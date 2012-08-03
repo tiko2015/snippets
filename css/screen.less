@@ -1,0 +1,28 @@
+/* -------------------------------------------------------------- 
+  
+   snippets
+   * Version:   0.1 (12-07-2012)
+   * docs: http://snippets.ws
+   
+-------------------------------------------------------------- */
+
+
+@base: #ccc; 
+@import "lib/plugins/grid.less";
+@import "lib/plugins/css3.less";
+
+// Defaults which you can freely override
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+
+body { background:darken(@base, 10%);}
+#wrapper { background-color: @base; .rounded(10px);  .inner-shadow();} 
+
+h1{ display:inline-block; .transition();
+	&:hover {.scale();}
+}
+
+#container #content { .column(7); }
+#container #sidebar { .column(5); }

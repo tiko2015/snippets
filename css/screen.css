@@ -1,0 +1,30 @@
+/* -------------------------------------------------------------- 
+  
+   snippets
+   * Version:   0.1 (12-07-2012)
+   * docs: http://snippets.ws
+   
+-------------------------------------------------------------- */
+
+@import "lib/reset.css";
+@import "lib/typography.css";
+@import "lib/forms.css";
+@import "lib/plugins/nav.css";
+@import "lib/plugins/scrollable.css";
+@import "lib/plugins/slider.css";
+@import "lib/plugins/gallery.css";
+
+@import "layout/all.css";
+
+/* for tablets in portrait mode and desktops with less than 994px of horizontal browser width */ 
+@import "layout/tablets.css" only screen and (min-device-width: 768px) and (orientation: portrait),
+screen and (max-width: 994px);
+
+/* for desktops with less than 555px of horizontal browser width and devices with less than 480px wide (most phones in landscape orientation) */ 
+@import "layout/phone-landscape.css" screen and (max-width: 555px),
+screen and (max-device-width: 480px),
+screen and (max-width: 767px);
+
+/* anything less than 320px (primarily phones in portrait */ 
+@import "layout/phone-portrait.css" screen and (max-width: 320px),
+screen and (max-width: 479px);

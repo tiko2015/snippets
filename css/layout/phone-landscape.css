@@ -1,0 +1,7 @@
+/* phone landscape */
+
+#wrapper { margin: 0 auto; width: 480px;}
+#container #content { width: 400px; }
+#container #sidebar { width: 60px;}
+
+#slider { display: none;}

@@ -1,0 +1,10 @@
+/* scrollable */
+
+.scrollable-container { position: relative;  width: 400px;}
+.scrollable {position:relative; overflow:hidden; width: 400px; height:90px;}
+.scrollable ul {width:20000em; position:absolute; }
+.scrollable ul li { float:left; width: 400px;}
+.scrollable  img { display: block; float: left; }
+.scrollable-container .navi { float: right;}
+.scrollable-container .navi a { float: left; display: block; width: 10px; height: 10px; border:1px solid #ccc; margin-left: 10px; }
+.scrollable-container .navi a.active { background: #ccc;}

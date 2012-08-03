@@ -1,0 +1,5 @@
+/* gallery */
+
+.gallery { padding-bottom: 10px;}
+.gallery li { float: left; margin: 0 5px 5px 0;}
+.gallery li img { display: block;}
