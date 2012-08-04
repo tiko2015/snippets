@@ -6,12 +6,44 @@
    
 -------------------------------------------------------------- */
 
+@import "lib/reset.less";
+
+@import "lib/typography.less";
+@import "lib/forms.less";
+@import "lib/grid.less";
+@media print { @import "lib/print.less"; }
+
+@import "plugins/css3.less";
+@import "plugins/nav.less";
+@import "plugins/scrollable.less";
+@import "plugins/slider.less";
+@import "plugins/gallery.less";
+
+@import "layout/all.less";
+
+/* for tablets in portrait mode and desktops with less than 994px of horizontal browser width */ 
+@media only screen and (min-device-width: 768px) and (orientation: portrait),
+screen and (max-width: 994px) {
+	@import "layout/tablets.less";
+}
+
+/* for desktops with less than 555px of horizontal browser width and devices with less than 480px wide (most phones in landscape orientation) */ 
+@media screen and (max-width: 555px),
+screen and (max-device-width: 480px),
+screen and (max-width: 767px) {
+	@import "layout/phone-landscape.less";
+}
+
+/* anything less than 320px (primarily phones in portrait */ 
+@media screen and (max-width: 320px),
+screen and (max-width: 479px) {
+	@import "layout/phone-portrait.less";
+}
+
+
+// vars
 
 @base: #ccc; 
-@import "lib/plugins/grid.less";
-@import "lib/plugins/css3.less";
-
-// Defaults which you can freely override
 @column-width: 60;
 @gutter-width: 20;
 @columns: 12;
