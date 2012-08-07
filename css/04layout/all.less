@@ -1,0 +1,11 @@
+/* all */
+
+body { background:darken(@base, 10%);}
+#wrapper { background-color: @base; .rounded(10px);  .inner-shadow(); margin:30px 80px;} 
+
+h1{ display:inline-block; .transition();
+	&:hover {.scale();}
+}
+
+#container #content { .column(7); }
+#container #sidebar { .column(5); }

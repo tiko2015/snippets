@@ -6,55 +6,23 @@
    
 -------------------------------------------------------------- */
 
-@import "lib/reset.less";
+@import "01core/vars.less";
+@import "01core/reset.less";
+@import "01core/typography.less";
+@import "01core/forms.less";
+@media print { @import "01core/print.less"; }
 
-@import "lib/typography.less";
-@import "lib/forms.less";
-@import "lib/grid.less";
-@media print { @import "lib/print.less"; }
+@import "02plugins/grid.less";
+@import "02plugins/css3.less";
 
-@import "plugins/css3.less";
-@import "plugins/nav.less";
-@import "plugins/scrollable.less";
-@import "plugins/slider.less";
-@import "plugins/gallery.less";
+@import "03elements/nav.less";
+@import "03elements/scrollable.less";
+@import "03elements/slider.less";
+@import "03elements/gallery.less";
 
-@import "layout/all.less";
-
-/* for tablets in portrait mode and desktops with less than 994px of horizontal browser width */ 
-@media only screen and (min-device-width: 768px) and (orientation: portrait),
-screen and (max-width: 994px) {
-	@import "layout/tablets.less";
-}
-
-/* for desktops with less than 555px of horizontal browser width and devices with less than 480px wide (most phones in landscape orientation) */ 
-@media screen and (max-width: 555px),
-screen and (max-device-width: 480px),
-screen and (max-width: 767px) {
-	@import "layout/phone-landscape.less";
-}
-
-/* anything less than 320px (primarily phones in portrait */ 
-@media screen and (max-width: 320px),
-screen and (max-width: 479px) {
-	@import "layout/phone-portrait.less";
-}
-
-
-// vars
-
-@base: #ccc; 
-@column-width: 60;
-@gutter-width: 20;
-@columns: 12;
-
-
-body { background:darken(@base, 10%);}
-#wrapper { background-color: @base; .rounded(10px);  .inner-shadow();} 
-
-h1{ display:inline-block; .transition();
-	&:hover {.scale();}
-}
-
-#container #content { .column(7); }
-#container #sidebar { .column(5); }
+@import "04layout/all.less";
+@media screen and (max-width: 1024px) {	@import "04layout/1024.less"; }
+@media screen and (max-width: 768px) { @import "04layout/768.less"; }
+@media screen and (max-width: 480px)  {	@import "04layout/480.less"; }
+@media screen and (max-width: 320px)  { @import "04layout/320.less"; }
+@media screen and (max-width: 240px)  { @import "04layout/240.less"; }
