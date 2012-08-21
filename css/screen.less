@@ -6,14 +6,16 @@
    
 -------------------------------------------------------------- */
 
-@import "01core/vars.less";
+
 @import "01core/reset.less";
 @import "01core/typography.less";
 @import "01core/forms.less";
+@import "01core/misc.less";
 @media print { @import "01core/print.less"; }
+@import "01core/vars.less";
 
-@import "02plugins/grid.less";
-@import "02plugins/css3.less";
+@import "02extends/grid.less";
+@import "02extends/css3.less";
 
 @import "03elements/nav.less";
 @import "03elements/scrollable.less";
@@ -22,7 +24,7 @@
 
 @import "04layout/all.less";
 @media screen and (max-width: 1024px) {	@import "04layout/1024.less"; }
-@media screen and (max-width: 768px) { @import "04layout/768.less"; }
+@media screen and (max-width: 768px)  { @import "04layout/768.less"; }
 @media screen and (max-width: 480px)  {	@import "04layout/480.less"; }
 @media screen and (max-width: 320px)  { @import "04layout/320.less"; }
 @media screen and (max-width: 240px)  { @import "04layout/240.less"; }

@@ -1,11 +1,11 @@
 /* all */
 
-body { background:darken(@base, 10%);}
-#wrapper { background-color: @base; .rounded(10px);  .inner-shadow(); margin:30px 80px;} 
+body { background-color: @base; }
+#wrapper { background:darken(@base, 3%); margin:30px auto; .border-radius(10px); .box-shadow(0 0 2px #888); max-width:960px; } 
+#container { background:darken(@base, 7%); margin:30px auto; .clearfix(); } 
+header { text-align:center;}
 
-h1{ display:inline-block; .transition();
-	&:hover {.scale();}
-}
 
-#container #content { .column(7); }
-#container #sidebar { .column(5); }
+#container #content { width:62%; float:left; margin:2%; padding:2%; }
+#container #sidebar { width:22%; float:left; margin:2%; padding:2%; background:darken(@base, 10%); .box-shadow(0 0 2px #888);.border-radius(10px);}
+footer { clear:both; }
