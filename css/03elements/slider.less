@@ -1,10 +1,14 @@
 /* slider */
 
-.slider-container { position: relative;  width: 500px; margin: 20px auto;}
-.slider {position:relative; overflow:hidden; width: 500px; height:390px;}
-.slider ul {width:20000em; position:absolute; }
-.slider ul li { float:left; width: 500px;}
-.slider img { display: block; float: left; }
-.slider-container .navi { float: right;}
-.slider-container .navi a { float: left; display: block; width: 10px; height: 10px; border:1px solid #ccc; margin-left: 10px; }
-.slider-container .navi a.active { background: #ccc;}
+.slider-container { position: relative;  width: 500px; margin: 20px auto;
+	.slider {position:relative; overflow:hidden; width: 500px; height:390px;
+		ul {width:20000em; position:absolute;
+			li { float:left; width: 500px;
+				img { display: block; float: left; }
+			}
+		}
+	}
+	.navi { float: right;}
+	.navi a { float: left; display: block; width: 10px; height: 10px; border:1px solid #ccc; margin-left: 10px; }
+	.navi a.active { background: #ccc;}
+}
