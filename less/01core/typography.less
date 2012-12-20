@@ -4,11 +4,11 @@
 
 @font-face {
     font-family: 'FearlessRegular';
-    src: url('../media/fonts/fearless-webfont.eot');
-    src: url('../media/fonts/fearless-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../media/fonts/fearless-webfont.woff') format('woff'),
-         url('../media/fonts/fearless-webfont.ttf') format('truetype'),
-         url('../media/fonts/fearless-webfont.svg#FearlessRegular') format('svg');
+    src: e(%("url(%s%s)", @media, "fonts/fearless-webfont.eot"));
+    src: e(%("url(%s%s)", @media, "fonts/fearless-webfont.eot?#iefix")) format('embedded-opentype'),
+         e(%("url(%s%s)", @media, "fonts/fearless-webfont.woff")) format('woff'),
+         e(%("url(%s%s)", @media, "fonts/fearless-webfont.ttf")) format('truetype'),
+         e(%("url(%s%s)", @media, "fonts/fearless-webfont.svg#FearlessRegular")) format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -17,14 +17,14 @@ html { font-size: 62.5%; line-height: 1.5em; }
 
 
 /* Default fonts and colors. */
-body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,input,textarea { font-family: 'Fredoka One', cursive, Helvetica, Arial, sans-serif; color: #333; }
+body,p,ul,ol,dl,input,textarea { font-family: 'Fredoka One', Helvetica, Arial, sans-serif; color: #333; }
 
 
 
 /* Headings
 -------------------------------------------------------------- */
 
-h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1; font-family: FearlessRegular, cursive, Helvetica, Arial, sans-serif; color: #333; }
+h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1; font-family: FearlessRegular, Helvetica, Arial, sans-serif; color: #333; }
 
 h1 { font-size: 36px; margin-bottom: 16px; }
 h2 { font-size: 28px; margin-bottom: 12px; }
