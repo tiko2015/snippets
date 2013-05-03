@@ -29,5 +29,10 @@
 }
 
 .bg(@img: "", @color: " ", @repeat: "no-repeat", @x: "0", @y: "0", @att: " ") {
-    background: e(%("%s", @color)) e(%("url(%s%s)", @media, @img)) e(%("%s", @repeat)) e(%("%s", @att)) e(%("%s", @x)) e(%("%s", @y));
+  background: e(%("%s", @color)) e(%("url(%s%s)", @media, @img)) e(%("%s", @repeat)) e(%("%s", @att)) e(%("%s", @x)) e(%("%s", @y));
+}
+
+.sprite(@img: "", @w: 10, @h: 10, @x: 0, @y: 0)  {
+  background: e(%("url(%s%s)", @media, @img)) no-repeat (@x * 1px) (@y * 1px);
+	.size(@w,@h);
 }
