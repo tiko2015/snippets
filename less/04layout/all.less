@@ -1,11 +1,11 @@
 /* all */
 
-body { background-color: @base; }
-#wrapper { background:darken(@base, 3%); margin:30px auto; .border-radius(10px); .box-shadow(0 0 2px #888); max-width:960px; } 
-#container { background:darken(@base, 7%); margin:30px auto; .clearfix(); } 
+body { background-color: @base; 
+	#wrapper { background:darken(@base, 2%); margin:30px auto; .border-radius(10px); .box-shadow(0 0 2px #888); max-width:960px;  }
+}
 header { text-align:center;}
-
-
-#container #content { width:62%; float:left; margin:2%; padding:2%; }
-#container #sidebar { width:22%; float:left; margin:2%; padding:2%; background:darken(@base, 10%); .box-shadow(0 0 2px #888);.border-radius(10px);}
-footer { clear:both; }
+#container { .clearfix(); padding:10px 0;
+	#content { .column(8); }
+	#sidebar { .column(4); background:darken(@base, 4%); .box-shadow(0 0 5px rgba(0, 0, 0, 0.3)); .border-radius(10px); padding:10px; .border-box(); }
+}
+footer { clear:both; padding:10px; }
