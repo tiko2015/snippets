@@ -29,12 +29,6 @@
   overflow: hidden;
 }
 
-.opacity (@opacity: 0.5) when (isnumber(@opacity)) and not (@opacity < 0) and not (@opacity > 1) {
-  zoom: 1;
-  opacity: @opacity;
-  filter: e(%("alpha(opacity=%d)", @opacity*100));
-}
-
 .background(@img: "", @att: " ") {
   background: e(%("url(%s%s)", @media, @img)) e(%("%s", @att));
 }
