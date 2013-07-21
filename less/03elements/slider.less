@@ -1,14 +1,63 @@
-/* slider */
+/*
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
 
-.slider-container { position: relative;  width: 960px; margin: 20px auto;
-	.slider {position:relative; overflow:hidden; width: 960px; height:390px;
-		ul {width:20000em; position:absolute;
-			li { float:left; width: 960px;
-				img { display: block; width:100%; }
-			}
-		}
-	}
-	.navi { float: right;}
-	.navi a { float: left; display: block; width: 10px; height: 10px; border:1px solid #ccc; margin-left: 10px; }
-	.navi a.active { background: #ccc;}
+
+.flexslider(@width:100%) { margin: 0 0 60px; position: relative; zoom: 1;
+
+	/* Browser Resets */
+	.slides,
+	.flex-control-nav,
+	.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+	
+	/* FlexSlider Necessary Styles
+	*********************************/ 
+	.slides > li {display: none; -webkit-backface-visibility: hidden;}
+	.slides img {width: @width; display: block;}
+	.clearfix();
+	.slides > li:first-child {display: block;}
+
+	/* Direction Nav */
+	.flex-direction-nav {*height: 0;}
+	.flex-direction-nav a {width: 30px; height: 30px; margin: -20px 0 0; display: block; .background('img/bg_direction_nav.png', 'no-repeat 0 0'); position: absolute; top: 50%; z-index: 10; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
+	.flex-direction-nav .flex-next {background-position: 100% 0; right: 10px; }
+	.flex-direction-nav .flex-prev {left: 10px;}
+	&:hover .flex-next {opacity: 0.8; right: 10px;}
+	&:hover .flex-prev {opacity: 0.8; left: 10px;}
+	&:hover .flex-next:hover, &:hover .flex-prev:hover {opacity: 1;}
+	.flex-direction-nav .flex-disabled {opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
+
+	/* Control Nav */
+	.flex-control-nav {width: 100%; position: absolute; bottom: -40px; text-align: center;}
+	.flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+	.flex-control-paging li a {width: 11px; height: 11px; display: block; background: #666; background: rgba(0,0,0,0.5); cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; box-shadow: inset 0 0 3px rgba(0,0,0,0.3);}
+	.flex-control-paging li a:hover { background: #333; background: rgba(0,0,0,0.7); }
+	.flex-control-paging li a.flex-active { background: #000; background: rgba(0,0,0,0.9); cursor: default; }
+	
+	.flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+	.flex-control-thumbs li {width: 25%; float: left; margin: 0;}
+	.flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+	.flex-control-thumbs img:hover {opacity: 1;}
+	.flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
+
+}
+.carousel() {
+	.flexslider(auto);
+}
+
+
+
+
+
+
+@media screen and (max-width: 860px) {
+  .flex-direction-nav .flex-prev {opacity: 1; left: 0;}
+  .flex-direction-nav .flex-next {opacity: 1; right: 0;}
 }

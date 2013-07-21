@@ -15,10 +15,11 @@ textarea { margin: 0; padding: 1%; width:98%;
 -------------------------------------------------------------- */
 form.hform p { margin: 0 0 5px; clear: left; 
 	label { float: left; width: 95px; }
-	input, select { width: 200px; }
+	input[type="text"], select { width: 200px; .border-box(); }
 	input.button { width: auto; }
 	input.checkbox { width: auto; }
 	input.radio { width: auto; }
+	textarea { width:200px; .border-box(); }
 
 	&.checkbox { margin-left: 100px; 
 		label { float: none; }

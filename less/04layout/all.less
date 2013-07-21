@@ -1,11 +1,40 @@
 /* all */
 
-body { background-color: @base; 
-	#wrapper { background:darken(@base, 2%); margin:30px auto; .border-radius(10px); .box-shadow(0 0 2px #888); max-width:960px;  }
+body { background-color: @backgroundColor; 
+	.wrapper { max-width: 1200px; margin: 0 auto; }
 }
-header { text-align:center;}
-#container { .clearfix(); padding:10px 0;
-	#content { .column(8); }
-	#sidebar { .column(4); background:darken(@base, 4%); .box-shadow(0 0 5px rgba(0, 0, 0, 0.3)); .border-radius(10px); padding:10px; .border-box(); }
+#header { .column(12); 
+	h1 { text-align: center;}
 }
-footer { clear:both; padding:10px; }
+#slider { clear:both; background: #f1f1f1;
+	.slider { .flexslider(); }
+}
+#container { clear:both;
+	#scrollable { .column(4);
+		.slider { .carousel(); }
+	}
+	#content { .column(4); }
+	#sidebar { .column(4); }
+}
+#titulos { background: #f1f1f1; clear:both; padding: 20px 0; margin: 20px 0; .clearfix();
+	.box { .column(4); height: 400px; position: relative; margin-bottom: 20px; }
+	.more { .button(); margin: 5px; position: absolute; bottom: 0; left: 0; }
+}
+
+#forms { clear:both; padding: 20px 0;
+	.vform { .column(6); }
+	.hform { .column(6); }
+}
+#varios { background: #f1f1f1; clear:both; padding: 20px 0; .clearfix(); margin: 20px 0;
+	.gallery-box { .column(6); }
+	.deflist { .column(3); }
+	.block { .column(3); }
+	.table { .column(6); }
+}
+footer { clear:both; .column(12); }
+
+
+
+.reset { .button(#d00, 2); } 
+.submit { .button(#333, 2); } 
+

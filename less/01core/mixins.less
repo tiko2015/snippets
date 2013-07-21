@@ -16,6 +16,13 @@
   height: @height * 1px;
 }
 
+.font-size(@sizeValue:1) {
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 10);
+  font-size: ~"@{pxValue}px"; 
+  font-size: ~"@{remValue}rem";
+}
+
 .hide-text () {
   text-indent: 100%;
   white-space: nowrap;
@@ -28,8 +35,8 @@
   filter: e(%("alpha(opacity=%d)", @opacity*100));
 }
 
-.bg(@img: "", @color: " ", @repeat: "no-repeat", @x: "0", @y: "0", @att: " ") {
-  background: e(%("%s", @color)) e(%("url(%s%s)", @media, @img)) e(%("%s", @repeat)) e(%("%s", @att)) e(%("%s", @x)) e(%("%s", @y));
+.background(@img: "", @att: " ") {
+  background: e(%("url(%s%s)", @media, @img)) e(%("%s", @att));
 }
 
 .sprite(@img: "", @w: 10, @h: 10, @x: 0, @y: 0)  {

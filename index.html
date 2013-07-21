@@ -25,10 +25,10 @@
                             //resource
     };
 	</script>
-	<script src="js/lib/less-1.3.0.min.js"></script>
+	<script src="js/lib/less-1.3.1.min.js"></script>
 	<!--Agregar #!watch a la url para ver los cambios en tiempo real. -->
-	<script src="js/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
-	<script src="js/lib/jquery.tools.min.js" type="text/javascript"></script>
+	<script src="js/lib/jquery-2.0.3.min.js" type="text/javascript"></script>
+	<script src="js/lib/jquery.flexslider.js" type="text/javascript"></script>
 	<script src="js/script.js" type="text/javascript"></script>
 	<!--[if lt IE 9]><script src="js/lib/html5.js"></script><![endif]-->
   <script type="text/javascript">
@@ -40,124 +40,178 @@
 </head>
 <body>
 
-<div id="wrapper">
-	<header>
-    <h1 class="logo">snippets</h1>
-		<nav>    
-    <ul class="nav">
-      <li><a href="#">Lorem</a></li>
-      <li><a href="#">Ipsum</a></li>
-      <li><a href="#">Dolor</a></li>
-      <li><a href="#">Consectetur</a></li>
-      <li><a href="#">Eiusmod</a></li>
-    </ul>
-    </nav>
-  </header>
-	<section id="slider" class="slider-container">
+<div class="wrapper">
+	<header id="header">
+	  <h1 class="logo">snippets</h1>
+	</header>
+	<nav>    
+	  <ul class="nav">
+	    <li><a href="#">Lorem</a></li>
+	    <li><a href="#">Ipsum</a></li>
+	    <li><a href="#">Dolor</a></li>
+	    <li><a href="#">Consectetur</a></li>
+	    <li><a href="#">Eiusmod</a></li>
+	  </ul>
+	</nav>
+</div>
+<section id="slider">
+	<div class="wrapper">
 		<div class="slider">
-		  <ul class="clean-list">
+		  <ul class="slides">
 		    <li>
-		      <img src="http://lorempixel.com/960/375/sports/1/" alt="" />
+		      <img src="media/upload/1_big.jpeg" alt="" />
 		    </li>
 		    <li>
-		      <img src="http://lorempixel.com/960/375/sports/2/" alt="" />
+		      <img src="media/upload/2_big.jpeg" alt="" />
 		    </li>
 		    <li>
-		      <img src="http://lorempixel.com/960/375/sports/3/" alt="" />
+		      <img src="media/upload/3_big.jpeg" alt="" />
 		    </li>
 		  </ul>
-		</div>
-		<a class="prev browse left">prev</a>
-		<a class="next browse right">next</a>
-		<div class="navi"></div>
-	</section><!--/#slider.slider-container-->
-	<script type="text/javascript" >
-		$(function() {
-		  // initialize scrollable
-		  $(".slider").scrollable().navigator();
-		});
-	</script>  
+	</div>
+	</div>
+</section><!--/#slider-->
+<script type="text/javascript">
+	$(window).load(function() {
+	  $('#slider .slider').flexslider({
+	    animation: "slide"
+	  });
+	});
+</script>  
 
-  <div id="container">
-  	<div id="content">
-			<div id="scrollable" class="scrollable-container">
-				<div class="scrollable">
-				  <ul class="clean-list">
-				    <!-- 1-4 -->
-				    <li>
-				      <img src="http://lorempixel.com/100/75/sports/1/" alt="" />
-				      <img src="http://lorempixel.com/100/75/sports/2/" alt="" />
-				      <img src="http://lorempixel.com/100/75/sports/3/" alt="" />
-				      <img src="http://lorempixel.com/100/75/sports/4/" alt="" />
-				    </li>
-				    <!-- 5-8 -->
-				    <li>
-				      <img src="http://lorempixel.com/100/75/sports/5/" alt="" />
-				      <img src="http://lorempixel.com/100/75/sports/6/" alt="" />
-				      <img src="http://lorempixel.com/100/75/sports/7/" alt="" />
-				      <img src="http://lorempixel.com/100/75/sports/8/" alt="" />
-				    </li>
-				    <!-- 9-12 -->
-				    <li>
-				      <img src="http://lorempixel.com/100/75/sports/9/" alt="" />
-				      <img src="http://lorempixel.com/100/75/sports/10/" alt="" />
-				      <img src="http://lorempixel.com/100/75/fashion/1/" alt="" />
-				      <img src="http://lorempixel.com/100/75/people/1/" alt="" />
-				    </li>
-				  </ul>
-				</div>
-				<a class="prev browse left">prev</a>
-				<a class="next browse right">next</a>
-				<div class="navi"></div>
-			</div><!--/#scrollable.scrollable-container-->
-			    
-			<script type="text/javascript" >
-				$(function() {
-				  // initialize scrollable
-				  $(".scrollable").scrollable().navigator();
-				});
-			</script>     
+<div id="container">
+	<div class="wrapper">
+		<div id="scrollable">
+			<div class="slider">
+			  <ul class="slides">
+			    <li><img src="media/upload/1.jpeg" alt="" /></li>
+			    <li><img src="media/upload/2.jpeg" alt="" /> </li>
+			    <li><img src="media/upload/3.jpeg" alt="" /></li>
+			    <li><img src="media/upload/4.jpeg" alt="" /></li>
+			    <li><img src="media/upload/5.jpeg" alt="" /></li>
+			    <li><img src="media/upload/6.jpeg" alt="" /></li>
+			  </ul>
+			</div>
+		</div><!--/#scrollable-->
+		<script type="text/javascript" >
+			$(window).load(function() {
+			  $('#scrollable .slider').flexslider({
+			    animation: "slide",
+			    animationLoop: false,
+			    itemWidth: 100,
+			    itemMargin: 5
+			  });
+			});
+		</script>     
 			
+		<div id="content">
+			<h3>Unordered lists</h3>
+      <ul>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipisicing elit</li>
+        <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+        <li>Ut enim ad minim veniam</li>
+      </ul>
+     </div>
+     <div id="sidebar">
+      <h3>Ordered lists</h3>
+      <ol>
+        <li>Consectetur adipisicing elit</li>
+        <li>Sed do eiusmod tempor incididunt ut labore</li>
+        <li>Et dolore magna aliqua</li>
+      </ol>
+		</div><!--/#sidebar-->
+	</div><!--/.wrapper-->
+</div><!-- /#container -->
+<div id="titulos">
+	<div class="wrapper">
+		<div class="box">
 			<h1>Heading h1</h1>
+	    <p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	    <p>Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.</p>
+	    <p>Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi. </p>
+			<a href="#" class="more">More</a>
+		</div>
+		<div class="box">
 			<h2>Heading h2</h2>
+	    <p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	    <p>Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.</p>
+	    <p>Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi. </p>
+			<a href="#" class="more">More</a>
+		</div>
+		<div class="box">
 			<h3>Heading h3</h3>
+	    <p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	    <p>Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.</p>
+	    <p>Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi. </p>
+			<a href="#" class="more">More</a>
+		</div>
+		<div class="box">
 			<h4>Heading h4</h4>
+	    <p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	    <p>Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.</p>
+	    <p>Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi. </p>
+			<a href="#" class="more">More</a>
+		</div>
+		<div class="box">
 			<h5>Heading h5</h5>
+	    <p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	    <p>Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.</p>
+	    <p>Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi. </p>
+			<a href="#" class="more">More</a>
+		</div>
+		<div class="box">
 			<h6>Heading h6</h6>
-			<hr />
-      <h2>Form</h2>
-      <form action="." method="post" class="vform">
-        <fieldset>
-          <legend>Comment form</legend>
-          <p><label>Name</label>
-            <input type="text" name="name" value="" id="name"/></p>
-          <p><label>Url</label>
-            <input type="text" name="address" value="" id="address"/></p>
-          <p><label>Email</label>
-            <input type="text" name="city" value="" id="city"/></p>
-          <p><label>Comment</label>
-            <textarea name="comment" rows="8" cols="40"></textarea></p>
-          <p class="checkbox"><input type="checkbox" name="remember" value="" id="remember"/> <label>Remember</label></p>
-        </fieldset>
-        
-        <p><input type="submit" name="submit" value="Save" class="button"/></p>
-      </form>
-      <form action="." method="post" class="hform">
-        <fieldset>
-          <legend>Comment form</legend>
-          <p><label>Name</label>
-            <input type="text" name="hname" value="" id="hname"/></p>
-          <p><label>Url</label>
-            <input type="text" name="haddress" value="" id="haddress"/></p>
-          <p><label>Email</label>
-            <input type="text" name="hcity" value="" id="hcity"/></p>
-          <p><label>Comment</label>
-            <textarea name="comment" rows="8" cols="40"></textarea></p>
-          <p class="checkbox"><input type="checkbox" name="hremember" value="" id="hremember"/> <label>Remember</label></p>
-        </fieldset>
-        
-        <p><input type="submit" name="submit" value="Save" class="button"/></p>
-      </form>
+	    <p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	    <p>Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.</p>
+	    <p>Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi. </p>
+			<a href="#" class="more">More</a>
+		</div>
+	</div>
+</div>
+<div id="forms">
+	<div class="wrapper">  
+    <form action="." method="post" class="vform">
+    	<h2>Vertical form</h2>
+      <fieldset>
+        <legend>Comment form</legend>
+        <p><label>Name</label>
+          <input type="text" name="name" value="" id="name"/></p>
+        <p><label>Url</label>
+          <input type="text" name="address" value="" id="address"/></p>
+        <p><label>Email</label>
+          <input type="text" name="city" value="" id="city"/></p>
+        <p><label>Comment</label>
+          <textarea name="comment" rows="8" cols="40"></textarea></p>
+        <p class="checkbox"><input type="checkbox" name="remember" value="" id="remember"/> <label>Remember</label></p>
+      </fieldset>
+      <p>
+      	<input type="reset" name="reset" value="Reset" class="reset"/> 
+      	<input type="submit" name="submit" value="Save" class="submit"/>
+      </p>
+    </form>
+    <form action="." method="post" class="hform">
+    	<h2>Horizontal Form</h2>
+      <fieldset>
+        <legend>Comment form</legend>
+        <p><label>Name</label>
+          <input type="text" name="hname" value="" id="hname"/></p>
+        <p><label>Url</label>
+          <input type="text" name="haddress" value="" id="haddress"/></p>
+        <p><label>Email</label>
+          <input type="text" name="hcity" value="" id="hcity"/></p>
+        <p><label>Comment</label>
+          <textarea name="comment" rows="8" cols="40"></textarea></p>
+        <p class="checkbox"><input type="checkbox" name="hremember" value="" id="hremember"/> <label>Remember</label></p>
+      </fieldset>
+      
+      <p><input type="submit" name="submit" value="Save" class="submit"/></p>
+    </form>
+	</div>
+</div>
+<div id="varios">
+	<div class="wrapper">
+		<div class="gallery-box">
       <h3>Gallery</h3>
       <ul class="clean-list clearfix gallery">
 		    <li>
@@ -197,6 +251,8 @@
 		      <img src="http://lorempixel.com/100/75/people/1/" alt="" />
 		    </li>
 		  </ul>
+		 </div>
+		 <div class="deflist">
 			<h3>Definition lists</h3>
       <dl>
         <dt>Lorem ipsum dolor sit amet</dt>
@@ -211,12 +267,14 @@
         <dt>Excepteur sint occaecat</dt>
         <dd>Cupidatat non proident, <strong>sunt in culpa qui officia</strong> deserunt mollit anim id est laborum.</dd>
       </dl>
-      
+     </div>
+     <div class="block">
       <h3>Blockquotes</h3>
       <blockquote>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </blockquote>
-      
+     </div>
+     <div class="table"> 
       <h3>Tables</h3>
       <table>
       	<thead>
@@ -239,41 +297,21 @@
         </tr>
         </tbody>
       </table>
-  	</div><!--/#content-->
-		<div id="sidebar">
-			<h3>Unordered lists</h3>
-	      <ul>
-	        <li>Lorem ipsum dolor sit amet</li>
-	        <li>Consectetur adipisicing elit</li>
-	        <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
-	        <li>Ut enim ad minim veniam</li>
-	      </ul>
-	      
-	      <h3>Ordered lists</h3>
-	      <ol>
-	        <li>Consectetur adipisicing elit</li>
-	        <li>Sed do eiusmod tempor incididunt ut labore</li>
-	        <li>Et dolore magna aliqua</li>
-	      </ol>
-	      <h3>Paragraph</h3>
-	      <p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-	      <p>Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.</p>
-	      <p>Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi. </p>
-	      
-		</div><!--/#sidebar-->
-  </div><!--/#container-->
+     </div>
+	</div><!--/.wrapper-->
+</div><!--/#varios-->
   
-  <footer>
-    <ul class="nav">
-      <li><a href="#">Lorem</a></li>
-      <li><a href="#">Ipsum</a></li>
-      <li><a href="#">Dolor</a></li>
-      <li><a href="#">Consectetur</a></li>
-      <li><a href="#">Eiusmod</a></li>
-    </ul>
-    <p class="legal"><small>Creative Commons License</small></p>
-  </footer>
-</div><!--/#wrapper.clearfix-->
+<footer>
+  <ul class="nav">
+    <li><a href="#">Lorem</a></li>
+    <li><a href="#">Ipsum</a></li>
+    <li><a href="#">Dolor</a></li>
+    <li><a href="#">Consectetur</a></li>
+    <li><a href="#">Eiusmod</a></li>
+  </ul>
+  <p class="legal"><small>Creative Commons License</small></p>
+</footer>
+
 
 </body>
 </html>
