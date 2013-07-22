@@ -33,3 +33,37 @@ form.vform p { margin: 0 0 5px;
 	label { display: block; } 
 	&.checkbox label { display: inline; }
 }
+
+.alertBox() {
+  color:#555;
+  .border-radius(4px);
+  padding:1em;
+  margin:1em;
+
+	span {
+	  font-weight:bold;
+	  text-transform:uppercase;
+	}	
+	&.alert-error {
+	  background:#ffecec;
+	  border:1px solid #f5aca6;
+	}
+	&.alert-success {
+	  background:#e9ffd9;
+	  border:1px solid #a6ca8a;
+	}
+	&.alert-warning {
+	  background:#fff8c4;
+	  border:1px solid #f2c779;
+	}
+	&.alert-notice {
+	  background:#e3f7fc;
+	  border:1px solid #8ed9f6;
+	}
+
+}
+
+.alert-box { .alertBox(); }
+
+.button-submit { .button(#996, 1.4); }
+.button-reset { .button(#d66, 1.4); }

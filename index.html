@@ -187,8 +187,8 @@
         <p class="checkbox"><input type="checkbox" name="remember" value="" id="remember"/> <label>Remember</label></p>
       </fieldset>
       <p>
-      	<input type="reset" name="reset" value="Reset" class="reset"/> 
-      	<input type="submit" name="submit" value="Save" class="submit"/>
+      	<input type="reset" name="reset" value="Reset" class="button-reset"/> 
+      	<input type="submit" name="submit" value="Save" class="button-submit"/>
       </p>
     </form>
     <form action="." method="post" class="hform">
@@ -204,9 +204,13 @@
         <p><label>Comment</label>
           <textarea name="comment" rows="8" cols="40"></textarea></p>
         <p class="checkbox"><input type="checkbox" name="hremember" value="" id="hremember"/> <label>Remember</label></p>
-      </fieldset>
       
-      <p><input type="submit" name="submit" value="Save" class="submit"/></p>
+	      <div class="alert-box alert-error"><span>Error: </span>Reemplaza esta alerta por tu HTML.</div>
+	      <div class="alert-box alert-success"><span>Success: </span>Reemplaza esta alerta por tu HTML.</div>
+	      <div class="alert-box alert-warning"><span>Warning: </span>Reemplaza esta alerta por tu HTML.</div>
+	      <div class="alert-box alert-notice"><span>Notice: </span>Reemplaza esta alerta por tu HTML.</div>
+      </fieldset>
+      <p><input type="submit" name="submit" value="Save" class="button-submit"/></p>
     </form>
 	</div>
 </div>
