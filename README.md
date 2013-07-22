@@ -1,5 +1,8 @@
 #snippets
-## Entorno para el desarrollo de interfaz de usuario basado en less.
+### Entorno para el desarrollo de interfaz de usuario basado en less.
+
+La característica principal de **snippets** es que no necesitas aprender una forma particular de escribir 
+HTML para poder utilizarlo. Este framework no necesita que te adaptes a el, **snippets** se adapta a tu proyecto.
 
 ### Características
 
