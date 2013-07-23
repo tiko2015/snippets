@@ -1,46 +1,45 @@
 /* buttons */
 
+.mixButton(@size: 1.2, @color: #666, @text-color: #fff){
+	.mixButtonColor(@color, @text-color: #fff);
+	.mixButtonSize(@size);
+}
 
-.button(@color: #666, @size: 1.2, @text-color: #fff) {
+.mixButtonColor(@color: #666, @text-color: #fff) {
 	@button_bg: @color;
-	@button_bg_light: spin(saturate(lighten(@button_bg, 10%), -10%), 22); 
-	@button_border: spin(saturate(lighten(@button_bg, 19%), -10%), 22);
-	@button_border_bottom: spin(saturate(darken(@button_bg, 19%), -10%), 22);
-	        
-	@button_hover: spin(lighten(@button_bg, 3%), 10);
-	@button_active: spin(saturate(lighten(@button_bg, -5%), 5%), 18);
+	@button_bg_light: lighten(@button_bg, 20%); 
 	
-	border:none;
-	border-top: 1px solid @button_border;
-	border-bottom: 1px solid @button_border_bottom;
+	@button_border: saturate(darken(@button_bg, 19%), -10%);
+	@button_hover: spin(saturate(lighten(@button_bg, -5%), 5%), 18);        
+	@button_active: spin(lighten(@button_bg, 3%), 10);
+	
+	
+	border:1px solid @button_border;
 	display:inline-block;
 	background: @button_bg;
-	.gradient(@button_bg,@button_bg_light,@button_bg);
-	padding: 0 @size*8px 0.1em;
-	.border-radius(@size*3px);
+	.linear-gradient-top(@button_bg,@button_bg_light,0%,@button_bg,50%);
 	.text-shadow(rgba(0,0,0,.4) 0 1px 0);
 	.content-box();
-	.font-size(@size);
 	text-align:center;
 	line-height:1.5em;
 	height:1.5em;
 	color: @text-color;
 	text-decoration: none;
 	vertical-align: middle;
-	
 	&:hover {
-	  border-top-color: @button_hover;
-	  background: @button_hover;
+	  background: @button_active;
 	  color: @text-color;
 	  text-decoration:none;
 	}
-	
 	&:active {
-	  border-top-color: @button_active;
-	  background: @button_active;
-	  position: relative;
-	  top: 1px;
+	  background: @button_hover;
 	  color: @text-color;
 	  .inner-shadow(1px 1px 5px rgba(0,0,0,.2));
 	}
+}
+
+.mixButtonSize(@size: 1.2) {
+	.font-size(@size);
+	padding: 0 @size*12px 0.1em;
+	.border-radius(@size*3px);
 }
