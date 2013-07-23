@@ -1,0 +1,168 @@
+/* glyphicons */
+
+.mixIcon(@_, @color: black) {
+	text-indent:20px;
+	position:relative;
+	&:before {
+	 .background-image('img/glyphicons-halflings.png');
+	 content: '';
+	 .size(14,14);
+	 position:absolute;
+	 left:5px;
+	 top:50%;
+	 margin-top:-7px;
+	}
+}
+
+.mixIconWhite(){
+	&:before {
+		.background-image('img/glyphicons-halflings-white.png');
+	}
+}
+
+.mixIcon(glass)              { &:before {background-position: 0      0;} }
+.mixIcon(music)              { &:before {background-position: -24px  0;} }
+.mixIcon(search)             { &:before {background-position: -48px  0;} }
+.mixIcon(envelope)           { &:before {background-position: -72px  0;} }
+.mixIcon(heart)              { &:before {background-position: -96px  0;} }
+.mixIcon(star)               { &:before {background-position: -120px 0;} }
+.mixIcon(star-empty)         { &:before {background-position: -144px 0;} }
+.mixIcon(user)               { &:before {background-position: -168px 0;} }
+.mixIcon(film)               { &:before {background-position: -192px 0;} }
+.mixIcon(th-large)           { &:before {background-position: -216px 0;} }
+.mixIcon(th)                 { &:before {background-position: -240px 0;} }
+.mixIcon(th-list)            { &:before {background-position: -264px 0;} }
+.mixIcon(ok)                 { &:before {background-position: -288px 0;} }
+.mixIcon(remove)             { &:before {background-position: -312px 0;} }
+.mixIcon(zoom-in)            { &:before {background-position: -336px 0;} }
+.mixIcon(zoom-out)           { &:before {background-position: -360px 0;} }
+.mixIcon(off)                { &:before {background-position: -384px 0;} }
+.mixIcon(signal)             { &:before {background-position: -408px 0;} }
+.mixIcon(cog)                { &:before {background-position: -432px 0;} }
+.mixIcon(trash)              { &:before {background-position: -456px 0;} }
+
+.mixIcon(home)               { &:before {background-position: 0      -24px;} }
+.mixIcon(file)               { &:before {background-position: -24px  -24px;} }
+.mixIcon(time)               { &:before {background-position: -48px  -24px;} }
+.mixIcon(road)               { &:before {background-position: -72px  -24px;} }
+.mixIcon(download-alt)       { &:before {background-position: -96px  -24px;} }
+.mixIcon(download)           { &:before {background-position: -120px -24px;} }
+.mixIcon(upload)             { &:before {background-position: -144px -24px;} }
+.mixIcon(inbox)              { &:before {background-position: -168px -24px;} }
+.mixIcon(play-circle)        { &:before {background-position: -192px -24px;} }
+.mixIcon(repeat)             { &:before {background-position: -216px -24px;} }
+.mixIcon(refresh)            { &:before {background-position: -240px -24px;} }
+.mixIcon(list-alt)           { &:before {background-position: -264px -24px;} }
+.mixIcon(lock)               { &:before {background-position: -287px -24px;} } // 1px off
+.mixIcon(flag)               { &:before {background-position: -312px -24px;} }
+.mixIcon(headphones)         { &:before {background-position: -336px -24px;} }
+.mixIcon(volume-off)         { &:before {background-position: -360px -24px;} }
+.mixIcon(volume-down)        { &:before {background-position: -384px -24px;} }
+.mixIcon(volume-up)          { &:before {background-position: -408px -24px;} }
+.mixIcon(qrcode)             { &:before {background-position: -432px -24px;} }
+.mixIcon(barcode)            { &:before {background-position: -456px -24px;} }
+
+.mixIcon(tag)                { &:before {background-position: 0      -48px;} }
+.mixIcon(tags)               { &:before {background-position: -25px  -48px;} } // 1px off
+.mixIcon(book)               { &:before {background-position: -48px  -48px;} }
+.mixIcon(bookmark)           { &:before {background-position: -72px  -48px;} }
+.mixIcon(print)              { &:before {background-position: -96px  -48px;} }
+.mixIcon(camera)             { &:before {background-position: -120px -48px;} }
+.mixIcon(font)               { &:before {background-position: -144px -48px;} }
+.mixIcon(bold)               { &:before {background-position: -167px -48px;} } // 1px off
+.mixIcon(italic)             { &:before {background-position: -192px -48px;} }
+.mixIcon(text-height)        { &:before {background-position: -216px -48px;} }
+.mixIcon(text-width)         { &:before {background-position: -240px -48px;} }
+.mixIcon(align-left)         { &:before {background-position: -264px -48px;} }
+.mixIcon(align-center)       { &:before {background-position: -288px -48px;} }
+.mixIcon(align-right)        { &:before {background-position: -312px -48px;} }
+.mixIcon(align-justify)      { &:before {background-position: -336px -48px;} }
+.mixIcon(list)               { &:before {background-position: -360px -48px;} }
+.mixIcon(indent-left)        { &:before {background-position: -384px -48px;} }
+.mixIcon(indent-right)       { &:before {background-position: -408px -48px;} }
+.mixIcon(facetime-video)     { &:before {background-position: -432px -48px;} }
+.mixIcon(picture)            { &:before {background-position: -456px -48px;} }
+
+.mixIcon(pencil)             { &:before {background-position: 0      -72px;} }
+.mixIcon(map-marker)         { &:before {background-position: -24px  -72px;} }
+.mixIcon(adjust)             { &:before {background-position: -48px  -72px;} }
+.mixIcon(tint)               { &:before {background-position: -72px  -72px;} }
+.mixIcon(edit)               { &:before {background-position: -96px  -72px;} }
+.mixIcon(share)              { &:before {background-position: -120px -72px;} }
+.mixIcon(check)              { &:before {background-position: -144px -72px;} }
+.mixIcon(move)               { &:before {background-position: -168px -72px;} }
+.mixIcon(step-backward)      { &:before {background-position: -192px -72px;} }
+.mixIcon(fast-backward)      { &:before {background-position: -216px -72px;} }
+.mixIcon(backward)           { &:before {background-position: -240px -72px;} }
+.mixIcon(play)               { &:before {background-position: -264px -72px;} }
+.mixIcon(pause)              { &:before {background-position: -288px -72px;} }
+.mixIcon(stop)               { &:before {background-position: -312px -72px;} }
+.mixIcon(forward)            { &:before {background-position: -336px -72px;} }
+.mixIcon(fast-forward)       { &:before {background-position: -360px -72px;} }
+.mixIcon(step-forward)       { &:before {background-position: -384px -72px;} }
+.mixIcon(eject)              { &:before {background-position: -408px -72px;} }
+.mixIcon(chevron-left)       { &:before {background-position: -432px -72px;} }
+.mixIcon(chevron-right)      { &:before {background-position: -456px -72px;} }
+
+.mixIcon(plus-sign)          { &:before {background-position: 0      -96px;} }
+.mixIcon(minus-sign)         { &:before {background-position: -24px  -96px;} }
+.mixIcon(remove-sign)        { &:before {background-position: -48px  -96px;} }
+.mixIcon(ok-sign)            { &:before {background-position: -72px  -96px;} }
+.mixIcon(question-sign)      { &:before {background-position: -96px  -96px;} }
+.mixIcon(info-sign)          { &:before {background-position: -120px -96px;} }
+.mixIcon(screenshot)         { &:before {background-position: -144px -96px;} }
+.mixIcon(remove-circle)      { &:before {background-position: -168px -96px;} }
+.mixIcon(ok-circle)          { &:before {background-position: -192px -96px;} }
+.mixIcon(ban-circle)         { &:before {background-position: -216px -96px;} }
+.mixIcon(arrow-left)         { &:before {background-position: -240px -96px;} }
+.mixIcon(arrow-right)        { &:before {background-position: -264px -96px;} }
+.mixIcon(arrow-up)           { &:before {background-position: -289px -96px;} } // 1px off
+.mixIcon(arrow-down)         { &:before {background-position: -312px -96px;} }
+.mixIcon(share-alt)          { &:before {background-position: -336px -96px;} }
+.mixIcon(resize-full)        { &:before {background-position: -360px -96px;} }
+.mixIcon(resize-small)       { &:before {background-position: -384px -96px;} }
+.mixIcon(plus)               { &:before {background-position: -408px -96px;} }
+.mixIcon(minus)              { &:before {background-position: -433px -96px;} }
+.mixIcon(asterisk)           { &:before {background-position: -456px -96px;} }
+
+.mixIcon(exclamation-sign)   { &:before {background-position: 0      -120px;} }
+.mixIcon(gift)               { &:before {background-position: -24px  -120px;} }
+.mixIcon(leaf)               { &:before {background-position: -48px  -120px;} }
+.mixIcon(fire)               { &:before {background-position: -72px  -120px;} }
+.mixIcon(eye-open)           { &:before {background-position: -96px  -120px;} }
+.mixIcon(eye-close)          { &:before {background-position: -120px -120px;} }
+.mixIcon(warning-sign)       { &:before {background-position: -144px -120px;} }
+.mixIcon(plane)              { &:before {background-position: -168px -120px;} }
+.mixIcon(calendar)           { &:before {background-position: -192px -120px;} }
+.mixIcon(random)             { &:before {background-position: -216px -120px; width: 16px;} }
+.mixIcon(comment)            { &:before {background-position: -240px -120px;} }
+.mixIcon(magnet)             { &:before {background-position: -264px -120px;} }
+.mixIcon(chevron-up)         { &:before {background-position: -288px -120px;} }
+.mixIcon(chevron-down)       { &:before {background-position: -313px -119px;} } // 1px, 1px off
+.mixIcon(retweet)            { &:before {background-position: -336px -120px;} }
+.mixIcon(shopping-cart)      { &:before {background-position: -360px -120px;} }
+.mixIcon(folder-close)       { &:before {background-position: -384px -120px; width: 16px;} }
+.mixIcon(folder-open)        { &:before {background-position: -408px -120px; width: 16px;} }
+.mixIcon(resize-vertical)    { &:before {background-position: -432px -119px;} } // 1px, 1px off
+.mixIcon(resize-horizontal)  { &:before {background-position: -456px -118px;} } // 1px, 2px off
+
+.mixIcon(hdd)                     { &:before {background-position: 0      -144px;} }
+.mixIcon(bullhorn)                { &:before {background-position: -24px  -144px;} }
+.mixIcon(bell)                    { &:before {background-position: -48px  -144px;} }
+.mixIcon(certificate)             { &:before {background-position: -72px  -144px;} }
+.mixIcon(thumbs-up)               { &:before {background-position: -96px  -144px;} }
+.mixIcon(thumbs-down)             { &:before {background-position: -120px -144px;} }
+.mixIcon(hand-right)              { &:before {background-position: -144px -144px;} }
+.mixIcon(hand-left)               { &:before {background-position: -168px -144px;} }
+.mixIcon(hand-up)                 { &:before {background-position: -192px -144px;} }
+.mixIcon(hand-down)               { &:before {background-position: -216px -144px;} }
+.mixIcon(circle-arrow-right)      { &:before {background-position: -240px -144px;} }
+.mixIcon(circle-arrow-left)       { &:before {background-position: -264px -144px;} }
+.mixIcon(circle-arrow-up)         { &:before {background-position: -288px -144px;} }
+.mixIcon(circle-arrow-down)       { &:before {background-position: -312px -144px;} }
+.mixIcon(globe)                   { &:before {background-position: -336px -144px;} }
+.mixIcon(wrench)                  { &:before {background-position: -360px -144px;} }
+.mixIcon(tasks)                   { &:before {background-position: -384px -144px;} }
+.mixIcon(filter)                  { &:before {background-position: -408px -144px;} }
+.mixIcon(briefcase)               { &:before {background-position: -432px -144px;} }
+.mixIcon(fullscreen)              { &:before {background-position: -456px -144px;} }

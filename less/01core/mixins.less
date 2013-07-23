@@ -33,6 +33,10 @@
   background: e(%("url(%s%s)", @media, @img)) e(%("%s", @att));
 }
 
+.background-image(@img: "") {
+  background-image: e(%("url(%s%s)", @media, @img));
+}
+
 .sprite(@img: "", @w: 10, @h: 10, @x: 0, @y: 0)  {
   background: e(%("url(%s%s)", @media, @img)) no-repeat (@x * 1px) (@y * 1px);
 	.size(@w,@h);
