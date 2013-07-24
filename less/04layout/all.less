@@ -3,8 +3,11 @@
 body { background-color: @backgroundColor; 
 	.wrapper { max-width: 1200px; margin: 0 auto; }
 }
-#header { .column(12); 
-	h1 { text-align: center;}
+#header { .column(12); text-align: center; 
+	h1 { color:#fff;  .border-radius(0 0 10px 10px); 
+		background:#333; display:inline-block; padding:0.5em 0.15em 0.15em; margin-top:0;
+		.text-shadow(0 1px 1px #999); .box-shadow(0 1px 15px 0 rgba(0,0,0,0.3));
+	}
 }
 #slider { clear:both; background: #f1f1f1;
 	.slider { .flexslider(); }
@@ -17,8 +20,10 @@ body { background-color: @backgroundColor;
 	#sidebar { .column(4); }
 }
 #titulos { background: #f1f1f1; clear:both; padding: 20px 0; margin: 20px 0; .clearfix();
-	.box { .column(4); height: 400px; position: relative; margin-bottom: 20px; }
-	.more { .mixButton(); .mixIcon(plus-sign); .mixIconWhite(); margin: 5px; bottom: 0; left: 0;position: absolute; }
+	.box { .column(4); position: relative; margin-bottom: 20px;
+		&:nth-child(3n+1) { clear: left; }
+	}
+	.more { .mixButton(); .mixIcon(plus-sign); .mixIconWhite(); margin: 5px; }
 }
 
 #forms { clear:both; padding: 20px 0;

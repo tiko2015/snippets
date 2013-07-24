@@ -1,5 +1,22 @@
 /* 480 */
 
-#container  {
-	#content, #sidebar{ .column(12); }
+.nav { display:none; }
+#container {
+	#scrollable,
+	#content,
+	#sidebar { .column(12); }
+}
+#titulos .box { .column(12); 
+	p { display:none; }
+}
+
+#forms { 
+	.vform,
+	.hform { .column(12); .pull(0); .push(0); }
+}
+#varios { 
+	.gallery-box { .column(12); }
+	.deflist,
+	.block,
+	.table { .column(12); }
 }
