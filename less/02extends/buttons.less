@@ -1,7 +1,7 @@
 /* buttons */
 
 .mixButton(@size: 1.2, @color: #666, @text-color: #fff){
-	.mixButtonColor(@color, @text-color: #fff);
+	.mixButtonColor(@color, @text-color);
 	.mixButtonSize(@size);
 }
 
@@ -26,6 +26,7 @@
 	color: @text-color;
 	text-decoration: none;
 	vertical-align: middle;
+	cursor:pointer;
 	&:hover {
 	  background: @button_active;
 	  color: @text-color;
