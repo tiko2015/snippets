@@ -1,0 +1,444 @@
+/*!
+ *  Font Awesome 3.2.1
+ *  the iconic font designed for Bootstrap
+ *  ------------------------------------------------------------------------------
+ *  The full suite of pictographic icons, examples, and documentation can be
+ *  found at http://fontawesome.io.  Stay up to date on Twitter at
+ *  http://twitter.com/fontawesome.
+ *
+ *  License
+ *  ------------------------------------------------------------------------------
+ *  - The Font Awesome font is licensed under SIL OFL 1.1 -
+ *    http://scripts.sil.org/OFL
+ *  - Font Awesome CSS, LESS, and SASS files are licensed under MIT License -
+ *    http://opensource.org/licenses/mit-license.html
+ *  - Font Awesome documentation licensed under CC BY 3.0 -
+ *    http://creativecommons.org/licenses/by/3.0/
+ *  - Attribution is no longer required in Font Awesome 3.0, but much appreciated:
+ *    "Font Awesome by Dave Gandy - http://fontawesome.io"
+ *
+ *  Author - Dave Gandy
+ *  ------------------------------------------------------------------------------
+ *  Email: dave@fontawesome.io
+ *  Twitter: http://twitter.com/davegandy
+ *  Work: Lead Product Designer @ Kyruus - http://kyruus.com
+ */
+
+@FontAwesomeVersion: "3.2.1";
+
+@font-face {
+    font-family: 'FontAwesome';
+		.fontFace('fonts/fontawesome-webfont', 'fontawesomeregular');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.mixIcon(@_, @color: inherit, @size: inherit) {
+	&:before {
+		font-family: 'FontAwesome';
+		color: @color;
+		font-size: @size;
+		margin-right:0.5em;
+		font-family: FontAwesome;
+		font-weight: normal;
+		font-style: normal;
+		text-decoration: inherit;
+		-webkit-font-smoothing: antialiased;
+		*margin-right: .3em; // fixes ie7 issues
+	}
+}
+
+.mixIconSpin() {
+	&:before {
+		.animation(spin 2s infinite linear);
+		display: inline-block;
+	  text-decoration: none;
+	  padding:0;
+	  text-indent:0;
+	}
+}
+
+@-moz-keyframes spin {
+  0% { -moz-transform: rotate(0deg); }
+  100% { -moz-transform: rotate(359deg); }
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(359deg); }
+}
+@-o-keyframes spin {
+  0% { -o-transform: rotate(0deg); }
+  100% { -o-transform: rotate(359deg); }
+}
+@-ms-keyframes spin {
+  0% { -ms-transform: rotate(0deg); }
+  100% { -ms-transform: rotate(359deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+
+
+
+  .mixIcon(glass)          { &:before { content: "\f000"; } }
+  .mixIcon(music)          { &:before { content: "\f001"; } }
+  .mixIcon(search)          { &:before { content: "\f002"; } }
+  .mixIcon(envelope-alt)          { &:before { content: "\f003"; } }
+  .mixIcon(heart)          { &:before { content: "\f004"; } }
+  .mixIcon(star)          { &:before { content: "\f005"; } }
+  .mixIcon(star-empty)          { &:before { content: "\f006"; } }
+  .mixIcon(user)          { &:before { content: "\f007"; } }
+  .mixIcon(film)          { &:before { content: "\f008"; } }
+  .mixIcon(th-large)          { &:before { content: "\f009"; } }
+  .mixIcon(th)          { &:before { content: "\f00a"; } }
+  .mixIcon(th-list)          { &:before { content: "\f00b"; } }
+  .mixIcon(ok)          { &:before { content: "\f00c"; } }
+  .mixIcon(remove)          { &:before { content: "\f00d"; } }
+  .mixIcon(zoom-in)          { &:before { content: "\f00e"; } }
+  .mixIcon(zoom-out)          { &:before { content: "\f010"; } }
+  .mixIcon(off)          { &:before { content: "\f011"; } }
+  .mixIcon(signal)          { &:before { content: "\f012"; } }
+  .mixIcon(cog)          { &:before { content: "\f013"; } }
+  .mixIcon(trash)          { &:before { content: "\f014"; } }
+  .mixIcon(home)          { &:before { content: "\f015"; } }
+  .mixIcon(file-alt)          { &:before { content: "\f016"; } }
+  .mixIcon(time)          { &:before { content: "\f017"; } }
+  .mixIcon(road)          { &:before { content: "\f018"; } }
+  .mixIcon(download-alt)          { &:before { content: "\f019"; } }
+  .mixIcon(download)          { &:before { content: "\f01a"; } }
+  .mixIcon(upload)          { &:before { content: "\f01b"; } }
+  .mixIcon(inbox)          { &:before { content: "\f01c"; } }
+  .mixIcon(play-circle)          { &:before { content: "\f01d"; } }
+  .mixIcon(repeat)          { &:before { content: "\f01e"; } }
+  .mixIcon(refresh)          { &:before { content: "\f021"; } }
+  .mixIcon(list-alt)          { &:before { content: "\f022"; } }
+  .mixIcon(lock)          { &:before { content: "\f023"; } }
+  .mixIcon(flag)          { &:before { content: "\f024"; } }
+  .mixIcon(headphones)          { &:before { content: "\f025"; } }
+  .mixIcon(volume-off)          { &:before { content: "\f026"; } }
+  .mixIcon(volume-down)          { &:before { content: "\f027"; } }
+  .mixIcon(volume-up)          { &:before { content: "\f028"; } }
+  .mixIcon(qrcode)          { &:before { content: "\f029"; } }
+  .mixIcon(barcode)          { &:before { content: "\f02a"; } }
+  .mixIcon(tag)          { &:before { content: "\f02b"; } }
+  .mixIcon(tags)          { &:before { content: "\f02c"; } }
+  .mixIcon(book)          { &:before { content: "\f02d"; } }
+  .mixIcon(bookmark)          { &:before { content: "\f02e"; } }
+  .mixIcon(print)          { &:before { content: "\f02f"; } }
+  .mixIcon(camera)          { &:before { content: "\f030"; } }
+  .mixIcon(font)          { &:before { content: "\f031"; } }
+  .mixIcon(bold)          { &:before { content: "\f032"; } }
+  .mixIcon(italic)          { &:before { content: "\f033"; } }
+  .mixIcon(text-height)          { &:before { content: "\f034"; } }
+  .mixIcon(text-width)          { &:before { content: "\f035"; } }
+  .mixIcon(align-left)          { &:before { content: "\f036"; } }
+  .mixIcon(align-center)          { &:before { content: "\f037"; } }
+  .mixIcon(align-right)          { &:before { content: "\f038"; } }
+  .mixIcon(align-justify)          { &:before { content: "\f039"; } }
+  .mixIcon(list)          { &:before { content: "\f03a"; } }
+  .mixIcon(indent-left)          { &:before { content: "\f03b"; } }
+  .mixIcon(indent-right)          { &:before { content: "\f03c"; } }
+  .mixIcon(facetime-video)          { &:before { content: "\f03d"; } }
+  .mixIcon(picture)          { &:before { content: "\f03e"; } }
+  .mixIcon(pencil)          { &:before { content: "\f040"; } }
+  .mixIcon(map-marker)          { &:before { content: "\f041"; } }
+  .mixIcon(adjust)          { &:before { content: "\f042"; } }
+  .mixIcon(tint)          { &:before { content: "\f043"; } }
+  .mixIcon(edit)          { &:before { content: "\f044"; } }
+  .mixIcon(share)          { &:before { content: "\f045"; } }
+  .mixIcon(check)          { &:before { content: "\f046"; } }
+  .mixIcon(move)          { &:before { content: "\f047"; } }
+  .mixIcon(step-backward)          { &:before { content: "\f048"; } }
+  .mixIcon(fast-backward)          { &:before { content: "\f049"; } }
+  .mixIcon(backward)          { &:before { content: "\f04a"; } }
+  .mixIcon(play)          { &:before { content: "\f04b"; } }
+  .mixIcon(pause)          { &:before { content: "\f04c"; } }
+  .mixIcon(stop)          { &:before { content: "\f04d"; } }
+  .mixIcon(forward)          { &:before { content: "\f04e"; } }
+  .mixIcon(fast-forward)          { &:before { content: "\f050"; } }
+  .mixIcon(step-forward)          { &:before { content: "\f051"; } }
+  .mixIcon(eject)          { &:before { content: "\f052"; } }
+  .mixIcon(chevron-left)          { &:before { content: "\f053"; } }
+  .mixIcon(chevron-right)          { &:before { content: "\f054"; } }
+  .mixIcon(plus-sign)          { &:before { content: "\f055"; } }
+  .mixIcon(minus-sign)          { &:before { content: "\f056"; } }
+  .mixIcon(remove-sign)          { &:before { content: "\f057"; } }
+  .mixIcon(ok-sign)          { &:before { content: "\f058"; } }
+  .mixIcon(question-sign)          { &:before { content: "\f059"; } }
+  .mixIcon(info-sign)          { &:before { content: "\f05a"; } }
+  .mixIcon(screenshot)          { &:before { content: "\f05b"; } }
+  .mixIcon(remove-circle)          { &:before { content: "\f05c"; } }
+  .mixIcon(ok-circle)          { &:before { content: "\f05d"; } }
+  .mixIcon(ban-circle)          { &:before { content: "\f05e"; } }
+  .mixIcon(arrow-left)          { &:before { content: "\f060"; } }
+  .mixIcon(arrow-right)          { &:before { content: "\f061"; } }
+  .mixIcon(arrow-up)          { &:before { content: "\f062"; } }
+  .mixIcon(arrow-down)          { &:before { content: "\f063"; } }
+  .mixIcon(share-alt)          { &:before { content: "\f064"; } }
+  .mixIcon(resize-full)          { &:before { content: "\f065"; } }
+  .mixIcon(resize-small)          { &:before { content: "\f066"; } }
+  .mixIcon(plus)          { &:before { content: "\f067"; } }
+  .mixIcon(minus)          { &:before { content: "\f068"; } }
+  .mixIcon(asterisk)          { &:before { content: "\f069"; } }
+  .mixIcon(exclamation-sign)          { &:before { content: "\f06a"; } }
+  .mixIcon(gift)          { &:before { content: "\f06b"; } }
+  .mixIcon(leaf)          { &:before { content: "\f06c"; } }
+  .mixIcon(fire)          { &:before { content: "\f06d"; } }
+  .mixIcon(eye-open)          { &:before { content: "\f06e"; } }
+  .mixIcon(eye-close)          { &:before { content: "\f070"; } }
+  .mixIcon(warning-sign)          { &:before { content: "\f071"; } }
+  .mixIcon(plane)          { &:before { content: "\f072"; } }
+  .mixIcon(calendar)          { &:before { content: "\f073"; } }
+  .mixIcon(random)          { &:before { content: "\f074"; } }
+  .mixIcon(comment)          { &:before { content: "\f075"; } }
+  .mixIcon(magnet)          { &:before { content: "\f076"; } }
+  .mixIcon(chevron-up)          { &:before { content: "\f077"; } }
+  .mixIcon(chevron-down)          { &:before { content: "\f078"; } }
+  .mixIcon(retweet)          { &:before { content: "\f079"; } }
+  .mixIcon(shopping-cart)          { &:before { content: "\f07a"; } }
+  .mixIcon(folder-close)          { &:before { content: "\f07b"; } }
+  .mixIcon(folder-open)          { &:before { content: "\f07c"; } }
+  .mixIcon(resize-vertical)          { &:before { content: "\f07d"; } }
+  .mixIcon(resize-horizontal)          { &:before { content: "\f07e"; } }
+  .mixIcon(bar-chart)          { &:before { content: "\f080"; } }
+  .mixIcon(twitter-sign)          { &:before { content: "\f081"; } }
+  .mixIcon(facebook-sign)          { &:before { content: "\f082"; } }
+  .mixIcon(camera-retro)          { &:before { content: "\f083"; } }
+  .mixIcon(key)          { &:before { content: "\f084"; } }
+  .mixIcon(cogs)          { &:before { content: "\f085"; } }
+  .mixIcon(comments)          { &:before { content: "\f086"; } }
+  .mixIcon(thumbs-up-alt)          { &:before { content: "\f087"; } }
+  .mixIcon(thumbs-down-alt)          { &:before { content: "\f088"; } }
+  .mixIcon(star-half)          { &:before { content: "\f089"; } }
+  .mixIcon(heart-empty)          { &:before { content: "\f08a"; } }
+  .mixIcon(signout)          { &:before { content: "\f08b"; } }
+  .mixIcon(linkedin-sign)          { &:before { content: "\f08c"; } }
+  .mixIcon(pushpin)          { &:before { content: "\f08d"; } }
+  .mixIcon(external-link)          { &:before { content: "\f08e"; } }
+  .mixIcon(signin)          { &:before { content: "\f090"; } }
+  .mixIcon(trophy)          { &:before { content: "\f091"; } }
+  .mixIcon(github-sign)          { &:before { content: "\f092"; } }
+  .mixIcon(upload-alt)          { &:before { content: "\f093"; } }
+  .mixIcon(lemon)          { &:before { content: "\f094"; } }
+  .mixIcon(phone)          { &:before { content: "\f095"; } }
+  .mixIcon(check-empty)          { &:before { content: "\f096"; } }
+  .mixIcon(bookmark-empty)          { &:before { content: "\f097"; } }
+  .mixIcon(phone-sign)          { &:before { content: "\f098"; } }
+  .mixIcon(twitter)          { &:before { content: "\f099"; } }
+  .mixIcon(facebook)          { &:before { content: "\f09a"; } }
+  .mixIcon(github)          { &:before { content: "\f09b"; } }
+  .mixIcon(unlock)          { &:before { content: "\f09c"; } }
+  .mixIcon(credit-card)          { &:before { content: "\f09d"; } }
+  .mixIcon(rss)          { &:before { content: "\f09e"; } }
+  .mixIcon(hdd)          { &:before { content: "\f0a0"; } }
+  .mixIcon(bullhorn)          { &:before { content: "\f0a1"; } }
+  .mixIcon(bell)          { &:before { content: "\f0a2"; } }
+  .mixIcon(certificate)          { &:before { content: "\f0a3"; } }
+  .mixIcon(hand-right)          { &:before { content: "\f0a4"; } }
+  .mixIcon(hand-left)          { &:before { content: "\f0a5"; } }
+  .mixIcon(hand-up)          { &:before { content: "\f0a6"; } }
+  .mixIcon(hand-down)          { &:before { content: "\f0a7"; } }
+  .mixIcon(circle-arrow-left)          { &:before { content: "\f0a8"; } }
+  .mixIcon(circle-arrow-right)          { &:before { content: "\f0a9"; } }
+  .mixIcon(circle-arrow-up)          { &:before { content: "\f0aa"; } }
+  .mixIcon(circle-arrow-down)          { &:before { content: "\f0ab"; } }
+  .mixIcon(globe)          { &:before { content: "\f0ac"; } }
+  .mixIcon(wrench)          { &:before { content: "\f0ad"; } }
+  .mixIcon(tasks)          { &:before { content: "\f0ae"; } }
+  .mixIcon(filter)          { &:before { content: "\f0b0"; } }
+  .mixIcon(briefcase)          { &:before { content: "\f0b1"; } }
+  .mixIcon(fullscreen)          { &:before { content: "\f0b2"; } }
+  .mixIcon(group)          { &:before { content: "\f0c0"; } }
+  .mixIcon(link)          { &:before { content: "\f0c1"; } }
+  .mixIcon(cloud)          { &:before { content: "\f0c2"; } }
+  .mixIcon(beaker)          { &:before { content: "\f0c3"; } }
+  .mixIcon(cut)          { &:before { content: "\f0c4"; } }
+  .mixIcon(copy)          { &:before { content: "\f0c5"; } }
+  .mixIcon(paper-clip)          { &:before { content: "\f0c6"; } }
+  .mixIcon(save)          { &:before { content: "\f0c7"; } }
+  .mixIcon(sign-blank)          { &:before { content: "\f0c8"; } }
+  .mixIcon(reorder)          { &:before { content: "\f0c9"; } }
+  .mixIcon(list-ul)          { &:before { content: "\f0ca"; } }
+  .mixIcon(list-ol)          { &:before { content: "\f0cb"; } }
+  .mixIcon(strikethrough)          { &:before { content: "\f0cc"; } }
+  .mixIcon(underline)          { &:before { content: "\f0cd"; } }
+  .mixIcon(table)          { &:before { content: "\f0ce"; } }
+  .mixIcon(magic)          { &:before { content: "\f0d0"; } }
+  .mixIcon(truck)          { &:before { content: "\f0d1"; } }
+  .mixIcon(pinterest)          { &:before { content: "\f0d2"; } }
+  .mixIcon(pinterest-sign)          { &:before { content: "\f0d3"; } }
+  .mixIcon(google-plus-sign)          { &:before { content: "\f0d4"; } }
+  .mixIcon(google-plus)          { &:before { content: "\f0d5"; } }
+  .mixIcon(money)          { &:before { content: "\f0d6"; } }
+  .mixIcon(caret-down)          { &:before { content: "\f0d7"; } }
+  .mixIcon(caret-up)          { &:before { content: "\f0d8"; } }
+  .mixIcon(caret-left)          { &:before { content: "\f0d9"; } }
+  .mixIcon(caret-right)          { &:before { content: "\f0da"; } }
+  .mixIcon(columns)          { &:before { content: "\f0db"; } }
+  .mixIcon(sort)          { &:before { content: "\f0dc"; } }
+  .mixIcon(sort-down)          { &:before { content: "\f0dd"; } }
+  .mixIcon(sort-up)          { &:before { content: "\f0de"; } }
+  .mixIcon(envelope)          { &:before { content: "\f0e0"; } }
+  .mixIcon(linkedin)          { &:before { content: "\f0e1"; } }
+  .mixIcon(undo)          { &:before { content: "\f0e2"; } }
+  .mixIcon(legal)          { &:before { content: "\f0e3"; } }
+  .mixIcon(dashboard)          { &:before { content: "\f0e4"; } }
+  .mixIcon(comment-alt)          { &:before { content: "\f0e5"; } }
+  .mixIcon(comments-alt)          { &:before { content: "\f0e6"; } }
+  .mixIcon(bolt)          { &:before { content: "\f0e7"; } }
+  .mixIcon(sitemap)          { &:before { content: "\f0e8"; } }
+  .mixIcon(umbrella)          { &:before { content: "\f0e9"; } }
+  .mixIcon(paste)          { &:before { content: "\f0ea"; } }
+  .mixIcon(lightbulb)          { &:before { content: "\f0eb"; } }
+  .mixIcon(exchange)          { &:before { content: "\f0ec"; } }
+  .mixIcon(cloud-download)          { &:before { content: "\f0ed"; } }
+  .mixIcon(cloud-upload)          { &:before { content: "\f0ee"; } }
+  .mixIcon(user-md)          { &:before { content: "\f0f0"; } }
+  .mixIcon(stethoscope)          { &:before { content: "\f0f1"; } }
+  .mixIcon(suitcase)          { &:before { content: "\f0f2"; } }
+  .mixIcon(bell-alt)          { &:before { content: "\f0f3"; } }
+  .mixIcon(coffee)          { &:before { content: "\f0f4"; } }
+  .mixIcon(food)          { &:before { content: "\f0f5"; } }
+  .mixIcon(file-text-alt)          { &:before { content: "\f0f6"; } }
+  .mixIcon(building)          { &:before { content: "\f0f7"; } }
+  .mixIcon(hospital)          { &:before { content: "\f0f8"; } }
+  .mixIcon(ambulance)          { &:before { content: "\f0f9"; } }
+  .mixIcon(medkit)          { &:before { content: "\f0fa"; } }
+  .mixIcon(fighter-jet)          { &:before { content: "\f0fb"; } }
+  .mixIcon(beer)          { &:before { content: "\f0fc"; } }
+  .mixIcon(h-sign)          { &:before { content: "\f0fd"; } }
+  .mixIcon(plus-sign-alt)          { &:before { content: "\f0fe"; } }
+  .mixIcon(double-angle-left)          { &:before { content: "\f100"; } }
+  .mixIcon(double-angle-right)          { &:before { content: "\f101"; } }
+  .mixIcon(double-angle-up)          { &:before { content: "\f102"; } }
+  .mixIcon(double-angle-down)          { &:before { content: "\f103"; } }
+  .mixIcon(angle-left)          { &:before { content: "\f104"; } }
+  .mixIcon(angle-right)          { &:before { content: "\f105"; } }
+  .mixIcon(angle-up)          { &:before { content: "\f106"; } }
+  .mixIcon(angle-down)          { &:before { content: "\f107"; } }
+  .mixIcon(desktop)          { &:before { content: "\f108"; } }
+  .mixIcon(laptop)          { &:before { content: "\f109"; } }
+  .mixIcon(tablet)          { &:before { content: "\f10a"; } }
+  .mixIcon(mobile-phone)          { &:before { content: "\f10b"; } }
+  .mixIcon(circle-blank)          { &:before { content: "\f10c"; } }
+  .mixIcon(quote-left)          { &:before { content: "\f10d"; } }
+  .mixIcon(quote-right)          { &:before { content: "\f10e"; } }
+  .mixIcon(spinner)          { &:before { content: "\f110"; } }
+  .mixIcon(circle)          { &:before { content: "\f111"; } }
+  .mixIcon(reply)          { &:before { content: "\f112"; } }
+  .mixIcon(github-alt)          { &:before { content: "\f113"; } }
+  .mixIcon(folder-close-alt)          { &:before { content: "\f114"; } }
+  .mixIcon(folder-open-alt)          { &:before { content: "\f115"; } }
+  .mixIcon(expand-alt)          { &:before { content: "\f116"; } }
+  .mixIcon(collapse-alt)          { &:before { content: "\f117"; } }
+  .mixIcon(smile)          { &:before { content: "\f118"; } }
+  .mixIcon(frown)          { &:before { content: "\f119"; } }
+  .mixIcon(meh)          { &:before { content: "\f11a"; } }
+  .mixIcon(gamepad)          { &:before { content: "\f11b"; } }
+  .mixIcon(keyboard)          { &:before { content: "\f11c"; } }
+  .mixIcon(flag-alt)          { &:before { content: "\f11d"; } }
+  .mixIcon(flag-checkered)          { &:before { content: "\f11e"; } }
+  .mixIcon(terminal)          { &:before { content: "\f120"; } }
+  .mixIcon(code)          { &:before { content: "\f121"; } }
+  .mixIcon(reply-all)          { &:before { content: "\f122"; } }
+  .mixIcon(mail-reply-all)          { &:before { content: "\f122"; } }
+  .mixIcon(star-half-empty)          { &:before { content: "\f123"; } }
+  .mixIcon(location-arrow)          { &:before { content: "\f124"; } }
+  .mixIcon(crop)          { &:before { content: "\f125"; } }
+  .mixIcon(code-fork)          { &:before { content: "\f126"; } }
+  .mixIcon(unlink)          { &:before { content: "\f127"; } }
+  .mixIcon(question)          { &:before { content: "\f128"; } }
+  .mixIcon(info)          { &:before { content: "\f129"; } }
+  .mixIcon(exclamation)          { &:before { content: "\f12a"; } }
+  .mixIcon(superscript)          { &:before { content: "\f12b"; } }
+  .mixIcon(subscript)          { &:before { content: "\f12c"; } }
+  .mixIcon(eraser)          { &:before { content: "\f12d"; } }
+  .mixIcon(puzzle-piece)          { &:before { content: "\f12e"; } }
+  .mixIcon(microphone)          { &:before { content: "\f130"; } }
+  .mixIcon(microphone-off)          { &:before { content: "\f131"; } }
+  .mixIcon(shield)          { &:before { content: "\f132"; } }
+  .mixIcon(calendar-empty)          { &:before { content: "\f133"; } }
+  .mixIcon(fire-extinguisher)          { &:before { content: "\f134"; } }
+  .mixIcon(rocket)          { &:before { content: "\f135"; } }
+  .mixIcon(maxcdn)          { &:before { content: "\f136"; } }
+  .mixIcon(chevron-sign-left)          { &:before { content: "\f137"; } }
+  .mixIcon(chevron-sign-right)          { &:before { content: "\f138"; } }
+  .mixIcon(chevron-sign-up)          { &:before { content: "\f139"; } }
+  .mixIcon(chevron-sign-down)          { &:before { content: "\f13a"; } }
+  .mixIcon(html5)          { &:before { content: "\f13b"; } }
+  .mixIcon(css3)          { &:before { content: "\f13c"; } }
+  .mixIcon(anchor)          { &:before { content: "\f13d"; } }
+  .mixIcon(unlock-alt)          { &:before { content: "\f13e"; } }
+  .mixIcon(bullseye)          { &:before { content: "\f140"; } }
+  .mixIcon(ellipsis-horizontal)          { &:before { content: "\f141"; } }
+  .mixIcon(ellipsis-vertical)          { &:before { content: "\f142"; } }
+  .mixIcon(rss-sign)          { &:before { content: "\f143"; } }
+  .mixIcon(play-sign)          { &:before { content: "\f144"; } }
+  .mixIcon(ticket)          { &:before { content: "\f145"; } }
+  .mixIcon(minus-sign-alt)          { &:before { content: "\f146"; } }
+  .mixIcon(check-minus)          { &:before { content: "\f147"; } }
+  .mixIcon(level-up)          { &:before { content: "\f148"; } }
+  .mixIcon(level-down)          { &:before { content: "\f149"; } }
+  .mixIcon(check-sign)          { &:before { content: "\f14a"; } }
+  .mixIcon(edit-sign)          { &:before { content: "\f14b"; } }
+  .mixIcon(external-link-sign)          { &:before { content: "\f14c"; } }
+  .mixIcon(share-sign)          { &:before { content: "\f14d"; } }
+  .mixIcon(compass)          { &:before { content: "\f14e"; } }
+  .mixIcon(collapse)          { &:before { content: "\f150"; } }
+  .mixIcon(collapse-top)          { &:before { content: "\f151"; } }
+  .mixIcon(expand)          { &:before { content: "\f152"; } }
+  .mixIcon(eur)          { &:before { content: "\f153"; } }
+  .mixIcon(gbp)          { &:before { content: "\f154"; } }
+  .mixIcon(usd)          { &:before { content: "\f155"; } }
+  .mixIcon(inr)          { &:before { content: "\f156"; } }
+  .mixIcon(jpy)          { &:before { content: "\f157"; } }
+  .mixIcon(cny)          { &:before { content: "\f158"; } }
+  .mixIcon(krw)          { &:before { content: "\f159"; } }
+  .mixIcon(btc)          { &:before { content: "\f15a"; } }
+  .mixIcon(file)          { &:before { content: "\f15b"; } }
+  .mixIcon(file-text)          { &:before { content: "\f15c"; } }
+  .mixIcon(sort-by-alphabet)          { &:before { content: "\f15d"; } }
+  .mixIcon(sort-by-alphabet-alt)          { &:before { content: "\f15e"; } }
+  .mixIcon(sort-by-attributes)          { &:before { content: "\f160"; } }
+  .mixIcon(sort-by-attributes-alt)          { &:before { content: "\f161"; } }
+  .mixIcon(sort-by-order)          { &:before { content: "\f162"; } }
+  .mixIcon(sort-by-order-alt)          { &:before { content: "\f163"; } }
+  .mixIcon(thumbs-up)          { &:before { content: "\f164"; } }
+  .mixIcon(thumbs-down)          { &:before { content: "\f165"; } }
+  .mixIcon(youtube-sign)          { &:before { content: "\f166"; } }
+  .mixIcon(youtube)          { &:before { content: "\f167"; } }
+  .mixIcon(xing)          { &:before { content: "\f168"; } }
+  .mixIcon(xing-sign)          { &:before { content: "\f169"; } }
+  .mixIcon(youtube-play)          { &:before { content: "\f16a"; } }
+  .mixIcon(dropbox)          { &:before { content: "\f16b"; } }
+  .mixIcon(stackexchange)          { &:before { content: "\f16c"; } }
+  .mixIcon(instagram)          { &:before { content: "\f16d"; } }
+  .mixIcon(flickr)          { &:before { content: "\f16e"; } }
+  .mixIcon(adn)          { &:before { content: "\f170"; } }
+  .mixIcon(bitbucket)          { &:before { content: "\f171"; } }
+  .mixIcon(bitbucket-sign)          { &:before { content: "\f172"; } }
+  .mixIcon(tumblr)          { &:before { content: "\f173"; } }
+  .mixIcon(tumblr-sign)          { &:before { content: "\f174"; } }
+  .mixIcon(long-arrow-down)          { &:before { content: "\f175"; } }
+  .mixIcon(long-arrow-up)          { &:before { content: "\f176"; } }
+  .mixIcon(long-arrow-left)          { &:before { content: "\f177"; } }
+  .mixIcon(long-arrow-right)          { &:before { content: "\f178"; } }
+  .mixIcon(apple)          { &:before { content: "\f179"; } }
+  .mixIcon(windows)          { &:before { content: "\f17a"; } }
+  .mixIcon(android)          { &:before { content: "\f17b"; } }
+  .mixIcon(linux)          { &:before { content: "\f17c"; } }
+  .mixIcon(dribbble)          { &:before { content: "\f17d"; } }
+  .mixIcon(skype)          { &:before { content: "\f17e"; } }
+  .mixIcon(foursquare)          { &:before { content: "\f180"; } }
+  .mixIcon(trello)          { &:before { content: "\f181"; } }
+  .mixIcon(female)          { &:before { content: "\f182"; } }
+  .mixIcon(male)          { &:before { content: "\f183"; } }
+  .mixIcon(gittip)          { &:before { content: "\f184"; } }
+  .mixIcon(sun)          { &:before { content: "\f185"; } }
+  .mixIcon(moon)          { &:before { content: "\f186"; } }
+  .mixIcon(archive)          { &:before { content: "\f187"; } }
+  .mixIcon(bug)          { &:before { content: "\f188"; } }
+  .mixIcon(vk)          { &:before { content: "\f189"; } }
+  .mixIcon(weibo)          { &:before { content: "\f18a"; } }
+  .mixIcon(renren)          { &:before { content: "\f18b"; } }

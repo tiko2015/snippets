@@ -16,12 +16,12 @@
   height: @height * 1px;
 }
 
-.fontFace(@font) {
+.fontFace(@font, @fontString) {
     src: e(%("url(%s%s%s)", @media, @font, ".eot"));
     src: e(%("url(%s%s%s)", @media, @font, ".eot?#iefix")) format('embedded-opentype'),
          e(%("url(%s%s%s)", @media, @font, ".woff")) format('woff'),
          e(%("url(%s%s%s)", @media, @font, ".ttf")) format('truetype'),
-         e(%("url(%s%s%s)", @media, @font, ".svg")) format('svg');
+         e(%("url(%s%s%s)", @media, @font, ".svg#", @fontString)) format('svg');
 }
 
 .font-size(@sizeValue:1) {

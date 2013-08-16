@@ -38,7 +38,7 @@ HTML para poder utilizarlo. Este framework no necesita que te adaptes a él, **s
     - Grilla y columnas de [semantic.gs](http://semantic.gs/).
     - CSS3 de [LESS Prefixer](http://lessprefixer.com/) .
     - Botones.
-    - Glyphicons
+    - Iconos de [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
 - Elementos predefinidos.
     - Galería.
     - Navegación.
@@ -129,7 +129,7 @@ Con css3.less haces compatible las propiedades de la nueva versión sin necesida
 
 Como sistema de grilla **snippets** adopta el método de 12 columnas. Conoce la implementación de [semantic.gs](http://semantic.gs/) que está muy bien explicado y documentado.
 
-[Glyphicons](http://glyphicons.com/) es una familia de iconos estándar para graficar botones, links, alertas, etc.
+[Font Awesome](http://fortawesome.github.io/Font-Awesome/) es una familia de iconos estándar para graficar botones, links, alertas, etc.
 
 #### Elementos, layouts y themes
 
