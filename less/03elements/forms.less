@@ -1,29 +1,16 @@
 /* forms */
 
-label { font-weight: bold; }
-
-/* Fieldsets */
-fieldset { padding: 10px; margin: 0 0 15px 0; border: 1px solid #ddd; }
-legend { padding: 0; font-weight: bold; font-size: 12px; }
-
-/* Textareas */
-textarea { margin: 0; padding: 1%; width:98%; 
-	&.no-resize { resize:none; }
-}
+fieldset { margin: 0 0 15px 0;  }
 
 /* hForm
 -------------------------------------------------------------- */
 form.hform p { margin: 0 0 5px; clear: left; 
 	label { float: left; width: 95px; }
-	input[type="text"], select { width: 200px; .border-box(); }
-	input.button { width: auto; }
-	input.checkbox { width: auto; }
-	input.radio { width: auto; }
+	input[type="text"], input[type="password"], select { width: 200px; .border-box(); }
 	textarea { width:200px; .border-box(); }
 
 	&.checkbox { margin-left: 100px; 
 		label { float: none; }
-		input { width: auto; }
 	}
 }
 
