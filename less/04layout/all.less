@@ -23,12 +23,12 @@ body { background-color: @backgroundColor;
 	.box { .column(4); position: relative; margin-bottom: 20px;
 		&:nth-child(3n+1) { clear: left; }
 	}
-	.more { .mixButton(); .mixIcon(chevron-right);  margin: 5px; }
+	.more { .mixButton(); .mixIcon(@icon-chevron-sign-right);  margin: 5px; }
 }
 
 #forms { clear:both; padding: 20px 0;
 	.vform { .column(6); 
-	>	p { .mixIcon(spinner); .mixIconSpin(); }
+	>	p { .mixIcon(@icon-spinner); .mixIconSpin(); }
 	}
 	.hform { .column(6); }
 }
