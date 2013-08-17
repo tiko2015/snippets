@@ -33,29 +33,50 @@
     font-style: normal;
 }
 
-.mixIcon(@icon: '\f005', @color: inherit, @size: inherit) {
-	&:before {
+.mixIconSrc(@icon: '\f005', @color: inherit, @size: inherit) {
 		font-family: 'FontAwesome';
 		content: @icon;
 		color: @color;
 		font-size: @size;
-		margin-right:0.5em;
 		font-family: FontAwesome;
 		font-weight: normal;
 		font-style: normal;
 		text-decoration: inherit;
 		-webkit-font-smoothing: antialiased;
 		*margin-right: .3em; // fixes ie7 issues
+}
+
+.mixIcon(@icon: '\f005', @color: inherit, @size: inherit) {
+	&:before {
+		.mixIconSrc(@icon, @color, @size);
+		margin-right:0.5em;
 	}
+}
+
+.mixIconAfter(@icon: '\f005', @color: inherit, @size: inherit) {
+	&:after {
+		.mixIconSrc(@icon, @color, @size);
+		margin-left:0.5em;
+	}
+}
+
+.mixIconSpinSrc {
+	.animation(spin 2s infinite linear);
+	display: inline-block;
+  text-decoration: none;
+  padding:0;
+  text-indent:0;
 }
 
 .mixIconSpin() {
 	&:before {
-		.animation(spin 2s infinite linear);
-		display: inline-block;
-	  text-decoration: none;
-	  padding:0;
-	  text-indent:0;
+		.mixIconSpinSrc();
+	}
+}
+
+.mixIconSpinAfter() {
+	&:after {
+		.mixIconSpinSrc();
 	}
 }
 
