@@ -142,3 +142,7 @@ Utilizá less desde un servidor local, instalarlo en cualquier sistema operativo
 Durante el desarrollo, agregá *'#!watch'* al final de la url en el navegador. Esto hará que tus estilos se vuelvan a generar cada un segundo sin necesidad de recargar la página.
 
 Durante el desarrollo, less toma como ruta relativa la poosición del archivo que estas mirando. En *'less/styles.less'* podes definir la ruta de tus archivos de estilos cambiando la variable *'@media'*.
+
+#### Licencia
+
+Copyright (c) 2013 [Jonathan Katz](http://www.linkedin.com/in/jokatz/) Licensed under the [MIT license](http://opensource.org/licenses/MIT).
