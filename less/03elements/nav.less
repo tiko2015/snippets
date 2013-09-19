@@ -11,3 +11,90 @@ ul.nav {
 	}
 }
 
+.verticalNav() {
+	list-style: none; margin:0; padding: 0; height: 100%;
+	border-bottom: 1px solid lighten(#5c5c5c, 5%);
+  overflow: auto;
+	li a {
+		.font-size(1.5);
+		margin: 0; padding:10px; display: block;
+		border-bottom: 1px solid darken(#5c5c5c, 5%);
+		border-top: 1px solid lighten(#5c5c5c, 5%);
+		color: #fff;
+		&:hover, &:focus {
+			background: darken(#5c5c5c, 5%);
+			text-decoration: none;
+		}
+	}
+}
+
+html {
+	overflow-x:hidden;
+}
+.sidemenu {
+	position:fixed;
+	top:0;
+	height:100%;
+	z-index:999999;
+	width:244px;
+	background:#5c5c5c;
+  left:-244px;
+  right:auto;
+  z-index: 10;
+  .border-box();
+  .inner-shadow(0 -10px 50px #444);
+  .transition(left 500ms ease-in-out);
+  .transform(translate3d(0px, 0px, 0px));
+  ul {
+  	.verticalNav();
+  }
+}
+body:target .sidemenu {
+	left:0px;
+}
+body #page {
+    position:relative; 
+    left:0;
+  .transition(left 500ms ease-in-out);
+  .transform(translate3d(0px, 0px, 0px));
+}
+body:target #page{ 
+	position:relative; 
+	left:244px; 
+	width:100%; 
+}
+[href*="#sidemenu"],
+[href*="#sidemenu"]:focus { 
+	outline:none; 
+	background: lighten(#5c5c5c, 20%);
+	color:#fff;
+	.border-radius(0 5px 5px 0);
+	.size(40,40);
+	position:fixed;
+	top:10px;
+	left:244px;
+	line-height:40px;
+	text-align:center;
+	z-index: 10;
+	&:before {
+		.mixIconSrc(@icon-arrow-right, #fff, 20px);
+		margin:0;
+	}
+}
+[href*="#sidemenu"]:hover {
+	text-decoration:none;
+	background: lighten(#5c5c5c, 15%);
+}
+[href="#sidemenu"] {
+	display:inline-block; 
+}
+body:target [href="#sidemenu"],
+[href="#sidemenuclose"] { 
+	display:none; 
+}
+body:target [href="#sidemenuclose"] { 
+	display:inline-block; 
+	&:before {
+		content: @icon-arrow-left;
+	}
+}
