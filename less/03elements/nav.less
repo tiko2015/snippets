@@ -90,7 +90,7 @@ footer ul.nav{
 	  .border-box();
 	  .inner-shadow(0 -10px 50px #444);
 	  .transition(left 500ms ease-in-out);
-	  .transform(translate3d(0px, 0px, 0px));
+	  /*.transform(translate3d(0px, 0px, 0px));*/
 	  ul {
 	  	.verticalNav(@color);
 	  }
@@ -102,7 +102,7 @@ footer ul.nav{
 	    position:relative; 
 	    left:0;
 	  .transition(left 500ms ease-in-out);
-	  .transform(translate3d(0px, 0px, 0px));
+	  /*.transform(translate3d(0px, 0px, 0px));*/
 	}
 	body:target #page{ 
 		position:relative; 
@@ -116,12 +116,12 @@ footer ul.nav{
 		color:#fff;
 		.border-radius(0 5px 5px 0);
 		.size(40,40);
-		position:fixed;
+		position:absolute;
 		top:10px;
 		left:244px;
 		line-height:40px;
 		text-align:center;
-		z-index: 10;
+		z-index: 1000;
 		&:before {
 			.mixIconSrc(@icon-arrow-right, @textColor, 20px);
 			margin:0;
@@ -132,7 +132,7 @@ footer ul.nav{
 		background: lighten(@color, 15%);
 	}
 	[href="#sidemenu"] {
-		display:inline-block; 
+		display:block; 
 	}
 	body:target [href="#sidemenu"],
 	[href="#sidemenuclose"] { 
