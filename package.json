@@ -17,9 +17,6 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
-  "bin": {
-    "lessc": "./bin/lessc"
-  },
   "main": "./public/",
   "keywords": [
     "less",
