@@ -64,9 +64,7 @@ footer ul.nav{
 
 .verticalNav(@color: #5c5c5c, @textColor: #fff) {
 	.mixNav(@color, @textColor);
-	height: 100%;
 	border-bottom: 1px solid lighten(@color, 5%);
-  overflow: auto;
   background:@color;
 	li a {
 		border-bottom: 1px solid darken(@color, 5%);
@@ -91,9 +89,11 @@ footer ul.nav{
 	  .inner-shadow(0 -10px 50px #444);
 	  .transition(left 500ms ease-in-out);
 	  /*.transform(translate3d(0px, 0px, 0px));*/
-	  ul {
-	  	.verticalNav(@color);
-	  }
+	  nav { overflow: auto; height: 100%; position: relative;
+		  ul {
+		  	.verticalNav(@color);
+	  	}
+		}
 	}
 	body:target .sidemenu {
 		left:0px;

@@ -1,7 +1,7 @@
 {
   "name": "snippets-less",
-  "version": "0.1.1",
-  "main": "./public/",
+  "version": "0.1.2",
+  "main": "public/",
   "dependencies": {
     "jquery": "2.0.*"
   },

@@ -1,16 +1,42 @@
 /* forms */
-
-fieldset { margin: 0 0 15px 0;  }
+form {
+	fieldset { margin: 0 0 15px 0; padding: 0; border:none;  
+		legend {.font-size(2); font-family: @titleFont; line-height: 3em;}
+	}
+	p { margin-bottom: 30px; clear: left; .font-size(1.6);
+		label {  
+			.font-size(1.6); font-family: @titleFont; line-height: 30px;
+			.req { font-size: 10px; position: relative; top: -5px; }
+		}
+		input[type="text"], input[type="number"], input[type="email"], input[type="password"], select { 
+			width: 90%; .border-box(); padding: 5px; border: 1px solid @lineColor; 
+			.border-radius(4px); height: 30px; line-height: 30px; .font-size(1.4); .transition(all 100ms ease-in-out);
+			&:focus { .box-shadow(0 0 5px rgba(0,0,0,0.5)); }
+		}
+		input[type="checkbox"] { width: auto; border:1px solid  @lineColor; }
+		input[type="radio"] { width: auto; }
+		textarea { width:90%; .border-box(); .transition(all 100ms ease-in-out);
+			&:focus { .box-shadow(0 0 5px rgba(0,0,0,0.5)); }
+		}
+		input[type="submit"], button { .mixButton(); }
+		&.checkbox {  height: auto;
+			label {  line-height: 19px;  margin-left: 10px; width: auto; text-align: left; }
+			input { width: auto; margin: 4px 0; float: left; }
+		}
+	}
+}
 
 /* hForm
 -------------------------------------------------------------- */
-form.hform p { margin: 0 0 5px; clear: left; 
-	label { float: left; width: 95px; }
-	input[type="text"], input[type="password"], select { width: 200px; .border-box(); }
-	textarea { width:200px; .border-box(); }
-
-	&.checkbox { margin-left: 100px; 
-		label { float: none; }
+form.hform {
+	p { 
+		label { float: left; width: 25%; margin-right: 5%; text-align: right; }
+		input[type="text"], input[type="number"], input[type="email"], input[type="password"], select { width: 50%;}
+		textarea { width:50%; }
+		&.checkbox { margin-left: 30%; height: auto;
+			label { text-align: left;  width: auto; float: none; margin-right: 0; display: inline;}
+		}
+		input[type="submit"], button { .mixButton(); margin-left: 30%; }
 	}
 }
 
@@ -20,6 +46,10 @@ form.vform p { margin: 0 0 5px;
 	label { display: block; } 
 	&.checkbox label { display: inline; }
 }
+
+
+/* alert
+-------------------------------------------------------------- */
 
 .alertBox() {
   color:#555;
@@ -31,19 +61,19 @@ form.vform p { margin: 0 0 5px;
 	  font-weight:bold;
 	  text-transform:uppercase;
 	}	
-	&.alert-error {
+	&[class*="error"] {
 	  background:#ffecec;
 	  border:1px solid #f5aca6;
 	}
-	&.alert-success {
+	&[class*="success"] {
 	  background:#e9ffd9;
 	  border:1px solid #a6ca8a;
 	}
-	&.alert-warning {
+	&[class*="warning"] {
 	  background:#fff8c4;
 	  border:1px solid #f2c779;
 	}
-	&.alert-notice {
+	&[class*="notice"] {
 	  background:#e3f7fc;
 	  border:1px solid #8ed9f6;
 	}
@@ -54,3 +84,30 @@ form.vform p { margin: 0 0 5px;
 
 .button-submit { .mixButton(1.4, #996); }
 .button-reset { .mixButton(1.4, #d55); }
+
+
+/* user
+-------------------------------------------------------------- */
+
+.mixUser() { background: darken(#5c5c5c, 15%); padding: 1em; border-bottom: 1px solid #696969;
+	figure { float: left; background: #fff; border: 2px solid #fff; margin-right: 1em; display: block;
+		img { display: block; .size(35,35); }		
+	}
+	h4 { margin: 0; color: #ddd; .font-size(1.5); }
+	p { color: #fff; margin: 0;
+		a { color: #fff;
+			&:hover { text-decoration: none; color: #ddd; }
+		}
+	}
+}
+
+/* search
+-------------------------------------------------------------- */
+
+.mixFormSearch() { padding:10px; .inner-shadow(0 -10px 50px #444); margin: 0; border-bottom: 1px solid lighten(#5c5c5c, 5%);
+	p { margin-bottom: 0; }
+	input { border:none; background: #fff; padding: 5px; margin-right: 10px; .border-radius(3px);  width: 150px; }
+	button { .mixButton(1.9); .mixIcon(@icon-search); padding:0 10px;
+		&:before{ margin-right: 0; }
+	}
+}
