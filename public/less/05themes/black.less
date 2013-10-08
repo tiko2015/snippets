@@ -17,6 +17,13 @@
 	}
 }
 
+form.hform { .mixFormHorizontal(); }
+form.vform { .mixFormVertical(); }
+#forms form p {
+	input, textarea {
+		&:focus { .box-shadow(0 0 5px rgba(255,255,255,1)); }	
+	}
+}
 #titulos { background: #333;
 	.more { .mixButton(); .mixIconAfter(@icon-chevron-sign-right);  margin: 5px; }
 }

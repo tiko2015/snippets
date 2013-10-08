@@ -15,7 +15,8 @@ form {
 		}
 		input[type="checkbox"] { width: auto; border:1px solid  @lineColor; }
 		input[type="radio"] { width: auto; }
-		textarea { width:90%; .border-box(); .transition(all 100ms ease-in-out);
+		textarea { width:90%; .border-box(); padding: 5px; border: 1px solid @lineColor; .font-size(1.4); 
+			.border-radius(4px); .transition(all 100ms ease-in-out); resize: vertical; min-height: 6em; max-height: 30em;
 			&:focus { .box-shadow(0 0 5px rgba(0,0,0,0.5)); }
 		}
 		input[type="submit"], button { .mixButton(); }
@@ -28,7 +29,7 @@ form {
 
 /* hForm
 -------------------------------------------------------------- */
-form.hform {
+.mixFormHorizontal() {
 	p { 
 		label { float: left; width: 25%; margin-right: 5%; text-align: right; }
 		input[type="text"], input[type="number"], input[type="email"], input[type="password"], select { width: 50%;}
@@ -42,11 +43,12 @@ form.hform {
 
 /* vForm
 -------------------------------------------------------------- */
-form.vform p { margin: 0 0 5px; 
-	label { display: block; } 
-	&.checkbox label { display: inline; }
+.mixFormVertical { 
+	p { margin: 0 0 5px; 
+		label { display: block; } 
+		&.checkbox label { display: inline; }
+	}
 }
-
 
 /* alert
 -------------------------------------------------------------- */
@@ -82,8 +84,8 @@ form.vform p { margin: 0 0 5px;
 
 .alert-box { .alertBox(); }
 
-.button-submit { .mixButton(1.4, #996); }
-.button-reset { .mixButton(1.4, #d55); }
+.button-submit { .mixButton(1.2, #996); }
+.button-reset { .mixButton(1.2, #d55); }
 
 
 /* user
