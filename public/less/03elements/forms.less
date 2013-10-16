@@ -53,39 +53,18 @@ form {
 /* alert
 -------------------------------------------------------------- */
 
-.alertBox() {
-  color:#555;
+.alertBox(@color: #333) {
   .border-radius(4px);
   padding:1em;
   margin:1em;
-
+  background:@color;
+  border:1px solid darken(@color, 15%);
+  color: spin(darken(@color, 60%), 10);
 	span {
 	  font-weight:bold;
 	  text-transform:uppercase;
-	}	
-	&[class*="error"] {
-	  background:#ffecec;
-	  border:1px solid #f5aca6;
 	}
-	&[class*="success"] {
-	  background:#e9ffd9;
-	  border:1px solid #a6ca8a;
-	}
-	&[class*="warning"] {
-	  background:#fff8c4;
-	  border:1px solid #f2c779;
-	}
-	&[class*="notice"] {
-	  background:#e3f7fc;
-	  border:1px solid #8ed9f6;
-	}
-
 }
-
-.alert-box { .alertBox(); }
-
-.button-submit { .mixButton(1.2, #996); }
-.button-reset { .mixButton(1.2, #d55); }
 
 
 /* user

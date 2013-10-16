@@ -38,6 +38,23 @@ form.vform { .mixFormVertical(); }
 	}
 }
 
+.alert-box { 
+	&[class*="error"] {
+	  .alertBox(@errorColor);
+	}
+	&[class*="success"] {
+	  .alertBox(@successColor);
+	}
+	&[class*="warning"] {
+	  .alertBox(@warningColor);
+	}
+	&[class*="notice"] {
+	  .alertBox(@noticeColor);
+	}
+}
+
+.button-submit { .mixButton(1.2, #996); }
+.button-reset { .mixButton(1.2, #d55); }
 #varios {
 	.gallery { .mixGallery(4); }
 	@media @layout768 {
