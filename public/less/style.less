@@ -29,11 +29,11 @@
 @import "03elements/gallery.less";
 
 @import "04layout/all.less";
-@media screen and (max-width: 1024px) {	@import "04layout/1024.less"; }
-@media screen and (max-width: 768px)  { @import "04layout/768.less"; }
-@media screen and (max-width: 480px)  {	@import "04layout/480.less"; }
-@media screen and (max-width: 320px)  { @import "04layout/320.less"; }
-@media screen and (max-width: 240px)  { @import "04layout/240.less"; }
+@media @layout1024 {	@import "04layout/1024.less"; }
+@media @layout768  { @import "04layout/768.less"; }
+@media @layout480  {	@import "04layout/480.less"; }
+@media @layout320  { @import "04layout/320.less"; }
+@media @layout240  { @import "04layout/240.less"; }
 @media print { @import "04layout/print.less"; }
 
 @import "05themes/default.less";

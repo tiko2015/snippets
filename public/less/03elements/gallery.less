@@ -1,7 +1,7 @@
 /* gallery */
 
-.gallery { padding: 0 0 10px; .clearfix();
-	li { float: left; padding: 0 5px 5px 0; .border-box(); width:25%;
+.mixGallery(@column:4) { padding: 0 0 10px; .clearfix(); margin:0; list-style:none;
+	li { float: left; padding: 0 1% 1% 0; .border-box(); width:100%/@column;
 		img { display: block; width:100%; }
 	}
 }
