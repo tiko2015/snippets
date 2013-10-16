@@ -17,6 +17,19 @@
 	}
 }
 
+nav { .column(12); }
+nav ul.nav{
+	.horizontalNav();
+	.border-radius(5px);
+	margin:1em 0 3em;
+}
+
+footer ul.nav{
+	.horizontalNav(#111, #333);
+	.border-radius(5px);
+	margin-bottom: 1em;
+}
+
 form.hform { .mixFormHorizontal(); }
 form.vform { .mixFormVertical(); }
 #forms form p {
@@ -24,6 +37,14 @@ form.vform { .mixFormVertical(); }
 		&:focus { .box-shadow(0 0 5px rgba(255,255,255,1)); }	
 	}
 }
+
+#varios {
+	.gallery { .mixGallery(4); }
+	@media @layout768 {
+		.gallery { .mixGallery(2); }
+	}
+}
+
 #titulos { background: #333;
 	.more { .mixButton(); .mixIconAfter(@icon-chevron-sign-right);  margin: 5px; }
 }
