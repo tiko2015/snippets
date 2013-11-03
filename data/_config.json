@@ -1,0 +1,9 @@
+{
+  "menu": true,
+  "user": {
+    "name": "User Name",
+    "provider": "github",
+    "image": "/media/upload/user.png"
+  },
+  "host": "local"
+}

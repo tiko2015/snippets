@@ -1,0 +1,20 @@
+doctype 5
+html(lang="en")
+  head
+    title= pageTitle
+    script(type='text/javascript').
+      if (foo) {
+         bar(1 + 5)
+      }
+  body
+    h1 Esta página está en tpl
+    #container.col
+      if youAreUsingJade
+        p tiene un archivo json asociado
+      else
+        p no tiene json asociado
+      p.
+        Jade is a terse and simple
+        templating language with a
+        strong focus on performance
+        and powerful features.

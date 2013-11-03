@@ -1,0 +1,35 @@
+!!! 5
+html(lang="en")
+  include ../_includes/head
+  body#sidemenu
+    #sidemenu.sidemenu
+      a(href="#sidemenu")
+      a(href="#sidemenuclose")
+      nav
+        aside
+          - if(config.user !== 'null')
+            figure
+              - if(config.user.image)
+                img(src=config.user.image)
+            h4= config.user.name
+            p= config.user.provider + ' | '
+              a(href="/signout") Signout
+        ul
+          li
+            a(href="/auth/facebook") facebook
+          li
+            a(href="/auth/github") github
+          li
+            a(href="/auth/twitter") twitter
+          li
+            a(href="/auth/google") google
+    #page
+      .wrapper
+        header#header
+          h1.logo Stickys
+      block content
+    include ../_includes/foot
+
+                
+
+

@@ -1,0 +1,18 @@
+extends _layouts/default
+
+block content
+  section
+    h2  Bienvenido a snippets
+    - if(config.menu) 
+      h4 también tiene menu
+    h1 Jade - node template engine
+    #container.col
+      if content.youAreUsingJade
+        p tiene un archivo json asociado
+      else
+        p no tiene json asociado
+      p.
+        Jade is a terse and simple
+        templating language with a
+        strong focus on performance
+        and powerful features.
