@@ -1,8 +1,21 @@
 #[snippets] (http://snippets.ws)
-### Entorno para el desarrollo de interfaz de usuario basado en less.
+### Entorno para el desarrollo de interfaz para nodejs basado en jade y less.
 
-La característica principal de **snippets** es que no necesitas aprender una forma particular de escribir 
-HTML para poder utilizarlo. Este framework no necesita que te adaptes a él, **snippets** se adapta a tu proyecto.
+## Instalación
+
+Atención: Para poder usar el servidor, debes tener instalado nodejs.
+
+
+En consola:
+
+>  git clone https://github.com/tiko2015/snippets.git
+>  cd snippets
+>  npm install
+>  node server
+
+En el navegador: 
+
+>  http://127.0.0.1:3000
 
 ### Características
 
@@ -24,6 +37,7 @@ HTML para poder utilizarlo. Este framework no necesita que te adaptes a él, **s
 - [flexSlider2](http://flexslider.woothemes.com/)
 - [html5shim](http://code.google.com/p/html5shim/)
 - [less](http://lesscss.org/)
+- [jade](http://jade-lang.com)
 
 ### Recursos less incluidos
 
@@ -58,18 +72,24 @@ El objetivo de esto es facilitar la tarea de desarrollo y generar un único css 
 
 ### Estructura de directorios:
 
-- **js** (tus scripts)
-    - **lib** (recursos javascript de terceros)
+- **data**
+- **tpl**
+    - **_includes**
+    - **_layouts**
+    - **_mixins**
 - **less** (aca se encuentran los archivos .less, no es necesaria para producción)
     - **01core** (tipografias, reset, mixins y demás configuraciones generales)
     - **02extends** (librerías less para facilitar la creación de código)
     - **03elements** (definición de elementos puntuales de tu sitio)
     - **04layout** (definicion general de estilos y excepciones para responsive)
     - **05theme** (características particulares del proyecto)
-- **media** (archivos binarios)
-    - **fonts** (tipografias a utilizar)
-    - **img** (archivos de imagen que forman parte del diseño)
-    - **upload** (archivos que forman parte del contenido)
+- **public**
+    - **js** (tus scripts)
+        - **lib** (recursos javascript de terceros)
+    - **media** (archivos binarios)
+        - **fonts** (tipografias a utilizar)
+        - **img** (archivos de imagen que forman parte del diseño)
+        - **upload** (archivos que forman parte del contenido)
   
 
 #### Por donde empezar:
