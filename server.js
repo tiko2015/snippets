@@ -2,7 +2,9 @@ var http = require('http')
   , path = require('path')
   , fs   = require('fs')
   , jade = require('jade')
-  , less = require('less');
+  , less = require('less')
+  , jsonlint = require('jsonlint');
+  
 function getFile(filePath,res,page404){
   fs.exists(filePath,function(exists){
     if(exists){
@@ -59,9 +61,10 @@ function requestHandler(req, res) {
       fs.readFile(jsonFileName, 'utf8', function (err, data) {
         if (err) return appError(err, res);   
         try {
-          options = JSON.parse(data);
+          options = jsonlint.parse(data);
           renderJade(options);
         } catch (err) {
+            err.file = jsonFileName;
             return appError(err, res);   
         }
         console.log('res: ' + jsonFileName);
@@ -75,7 +78,7 @@ function requestHandler(req, res) {
     fs.readFile('./data/_config.json', 'utf8', function (err, configFile) {
       if (err) return appError(err, res);   
       try {  
-        var config = JSON.parse(configFile);
+        var config = jsonlint.parse(configFile);
         jade.renderFile(jadeFileName, { content:options, config:config }, function (err, html) {
           if (err) return appError(err, res);   
           res.setHeader('Content-Type', 'text/html; charset=utf-8');
@@ -83,6 +86,7 @@ function requestHandler(req, res) {
           console.log('res: ' + jadeFileName);
         });
       } catch (err) {
+          err.file = 'data/_config.json';
           return appError(err, res);   
       }
     });
@@ -96,6 +100,7 @@ function appError(err, res) {
   console.log(err);
   res.writeHead(500, {"Content-Type": "text/plain"});
   res.write('ERROR:\n\n');
+  if(err.file) res.write('FILE:'+err.file+'\n\n');
   res.write(err.message);
   res.end();
 }
