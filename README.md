@@ -8,14 +8,14 @@ Atención: Para poder usar el servidor, debes tener instalado nodejs.
 
 En consola:
 
->  git clone https://github.com/tiko2015/snippets.git
->  cd snippets
->  npm install
->  node server
+    git clone https://github.com/tiko2015/snippets.git
+    cd snippets
+    npm install
+    node server
 
 En el navegador: 
 
->  http://127.0.0.1:3000
+    http://127.0.0.1:3000
 
 ### Características
 
