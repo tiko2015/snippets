@@ -1,21 +1,51 @@
-#[snippets] (http://snippets.ws)
+#[snippets](http://snippets.ws)
 ### Entorno para el desarrollo de interfaz para nodejs basado en jade y less.
+
+Debido al interes de poder trabajar los templates con jade y los estilos con less, me surgió la necesidad de tener un compilador en tiempo real.
+
+Snippets logra cumplir esta tarea y crear un entorno de desarrollo a medida para la misma.
+
+Básicamente, lo que hace es separar los datos de la presentación usando jade, y crear estilos aprovechando las ventajas de less.
+
+El resultado es un sitio compilado y optimizado para su puesta en producción o un sistema de estilos y plantillas accesibles para incorporar al desarrollo de cualquier aplicación.
+
+## Como funciona
+
+Al ser un desarrollo orientado a crear plantillas, el servido node que se inicia se queda a la espera de la petición de archivos situados en el directorio public.
+
+Si los archivos solicitados tienen la extensión .html, busca su correlación en la carpeta tpl,en este caso con la extensión .html.jade. 
+En el caso de existir, busca el mismo archivo en data con la extensión .html.json, compila y devuelte el html solicitado.
+
+Si no existiera, intenta encontrarlo en public y en caso de no exitir mostrará un error 404.
+
+En el caso de less, se repite la misma mecánica. O sea que el llamado a style.css generaría que se compile less/style.css.less con todos sus include y devolviera una hoja de estilos única.
+
+
 
 ## Instalación
 
-Atención: Para poder usar el servidor, debes tener instalado nodejs.
+**Atención: Para poder usar el servidor, debes tener instalado [nodejs](http://nodejs.org).**
 
 
-En consola:
+##### En consola:
 
     git clone https://github.com/tiko2015/snippets.git
     cd snippets
     npm install
     node server
 
-En el navegador: 
+##### En el navegador: 
 
     http://127.0.0.1:3000
+
+Correr la aplicacion en heroku.com:
+
+    heroku apps:create example
+    git push heroku master
+    heroku open
+
+Si necesitas ayuda con esto, [acá está la documentación de heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+
 
 ### Características
 
@@ -29,6 +59,7 @@ En el navegador:
 - Fácil de aprender
 - Incluye librerías js para formularios, modales, slider, tooltips tabs y más.
 - El css base compilado pesa solo 7.4k.
+
 
 ### Recursos javascript incluidos
 
@@ -60,7 +91,7 @@ En el navegador:
 - Layout
     - Estilos generales y archivos separados para cada media query.
     
-## Instrucciones
+## Instruccion para trabajar con less en snippets
 
 Lo primero que tenes que saber es que esta herramienta tiene que ser útil para tu proyecto, tomar una estructura como **snippets** para empezar no debe condicionarte, adaptala a tu necesidad.
 
@@ -72,9 +103,9 @@ El objetivo de esto es facilitar la tarea de desarrollo y generar un único css 
 
 ### Estructura de directorios:
 
-- **data**
-- **tpl**
-    - **_includes**
+- **data** (archivos de datos en formato json)
+- **tpl** (archivos jade)
+    - **_includes** 
     - **_layouts**
     - **_mixins**
 - **less** (aca se encuentran los archivos .less, no es necesaria para producción)
@@ -153,15 +184,17 @@ Como sistema de grilla **snippets** adopta el método de 12 columnas. Conoce la 
 
 #### Elementos, layouts y themes
 
-Próximamente....
+En elements vas a encontrar algunas estructuras que se utilizan comunmente, revisa en el directorio tpl/_mixins que encontraras otros recortes de código compatibles.
+
+En layouts se definen las reglas generales para responsive.
+
+Themes es donde se encuentran todos los estilos particulares de tu desarrollo.
+
 
 #### Recomendaciones
 
 Utilizá less desde un servidor local, instalarlo en cualquier sistema operativo suele ser una tarea simple.
 
-Durante el desarrollo, agregá *'#!watch'* al final de la url en el navegador. Esto hará que tus estilos se vuelvan a generar cada un segundo sin necesidad de recargar la página.
-
-Durante el desarrollo, less toma como ruta relativa la poosición del archivo que estas mirando. En *'less/styles.less'* podes definir la ruta de tus archivos de estilos cambiando la variable *'@media'*.
 
 #### Licencia
 
