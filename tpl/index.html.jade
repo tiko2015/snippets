@@ -1,18 +1,28 @@
 extends _layouts/default
-
+include _mixins/slider
+include _mixins/nav
 block content
-  section
-    h2  Bienvenido a snippets
-    - if(config.menu) 
-      h4 también tiene menu
-    h1 Jade - node template engine
-    #container.col
-      if content.youAreUsingJade
-        p tiene un archivo json asociado
-      else
-        p no tiene json asociado
-      p.
-        Jade is a terse and simple
-        templating language with a
-        strong focus on performance
-        and powerful features.
+  .wrapper
+    header#header
+      h1.logo= config.page.title
+    +nav('nav', config.nav)
+  +slider(content.slides)
+  .wrapper
+    section#content.span4.span-768-6
+      h3 Vertical nav
+      +nav('nav-vertical', [{link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}])
+    section#content.span4.span-768-6
+      h3 Vertical nav light
+      +nav('nav-vertical-light', [{link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}])
+    section#content.span4.span-768-12
+      h3 Unordered lists
+        ul
+          li Lorem ipsum dolor sit amet
+          li Consectetur adipisicing elit
+          li Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+          li Ut enim ad minim veniam
+      h3 Ordered lists
+        ol
+          li Consectetur adipisicing elit
+          li Sed do eiusmod tempor incididunt ut labore
+          li Et dolore magna aliqua

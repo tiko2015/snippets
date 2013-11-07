@@ -1,0 +1,65 @@
+extends _layouts/default
+include _mixins/slider
+include _mixins/nav
+block content
+  .wrapper
+    header#header
+      h1.logo= config.page.title
+    +nav('nav', config.nav)
+  .wrapper
+    .clearfix
+      .span4
+        :markdown
+          #Heading h1
+          Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          
+          Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.
+          
+          Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi.
+        a.more(href="#") More
+      .span4
+        :markdown
+          ##Heading h2
+          Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          
+          Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.
+          
+          Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi.
+        a.more(href="#") More
+      .span4
+        :markdown
+          ###Heading h3
+          Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          
+          Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.
+          
+          Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi.
+        a.more(href="#") More
+    .clearfix
+      .span4
+        :markdown
+          ####Heading h4
+          Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          
+          Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.
+          
+          Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi.
+        a.more(href="#") More
+      .span4
+        :markdown
+          #####Heading h5
+          Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          
+          Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.
+          
+          Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi.
+        a.more(href="#") More
+      .span4
+        :markdown
+          ######Heading h6
+          Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est consequat leo, et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          
+          Maecenas faucibus elit eu erat euismod tincidunt. Nunc adipiscing aliquam malesuada. Aliquam eleifend ullamcorper tempor. Donec interdum justo sit amet nisi congue fringilla. Nam bibendum bibendum massa, eu gravida nunc tincidunt vitae.
+          
+          Duis leo nulla, accumsan ut venenatis vel, consequat ac lectus. Donec ac quam ac nisi porttitor vehicula non ultricies lacus. Vestibulum a dictum velit. Aenean egestas laoreet eros non imperdiet. Vivamus turpis lectus, sagittis eu pulvinar in, facilisis eu nisi.
+        a.more(href="#") More

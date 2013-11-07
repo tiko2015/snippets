@@ -1,0 +1,4 @@
+mixin gallery(col, items)
+  ul(class='gallery'+col)
+    - each item in items
+      li: img(src=item)

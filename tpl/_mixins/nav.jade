@@ -1,0 +1,5 @@
+mixin nav(style, items)
+  ul(class=style)
+    - each item in items
+      li
+        a(href=item.link)= item.name

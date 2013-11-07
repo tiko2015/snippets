@@ -76,7 +76,7 @@ function requestHandler(req, res) {
       if (err) return appError(err, res);   
       try {  
         var config = JSON.parse(configFile);
-        jade.renderFile(jadeFileName, { content:options, config:JSON.parse(configFile) }, function (err, html) {
+        jade.renderFile(jadeFileName, { content:options, config:config }, function (err, html) {
           if (err) return appError(err, res);   
           res.setHeader('Content-Type', 'text/html; charset=utf-8');
           res.end(html);

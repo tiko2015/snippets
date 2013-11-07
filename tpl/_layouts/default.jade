@@ -6,7 +6,7 @@ html(lang="en")
       a(href="#sidemenu")
       a(href="#sidemenuclose")
       nav
-        aside
+        aside.userlogin
           - if(config.user !== 'null')
             figure
               - if(config.user.image)
@@ -24,12 +24,5 @@ html(lang="en")
           li
             a(href="/auth/google") google
     #page
-      .wrapper
-        header#header
-          h1.logo Stickys
       block content
-    include ../_includes/foot
-
-                
-
-
+      include ../_includes/foot

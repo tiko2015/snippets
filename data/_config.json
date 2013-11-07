@@ -1,9 +1,16 @@
 {
-  "menu": true,
+  "nav": [ 
+    {"link":"/", "name":"inicio"},
+    {"link":"/article.html", "name":"Titulos"},
+    {"link":"/gallery.html", "name":"Galeria"}
+  ],
   "user": {
     "name": "User Name",
     "provider": "github",
     "image": "/media/upload/user.png"
   },
-  "host": "local"
+  "page": {
+    "title": "snippets",
+    "decription": "framework frontend: nodejs + jade + less"
+  }
 }

@@ -1,0 +1,15 @@
+extends _layouts/default
+include _mixins/gallery
+include _mixins/nav
+block content
+  .wrapper
+    header#header
+      h1.logo= config.page.title
+    +nav('nav', config.nav)
+  .wrapper
+    .span8
+      h3 Galeria a 6 columnas
+      +gallery(6, content.gallery)
+    .span4
+      h3 Galeria a 4 columnas
+      +gallery(4, content.gallery)

@@ -1,0 +1,13 @@
+mixin slider(images)
+  section#slider.row
+    .wrapper
+      .slider
+        ul.slides
+          -each image in images
+            li: img(src=image)
+  script(type="text/javascript")
+    $(window).load(function() {
+      $('#slider .slider').flexslider({
+        animation: "slide"
+      });
+    });
