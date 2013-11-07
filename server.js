@@ -104,6 +104,6 @@ function appError(err, res) {
   res.write(err.message);
   res.end();
 }
-
-http.createServer(requestHandler).listen(3000, '127.0.0.1');
-console.log('Server running at http://127.0.0.1:3000/');
+var port = process.env.PORT || 5000;
+http.createServer(requestHandler).listen(port);
+console.log('Server running in port:' + port );
