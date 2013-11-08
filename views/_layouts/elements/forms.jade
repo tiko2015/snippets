@@ -1,0 +1,18 @@
+mixin formInput(type, id, label, value)
+  label(for=id)= label
+  input(type=type, id=id, name=id, value=value)
+mixin formTextarea(id, label, value)
+  label(for=id)= label
+  textarea(id=id, name=id)= value
+mixin formSelect(id, label, options)
+  label(for=id)= label
+  select(id=id, name=id)
+    - each option in options
+      option(value=option.value)= option.name
+mixin formRadio(id, options)
+  - each option in options
+    input(type="radio", id=id + '_' + option.value, name=id, value=option.value)
+    label(for=id + '_' + option.value)= option.label
+mixin formCheckbox(id, label, value)
+  input(type="checkbox", id=id, name=id, value=value)
+  label(for=id)= label

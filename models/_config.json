@@ -2,7 +2,8 @@
   "nav": [ 
     {"link":"/", "name":"inicio"},
     {"link":"/article.html", "name":"Titulos"},
-    {"link":"/gallery.html", "name":"Galeria"}
+    {"link":"/gallery.html", "name":"Galeria"},
+    {"link":"/contacto.html", "name":"Contacto"}
   ],
   "user": {
     "name": "User Name",

@@ -4,15 +4,19 @@ block content
     header#header
       h1.logo= config.page.title
     +nav('nav', config.nav)
-  +slider(content.slides)
   .wrapper
-    section#content.span4.span-768-6
+    +slider(content.slides)
+  .wrapper
+    section#content.span6.span-768-6
       h3 Vertical nav
       +nav('nav-vertical', [{link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}])
-    section#content.span4.span-768-6
+    section#content.span6.span-768-6
       h3 Vertical nav light
       +nav('nav-vertical-light', [{link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}])
-    section#content.span4.span-768-12
+    section#content.span4.span-768-6
+      h3 Carousel
+      +carousel(content.thumbs)
+    section#content.span8.span-768-6
       h3 Unordered lists
         ul
           li Lorem ipsum dolor sit amet

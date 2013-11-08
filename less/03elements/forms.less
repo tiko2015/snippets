@@ -3,7 +3,7 @@ form {
 	fieldset { margin: 0 0 15px 0; padding: 0; border:none;  
 		legend {.font-size(2); font-family: @titleFont; line-height: 3em;}
 	}
-	p { margin-bottom: 30px; clear: left; .font-size(1.6);
+	p {  clear: left; .font-size(1.6);
 		label {  
 			.font-size(1.6); font-family: @titleFont; line-height: 30px;
 			.req { font-size: 10px; position: relative; top: -5px; }
@@ -21,8 +21,8 @@ form {
 		}
 		input[type="submit"], button { .mixButton(); }
 		&.checkbox {  height: auto;
-			label {  line-height: 19px;  margin-left: 10px; width: auto; text-align: left; }
-			input { width: auto; margin: 4px 0; float: left; }
+			label {  line-height: 19px;  margin-right: 1em; width: auto; text-align: left; }
+			input { width: auto; margin: 4px 0.5em 0;  }
 		}
 	}
 }
@@ -35,16 +35,16 @@ form {
 		input[type="text"], input[type="number"], input[type="email"], input[type="password"], select { width: 50%;}
 		textarea { width:50%; }
 		&.checkbox { margin-left: 30%; height: auto;
-			label { text-align: left;  width: auto; float: none; margin-right: 0; display: inline;}
+			label { text-align: left;  width: auto; margin-right: 1em; display: inline; float:none; }
 		}
-		input[type="submit"], button { .mixButton(); margin-left: 30%; }
+		input[type="submit"], button { margin-left: 30%; }
 	}
 }
 
 /* vForm
 -------------------------------------------------------------- */
 .mixFormVertical { 
-	p { margin: 0 0 5px; 
+	p { 
 		label { display: block; } 
 		&.checkbox label { display: inline; }
 	}

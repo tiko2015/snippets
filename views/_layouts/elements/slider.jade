@@ -1,13 +1,26 @@
 mixin slider(images)
-  section#slider.row
-    .wrapper
-      .slider
-        ul.slides
-          -each image in images
-            li: img(src=image)
+  section#slider
+    .slider
+      ul.slides
+        -each image in images
+          li: img(src=image)
   script.
     $(window).load(function() {
       $('#slider .slider').flexslider({
         animation: "slide"
+      });
+    });
+mixin carousel(images)
+  section#scrollable
+    .slider
+      ul.slides
+        -each image in images
+          li: img(src=image)
+  script.
+    $(window).load(function() {
+      $('#scrollable .slider').flexslider({
+          animation: "slide",
+          animationLoop: false,
+          itemWidth: 100
       });
     });
