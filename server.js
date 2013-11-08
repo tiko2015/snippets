@@ -11,7 +11,7 @@ function getFile(filePath,res,page404){
       fs.readFile(filePath,function(err,contents){
         if (err) return appError(err, res);   
         res.end(contents);
-        console.log('res: ' + filePath);
+        //console.log('res: ' + filePath);
       });
     } else {
       fs.readFile(page404,function(err,contents){
@@ -23,16 +23,16 @@ function getFile(filePath,res,page404){
   });
 };
 function requestHandler(req, res) {
-  console.log('req: ' + req.url);
-  var fileName = (path.extname(req.url)) ? req.url : path.join(req.url, 'index.html')
-    , tplFolder = __dirname + '/tpl'
-    , lessFolder = __dirname + '/less'
-    , dataFolder = __dirname + '/data'
-    , localFolder = __dirname + '/public'
-    , page404 = localFolder + '/404.html'
-    , jadeFileName = path.join(tplFolder, fileName) + '.jade'
-    , lessFileName = path.join(lessFolder, fileName) + '.less'
-    , jsonFileName = path.join(dataFolder, fileName) + '.json';
+  //console.log('req: ' + req.url);
+  var fileName      = (path.extname(req.url)) ? req.url : path.join(req.url, 'index.html')
+    , tplFolder     = './views'
+    , lessFolder    = './less'
+    , dataFolder    = './models'
+    , localFolder   = './public'
+    , page404       = localFolder + '/404.html'
+    , jadeFileName  = path.join(tplFolder, fileName) + '.jade'
+    , lessFileName  = path.join(lessFolder, fileName) + '.less'
+    , jsonFileName  = path.join(dataFolder, fileName) + '.json';
 
   var loadJade = function (exists) {
     if(exists){
@@ -46,11 +46,16 @@ function requestHandler(req, res) {
     if(exists){
       fs.readFile(lessFileName, 'utf8', function (err, data) {
         if (err) return appError(err, res);   
-        console.log('res: ' + lessFileName);
         less.render(data, { compress: true, paths: ['./less'] }, function (err, css) {
           if (err) return appError(err, res);   
           res.setHeader("Content-type", "text/css; charset=utf-8");
           res.end(css);
+          console.log('res: ' + lessFileName);
+          console.log('res: ' + localFolder + fileName);
+          fs.writeFile(localFolder + fileName, css, function (err) {
+            if (err) throw err;
+            console.log(localFolder + fileName + ' saved!');
+          });
         });
       });
     }
@@ -75,7 +80,7 @@ function requestHandler(req, res) {
     }
   };
   var renderJade = function() {
-    fs.readFile('./data/_config.json', 'utf8', function (err, configFile) {
+    fs.readFile('./models/_config.json', 'utf8', function (err, configFile) {
       if (err) return appError(err, res);   
       try {  
         var config = jsonlint.parse(configFile);
@@ -84,9 +89,14 @@ function requestHandler(req, res) {
           res.setHeader('Content-Type', 'text/html; charset=utf-8');
           res.end(html);
           console.log('res: ' + jadeFileName);
+          console.log('res: ' + localFolder + fileName);
+          fs.writeFile(localFolder + fileName, html, function (err) {
+            if (err) throw err;
+            console.log(localFolder + fileName + ' saved!');
+          });
         });
       } catch (err) {
-          err.file = 'data/_config.json';
+          err.file = 'models/_config.json';
           return appError(err, res);   
       }
     });

@@ -5,21 +5,27 @@ Debido al interes de poder trabajar los templates con jade y los estilos con les
 
 Snippets logra cumplir esta tarea y crear un entorno de desarrollo a medida para la misma.
 
-Básicamente, lo que hace es separar los datos de la presentación usando jade, y crear estilos aprovechando las ventajas de less.
+En definitiva, es un emulador de MVC pero sin controlador. Esto permite simular los datos, integrarlos al template y luego incluir las vistas y 
+los estilos en cualquier proyecto.
 
-El resultado es un sitio compilado y optimizado para su puesta en producción o un sistema de estilos y plantillas accesibles para incorporar al desarrollo de cualquier aplicación.
+También es un generador de sitios estáticos, porque a medida que compila y muestra en tiempo real, crea los archivos html y css que entiende 
+cualquier servidor como apache, ngingx y hasta Microsoft IIS.
+
 
 ## Como funciona
 
-Al ser un desarrollo orientado a crear plantillas, el servido node que se inicia se queda a la espera de la petición de archivos situados en el directorio public.
+Al ser un desarrollo orientado a crear plantillas, el servidor node que se inicia se queda a la espera de la petición de archivos situados en el directorio public.
 
-Si los archivos solicitados tienen la extensión .html, busca su correlación en la carpeta tpl,en este caso con la extensión .html.jade. 
-En el caso de existir, busca el mismo archivo en data con la extensión .html.json, compila y devuelte el html solicitado.
+Si los archivos solicitados tienen la extensión .html, busca su correlación en la carpeta views,en este caso con la extensión .html.jade. 
+En el caso de existir, busca el mismo archivo en models con la extensión .html.json, compila y devuelte el html solicitado.
+Al mismo tiempo crea el archivo solicitado en la carpeta public.
 
 Si no existiera, intenta encontrarlo en public y en caso de no exitir mostrará un error 404.
 
-En el caso de less, se repite la misma mecánica. O sea que el llamado a style.css generaría que se compile less/style.css.less con todos sus include y devolviera una hoja de estilos única.
+En el caso de less, se repite la misma mecánica. O sea que el llamado a style.css generaría que se compile less/style.css.less con todos sus include y 
+devolviera una hoja de estilos única.
 
+> **NOTA:** Se pueden generar sitios estaticos si no se incluyen las carpetas less y views en el servidor de producción.
 
 
 ## Instalación
@@ -103,11 +109,11 @@ El objetivo de esto es facilitar la tarea de desarrollo y generar un único css 
 
 ### Estructura de directorios:
 
-- **data** (archivos de datos en formato json)
-- **tpl** (archivos jade)
-    - **_includes** 
-    - **_layouts**
-    - **_mixins**
+- **models** (archivos de datos en formato json)
+- **views** (archivos jade)
+    - **_layouts** 
+      - **includes**
+      - **elements**
 - **less** (aca se encuentran los archivos .less, no es necesaria para producción)
     - **01core** (tipografias, reset, mixins y demás configuraciones generales)
     - **02extends** (librerías less para facilitar la creación de código)
@@ -127,7 +133,8 @@ El objetivo de esto es facilitar la tarea de desarrollo y generar un único css 
 
 Lo primero que podés hacer es abrir el archivo *'less/style.less'*. Acá vás a encotrar todos los archivos incluidos en tu proyecto y el orden en que se cargan.
 
-Fijate que los directorios esán numerados para facilitar la lectura, de todos modos, cada proyecto tiene sus requerimentos y este orden se puede alterar según las necesidades.
+Fijate que los directorios esán numerados para facilitar la lectura, de todos modos, cada proyecto tiene sus requerimentos y este orden se puede alterar 
+según las necesidades.
 
 Para quitar archivos no es necesario borrarlos, se pueden comentar como el caso de *'reset.less'*:
 
@@ -142,11 +149,13 @@ En él nos vamos a encontrar con algunas líneas que le dan forma al html de eje
 
 Si todavía no conoces **less**, este es el momento de darte una vuelta por [less](http://lesscss.org/).
 
-Para empezar un proyecto nuevo, podés borrar todos estos estilos y comenzar utilizando *'clean.html'*. En este archivo solo están definidas las llamadas a los scripts necesarios para el desarrollo con **snippets**.
+Para empezar un proyecto nuevo, podés borrar todos estos estilos y comenzar utilizando *'clean.html'*. En este archivo solo están definidas las 
+llamadas a los scripts necesarios para el desarrollo con **snippets**.
 
 #### Usando mixins:
 
-Una de las grandes ventajas de crear css con less, es la posibilidad de usar *mixins*. Esto nos permite definir una serie de atributos para un elemento, incluso se le pueden pasar variables.
+Una de las grandes ventajas de crear css con less, es la posibilidad de usar *mixins*. Esto nos permite definir una serie de atributos para un elemento, 
+incluso se le pueden pasar variables.
 
 Vamos a ver un ejemplo de nuestro archivo *'01core/mixins.less'*
 
@@ -174,17 +183,21 @@ Y el resultado en el css compilado sería el siguiente:
 
 Hasta ahora tenemos 4 extensiones definidas: buttons, css3, grid y glyphicons.
 
-Buttons es una extensión que te permite crear botonos tanto de links como inputs de formularios. Te permite definir el color de fondo, tamaño. Miralo, modificalo y sualo a tu gusto.
+Buttons es una extensión que te permite crear botonos tanto de links como inputs de formularios. Te permite definir el color de fondo, tamaño. Miralo, 
+modificalo y sualo a tu gusto.
 
-Con css3.less haces compatible las propiedades de la nueva versión sin necesidad de escribir prefijos para todos los navegadores. Mirá como usarlo en [LESS Prefixer](http://lessprefixer.com/) 
+Con css3.less haces compatible las propiedades de la nueva versión sin necesidad de escribir prefijos para todos los navegadores. 
+Mirá como usarlo en [LESS Prefixer](http://lessprefixer.com/) 
 
-Como sistema de grilla **snippets** adopta el método de 12 columnas. Conoce la implementación de [semantic.gs](http://semantic.gs/) que está muy bien explicado y documentado.
+Como sistema de grilla **snippets** adopta el método de 12 columnas. Conoce la implementación de [semantic.gs](http://semantic.gs/) que está 
+muy bien explicado y documentado.
 
 [Font Awesome](http://fortawesome.github.io/Font-Awesome/) es una familia de iconos estándar para graficar botones, links, alertas, etc.
 
 #### Elementos, layouts y themes
 
-En elements vas a encontrar algunas estructuras que se utilizan comunmente, revisa en el directorio tpl/_mixins que encontraras otros recortes de código compatibles.
+En elements vas a encontrar algunas estructuras que se utilizan comunmente, revisa en el directorio views/_layouts/elements 
+que encontraras otros recortes de código compatibles.
 
 En layouts se definen las reglas generales para responsive.
 

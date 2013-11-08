@@ -5,7 +5,7 @@ mixin slider(images)
         ul.slides
           -each image in images
             li: img(src=image)
-  script(type="text/javascript")
+  script.
     $(window).load(function() {
       $('#slider .slider').flexslider({
         animation: "slide"
