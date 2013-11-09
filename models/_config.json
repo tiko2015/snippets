@@ -13,7 +13,7 @@
   ],
   "navdocs": [ 
     {"link":"/docs/caracteristicas.html", "name":"Características y recursos"},
-    {"link":"/docs/instalacion.html", "name":"Por donde empezar"},
+    {"link":"/docs/instalacion.html", "name":"Instalación"},
     {"link":"/docs/less.html", "name":"Como usar less"},
     {"link":"/docs/jade.html", "name":"Como usar jade"}
   ],

@@ -1,9 +1,11 @@
 extends _layouts/default
+block nav
+  header#header
+    h1.logo= config.page.title
+  +nav('nav', config.nav)
+
 block content
   .wrapper
-    header#header
-      h1.logo= config.page.title
-    +nav('nav', config.nav)
     :markdown
       ### Entorno para el desarrollo de interfaz para nodejs basado en jade y less.
 

@@ -1,19 +1,18 @@
 extends _layouts/default
+block nav
+  header#header
+    h1.logo= config.page.title
+  +nav('nav', config.nav)
+  +nav('nav-light', config.navejemplos)
+
 block content
   .wrapper
-    header#header
-      h1.logo= config.page.title
-    +nav('nav', config.nav)
-    +nav('nav-light', config.navejemplos)
-  .wrapper
     +slider(content.slides)
-  .wrapper
     section#content.span5.span-768-6
       h3 Carousel
       +carousel(content.thumbs)
       h3 Galeria a 6 columnas
       +gallery(6, content.gallery)
-  .wrapper
     .span7.span-768-6
       h3 Galeria a 4 columnas
       +gallery(4, content.gallery)

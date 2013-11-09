@@ -1,10 +1,11 @@
 extends ../_layouts/default
+block nav
+  header#header
+    h1.logo= config.page.title
+  +nav('nav', config.nav)
+  +nav('nav-light', config.navdocs)
 block content
-  .wrapper
-    header#header
-      h1.logo= config.page.title
-    +nav('nav', config.nav)
-    +nav('nav-light', config.navdocs)
+  .wrapper.folder
     :markdown
 
       ## Instruccion para trabajar con less en snippets
@@ -18,7 +19,7 @@ block content
       El objetivo de esto es facilitar la tarea de desarrollo y generar un único css compilado para tu sitio en producción.
 
       ### Estructura de directorios:
-
+      
       - **models** (archivos de datos en formato json)
       - **views** (archivos jade)
           - **_layouts** 

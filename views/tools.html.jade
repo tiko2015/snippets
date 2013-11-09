@@ -1,10 +1,10 @@
 extends _layouts/default
+block nav
+  header#header
+    h1.logo= config.page.title
+  +nav('nav', config.nav)
+  +nav('nav-light', config.navejemplos)
 block content
-  .wrapper
-    header#header
-      h1.logo= config.page.title
-    +nav('nav', config.nav)
-    +nav('nav-light', config.navejemplos)
   .wrapper
     section.span4
       h3 Tooltips
@@ -23,8 +23,18 @@ block content
       h5: span(data-hint="success", class="hint hint--right hint--success") Tooltip success
     section.span8
       :markdown
-        #Agregar
+        #Elementos pendientes de integrar
         
+        ###javascript
         - modal
-        - accordeon
-        - tabs
+
+        ###Elementos de articulos
+        - super (destacado)
+        - articulos
+        - listados de articulos
+        - comentarios
+        
+        ### generales
+        - paneles
+        - paginador
+        - breadcrumb

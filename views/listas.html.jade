@@ -1,25 +1,29 @@
 extends _layouts/sidenav
+block nav
+  header#header
+    h1.logo= config.page.title
+  +nav('nav', config.nav)
+  +nav('nav-light', config.navejemplos)
 block content
   .wrapper
-    header#header
-      h1.logo= config.page.title
-    +nav('nav', config.nav)
-    +nav('nav-light', config.navejemplos)
-  .wrapper
     .row
-      section#content.span4.span-768-6
+      section#content.span3.span-768-6
+        h3 Tabs
+        +tabs(content.tabs)
+      section#content.span3.span-768-6
         h3 Unordered lists
           ul
             li Lorem ipsum dolor sit amet
             li Consectetur adipisicing elit
             li Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             li Ut enim ad minim veniam
+      section#content.span3.span-768-6
         h3 Ordered lists
           ol
             li Consectetur adipisicing elit
             li Sed do eiusmod tempor incididunt ut labore
             li Et dolore magna aliqua
-      section.span8.span-768-6
+      section.span3.span-768-6
         h3 Definition lists
           dl
             dt Lorem ipsum dolor sit amet

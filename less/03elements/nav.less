@@ -17,21 +17,6 @@
 	}
 }
 
-.mixNav(@color: #5c5c5c, @textColor: #fff) {
-	list-style: none; margin:0; padding: 0;
-	.font-size(1.5);
-	li a {
-		margin: 0; padding:1em; display: block;
-		line-height:1em;
-		color: @textColor;
-		.text-shadow(0 1px 1px darken(@color, 20%));
-		&:hover, &:focus {
-			background: darken(@color, 5%);
-			text-decoration: none;
-		}
-	}
-}
-
 .horizontalNav(@color: #5c5c5c, @textColor: #fff) {
 	.mixNav(@color, @textColor);
 	height:3em;
@@ -123,3 +108,31 @@
 		}
 	}
 }
+
+.mixTabs(@bgcolor: #fff, @textColor: @textColor) {
+  list-style: none; margin:0; padding: 0;
+  .font-size(1.5);  
+  border-bottom:1px solid @lineColor;
+	height:2.2em;
+  li { 
+    float: left; margin: 0 0 0 0.5em; height:2.2em;
+    a {
+      margin: 0; padding:0.6em 1.2em; display: block;
+      background:@bgcolor;
+      line-height:1em;
+      .border-radius(4px 4px 0 0);
+      &:hover, &:focus {
+        text-decoration: none;
+        background: darken(@bgcolor, 5%);
+      }
+      &.current, &.current:hover, &.current:focus {
+        border:1px solid @lineColor;
+        border-bottom: @bgcolor;
+        cursor:default;
+        background:@bgcolor;
+        color:@textColor;
+      }
+    }
+  }
+}
+

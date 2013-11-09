@@ -1,8 +1,11 @@
 #page { padding:0 20px;
-  .wrapper { max-width:100%; min-width:960px; 
+  .wrapper { max-width:100%; min-width:960px;  .clearfix();
     > ul[class*="nav"] { margin: 0 -20px; }
   }
-  footer .nav-light { margin: 0 -20px; }
+  footer { margin:5em 0 0 0;
+   .nav-footer { border-top: 1px solid @lineColor; .horizontalNav(#fff, @linkColor); margin:0 -20px;}
+   .legal {  padding:1em 3em; margin:0 -20px; background:#f2f2f2; font-size:1.2em; }
+  }
 }
 #header {
   float:left;  margin-left:30px;
@@ -17,7 +20,14 @@
     text-shadow: 0 1px 1px #999999;
   }
 }
-
+.folder {
+  ul{ margin:0.3em 0 0; padding-left: 1.3em; 
+    li { .mixIcon(@icon-folder-open); list-style: none; margin-bottom: 0.3em;
+      &:before {top: 8px; left: 0px;} 
+    }
+  }
+}
+    
 .github-fork-ribbon-wrapper {
     height: 150px;
     overflow: hidden;
