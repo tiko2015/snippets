@@ -1,0 +1,57 @@
+#page { padding:0 20px;
+  .wrapper { max-width:100%; min-width:960px; 
+    > ul[class*="nav"] { margin: 0 -20px; }
+  }
+  footer .nav-light { margin: 0 -20px; }
+}
+#header {
+  float:left;  margin-left:30px;
+  h1 {
+    background: none repeat scroll 0 0 #333333;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+    display: inline-block;
+    margin: 0;
+    padding: 0.2em 0.15em 0.15em;
+    text-shadow: 0 1px 1px #999999;
+  }
+}
+
+.github-fork-ribbon-wrapper {
+    height: 150px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right:0;
+    width: 150px;
+    z-index: 9999;
+    .github-fork-ribbon {
+        background-color: #AA0000;
+        background-image: -moz-linear-gradient(center top , rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+        padding: 2px 0;
+        position: absolute;
+        z-index: 9999;
+        right: -43px;
+        top: 42px;
+        transform: rotate(45deg);
+        a, 
+        a:hover {
+            border-color: rgba(255, 255, 255, 0.698);
+            border-style: dotted;
+            border-width: 1px 0;
+            color: #FFFFFF;
+            display: inline-block;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 20px;
+            padding: 2px 0;
+            text-align: center;
+            text-decoration: none;
+            text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+            width: 200px;
+        }
+    }
+}

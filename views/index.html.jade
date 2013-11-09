@@ -5,6 +5,14 @@ block content
       h1.logo= config.page.title
     +nav('nav', config.nav)
     :markdown
-      #Docs
-      
-      ...
+      ### Entorno para el desarrollo de interfaz para nodejs basado en jade y less.
+
+      Debido al interes de poder trabajar los templates con jade y los estilos con less, me surgió la necesidad de tener un compilador en tiempo real.
+
+      Snippets logra cumplir esta tarea y crear un entorno de desarrollo a medida para la misma.
+
+      En definitiva, es un emulador de MVC pero sin controlador. Esto permite simular los datos, integrarlos al template y luego incluir las vistas y 
+      los estilos en cualquier proyecto.
+
+      También es un generador de sitios estáticos, porque a medida que compila y muestra en tiempo real, crea los archivos html y css que entiende 
+      cualquier servidor como apache, ngingx y hasta Microsoft IIS.

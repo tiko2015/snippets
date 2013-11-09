@@ -1,9 +1,10 @@
-extends _layouts/default
+extends _layouts/sidenav
 block content
   .wrapper
     header#header
       h1.logo= config.page.title
     +nav('nav', config.nav)
+    +nav('nav-light', config.navejemplos)
   .wrapper
     .row
       section#content.span4.span-768-6

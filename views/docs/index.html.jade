@@ -6,6 +6,17 @@ block content
     +nav('nav', config.nav)
     +nav('nav-light', config.navdocs)
     :markdown
-      #Docs
-      
-      ...
+      ## Como funciona
+
+      Al ser un desarrollo orientado a crear plantillas, el servidor node que se inicia se queda a la espera de la petición de archivos situados en el directorio public.
+
+      Si los archivos solicitados tienen la extensión .html, busca su correlación en la carpeta views,en este caso con la extensión .html.jade. 
+      En el caso de existir, busca el mismo archivo en models con la extensión .html.json, compila y devuelte el html solicitado.
+      Al mismo tiempo crea el archivo solicitado en la carpeta public.
+
+      Si no existiera, intenta encontrarlo en public y en caso de no exitir mostrará un error 404.
+
+      En el caso de less, se repite la misma mecánica. O sea que el llamado a style.css generaría que se compile less/style.css.less con todos sus include y 
+      devolviera una hoja de estilos única.
+
+      > **NOTA:** Se pueden generar sitios estaticos si no se incluyen las carpetas less y views en el servidor de producción.

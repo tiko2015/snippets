@@ -1,18 +1,21 @@
 {
   "nav": [ 
     {"link":"/", "name":"Inicio"},
+    {"link":"/docs", "name":"Como funciona"},
+    {"link":"/article.html", "name":"Ejemplos"}
+  ],
+  "navejemplos": [ 
     {"link":"/article.html", "name":"Textos"},
     {"link":"/gallery.html", "name":"Multimedia"},
     {"link":"/listas.html", "name":"Listas"},
     {"link":"/contacto.html", "name":"Formularios"},
-    {"link":"/tools.html", "name":"Herramientas"},
-    {"link":"/docs", "name":"Documentación"}
+    {"link":"/tools.html", "name":"Herramientas"}
   ],
   "navdocs": [ 
-    {"link":"/docs", "name":"General"},
-    {"link":"/less.html", "name":"less"},
-    {"link":"/jade.html", "name":"jade"},
-    {"link":"/node.html", "name":"node"}
+    {"link":"/docs/caracteristicas.html", "name":"Características y recursos"},
+    {"link":"/docs/instalacion.html", "name":"Por donde empezar"},
+    {"link":"/docs/less.html", "name":"Como usar less"},
+    {"link":"/docs/jade.html", "name":"Como usar jade"}
   ],
   "user": {
     "name": "User Name",

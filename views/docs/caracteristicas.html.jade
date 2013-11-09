@@ -1,0 +1,52 @@
+extends ../_layouts/default
+block content
+  .wrapper
+    header#header
+      h1.logo= config.page.title
+    +nav('nav', config.nav)
+    +nav('nav-light', config.navdocs)
+    :markdown
+
+      ### Características
+
+      - HTML5 y CSS3
+      - Responsive o Adaptive según la necesidad.
+      - Configurable.
+      - Construido en less para desarrollar en less.
+      - Sin classes predefinidas.
+      - Ordenado y extensible.
+      - Sin código basura.
+      - Fácil de aprender
+      - Incluye librerías js para formularios, modales, slider, tooltips tabs y más.
+      - El css base compilado pesa solo 7.4k.
+
+
+      ### Recursos javascript incluidos
+
+      - [jQuery](http://jquery.com/)
+      - [jQuery tools](http://jquerytools.org) (incluye: Tabs, Tooltip, Form Tools, Toolbox.)
+      - [flexSlider2](http://flexslider.woothemes.com/)
+      - [html5shim](http://code.google.com/p/html5shim/)
+      - [less](http://lesscss.org/)
+      - [jade](http://jade-lang.com)
+
+      ### Recursos less incluidos
+
+      - Variables de entorno
+          - Colores 
+          - Fuentes
+          - Ruta del directorio de contenidos multimedia (imágenes, tipografia, etc.)
+      - [Normalize](http://git.io/normalize) por defecto o [reset v2.0](http://meyerweb.com/eric/tools/css/reset/) de Eric Meyer.
+      - Tipografias incluidas y mediante google fonts
+      - Definición de formularios horizontales o verticales.
+      - Conjuntos de atributos para generar código recurrente. Algo asi como ejecutar funciones dentro del css.
+          - Grilla y columnas de [semantic.gs](http://semantic.gs/).
+          - CSS3 de [LESS Prefixer](http://lessprefixer.com/) .
+          - Botones.
+          - Iconos de [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
+      - Elementos predefinidos.
+          - Galería.
+          - Navegación.
+          - Rotador de imágenes.
+      - Layout
+          - Estilos generales y archivos separados para cada media query.

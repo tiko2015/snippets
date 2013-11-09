@@ -1,11 +1,19 @@
 <!DOCTYPE html><html lang="en"><head><title>snippets</title><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="config.page.description"><meta name="description" content="descripvion de snippets"><link href="/media/img/favicon.ico" rel="shortcut icon" type="image/x-icon"><link rel="stylesheet" href="/style.css" type="text/css" media="all"><meta property="og:title" content="undefined - snippets"><meta property="og:description" content="config.page.description"><meta property="og:type" content="website"><meta property="og:url" content="APP_URL"><meta property="og:image" content="/media/img/favicon.png"><meta property="og:site_name" content="snippets"><meta property="fb:admins" content="APP_ADMIN"><script src="/js/lib/jquery-2.0.3.min.js" type="text/javascript"></script><script src="/js/lib/jquery.tools.min.js" type="text/javascript"></script><script src="/js/lib/jquery.flexslider.js" type="text/javascript"></script><script src="/js/script.js" type="text/javascript"></script><!--[if lt IE 9]><script src="/js/lib/html5.js"></script><![endif]--><script>var _gaq=[['_setAccount','UA-31441831-4'],['_trackPageview']];
 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-s.parentNode.insertBefore(g,s)}(document,'script'));</script></head><body><div id="page"><div class="wrapper"><header id="header"><h1 class="logo">snippets</h1></header><ul class="nav"><li><a href="/">Inicio</a></li><li><a href="/docs">Como funciona</a></li><li><a href="/article.html">Ejemplos</a></li></ul><h3 id="entorno-para-el-desarrollo-de-interfaz-para-nodejs-basado-en-jade-y-less-">Entorno para el desarrollo de interfaz para nodejs basado en jade y less.</h3>
-<p>Debido al interes de poder trabajar los templates con jade y los estilos con less, me surgió la necesidad de tener un compilador en tiempo real.</p>
-<p>Snippets logra cumplir esta tarea y crear un entorno de desarrollo a medida para la misma.</p>
-<p>En definitiva, es un emulador de MVC pero sin controlador. Esto permite simular los datos, integrarlos al template y luego incluir las vistas y 
-los estilos en cualquier proyecto.</p>
-<p>También es un generador de sitios estáticos, porque a medida que compila y muestra en tiempo real, crea los archivos html y css que entiende 
-cualquier servidor como apache, ngingx y hasta Microsoft IIS.</p>
+s.parentNode.insertBefore(g,s)}(document,'script'));</script></head><body><div id="page"><div class="wrapper"><header id="header"><h1 class="logo">snippets</h1></header><ul class="nav"><li><a href="/">Inicio</a></li><li><a href="/docs">Como funciona</a></li><li><a href="/article.html">Ejemplos</a></li></ul><ul class="nav-light"><li><a href="/docs/caracteristicas.html">Características y recursos</a></li><li><a href="/docs/instalacion.html">Por donde empezar</a></li><li><a href="/docs/less.html">Como usar less</a></li><li><a href="/docs/jade.html">Como usar jade</a></li></ul><h2 id="instalaci-n">Instalación</h2>
+<p><strong>Atención: Para poder usar el servidor, debes tener instalado <a href="http://nodejs.org">nodejs</a>.</strong></p>
+<h5 id="en-consola-">En consola:</h5>
+<pre><code>git clone https://github.com/tiko2015/snippets.git
+cd snippets
+npm install
+node server</code></pre>
+<h5 id="en-el-navegador-">En el navegador:</h5>
+<pre><code>http://127.0.0.1:3000</code></pre>
+<p>Correr la aplicacion en heroku.com:</p>
+<pre><code>heroku apps:create example
+git push heroku master
+heroku open</code></pre>
+<p>Miralo funcionando en <a href="http://snippets-ws.herokuapp.com">heroku</a></p>
+<p>Si necesitas ayuda con esto, <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">acá está la documentación de heroku</a></p>
 </div><div class="wrapper"><footer class="clear"><ul class="nav-light"><li><a href="/">Inicio</a></li><li><a href="/docs">Como funciona</a></li><li><a href="/article.html">Ejemplos</a></li></ul><p class="legal"><small>Copyright &copy; 2013 <a href="http://www.linkedin.com/in/jokatz/">Jonathan Katz</a> Licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</small></p></footer></div><div class="github-fork-ribbon-wrapper right"><div class="github-fork-ribbon"><a href="https://github.com/tiko2015/snippets">Fork me on GitHub</a></div></div></div></body></html>

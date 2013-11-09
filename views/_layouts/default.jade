@@ -5,20 +5,7 @@ include elements/nav
 !!! 5
 html(lang="en")
   include includes/head
-  body#sidemenu
-    #sidemenu.sidemenu
-      a(href="#sidemenu")
-      a(href="#sidemenuclose")
-      nav
-        aside.userlogin
-          - if(config.user !== 'null')
-            figure
-              - if(config.user.image)
-                img(src=config.user.image)
-            h4= config.user.name
-            p= config.user.provider + ' | '
-              a(href="#") Signout
-        +nav('', config.nav)
+  body
     #page
       block content
       include includes/foot

@@ -1,0 +1,11 @@
+extends ../_layouts/default
+block content
+  .wrapper
+    header#header
+      h1.logo= config.page.title
+    +nav('nav', config.nav)
+    +nav('nav-light', config.navdocs)
+    :markdown
+      ## Jade
+
+      Mientras preparamos la documentación, podés ir a la [documentación](http://jade-lang.com/reference/) de [jade](http://jade-lang.com/).

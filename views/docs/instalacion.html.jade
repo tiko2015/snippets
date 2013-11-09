@@ -1,0 +1,33 @@
+extends ../_layouts/default
+block content
+  .wrapper
+    header#header
+      h1.logo= config.page.title
+    +nav('nav', config.nav)
+    +nav('nav-light', config.navdocs)
+    :markdown
+      ## Instalación
+
+      **Atención: Para poder usar el servidor, debes tener instalado [nodejs](http://nodejs.org).**
+
+
+      ##### En consola:
+
+          git clone https://github.com/tiko2015/snippets.git
+          cd snippets
+          npm install
+          node server
+
+      ##### En el navegador: 
+
+          http://127.0.0.1:3000
+
+      Correr la aplicacion en heroku.com:
+
+          heroku apps:create example
+          git push heroku master
+          heroku open
+
+      Miralo funcionando en [heroku](http://snippets-ws.herokuapp.com)
+
+      Si necesitas ayuda con esto, [acá está la documentación de heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
