@@ -50,6 +50,8 @@ Correr la aplicacion en heroku.com:
     git push heroku master
     heroku open
 
+Miralo funcionando en [heroku](http://snippets-ws.herokuapp.com)
+
 Si necesitas ayuda con esto, [acá está la documentación de heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 
 
