@@ -82,7 +82,7 @@ function requestHandler(req, res) {
   var renderJade = function() {
     fs.readFile('./models/_config.json', 'utf8', function (err, configFile) {
       if (err) return appError(err, res);   
-      try {  
+      try {
         var config = jsonlint.parse(configFile);
         jade.renderFile(jadeFileName, { content:options, config:config }, function (err, html) {
           if (err) return appError(err, res);   

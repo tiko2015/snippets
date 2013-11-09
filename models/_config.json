@@ -1,9 +1,18 @@
 {
   "nav": [ 
-    {"link":"/", "name":"inicio"},
-    {"link":"/article.html", "name":"Titulos"},
-    {"link":"/gallery.html", "name":"Galeria"},
-    {"link":"/contacto.html", "name":"Contacto"}
+    {"link":"/", "name":"Inicio"},
+    {"link":"/article.html", "name":"Textos"},
+    {"link":"/gallery.html", "name":"Multimedia"},
+    {"link":"/listas.html", "name":"Listas"},
+    {"link":"/contacto.html", "name":"Formularios"},
+    {"link":"/tools.html", "name":"Herramientas"},
+    {"link":"/docs", "name":"Documentación"}
+  ],
+  "navdocs": [ 
+    {"link":"/docs", "name":"General"},
+    {"link":"/less.html", "name":"less"},
+    {"link":"/jade.html", "name":"jade"},
+    {"link":"/node.html", "name":"node"}
   ],
   "user": {
     "name": "User Name",

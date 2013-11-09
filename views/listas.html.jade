@@ -1,0 +1,59 @@
+extends _layouts/default
+block content
+  .wrapper
+    header#header
+      h1.logo= config.page.title
+    +nav('nav', config.nav)
+  .wrapper
+    .row
+      section#content.span4.span-768-6
+        h3 Unordered lists
+          ul
+            li Lorem ipsum dolor sit amet
+            li Consectetur adipisicing elit
+            li Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            li Ut enim ad minim veniam
+        h3 Ordered lists
+          ol
+            li Consectetur adipisicing elit
+            li Sed do eiusmod tempor incididunt ut labore
+            li Et dolore magna aliqua
+      section.span8.span-768-6
+        h3 Definition lists
+          dl
+            dt Lorem ipsum dolor sit amet
+            dd Consectetur adipisicing elit, sed do eiusmod tempor incididunt asdas ut labore et dolore magna aliqua.
+
+            dt Ut enim ad minim veniam
+            dd Quis nostrud exercitation ullamco <abbr title="algo">a</abbr> laboris nisi ut aliquip ex ea commodo consequat.
+
+            dt Duis aute irure dolor
+            dd In reprehenderit in voluptate velit <em>esse cillum dolore</em> eu fugiat nulla pariatur.
+
+            dt Excepteur sint occaecat</dt>
+            dd Cupidatat non proident, <strong>sunt in culpa qui officia</strong> deserunt mollit anim id est laborum.
+    .row
+      section#content.span6.span-768-6
+        h3 Vertical nav
+        +nav('nav-vertical', [{link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}])
+      section#content.span6.span-768-6
+        h3 Vertical nav light
+        +nav('nav-vertical-light', [{link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}])
+
+    section.span12 
+      h3 Tables
+      table
+        thead
+          tr
+            th Item
+            th Quantity
+            th Price
+        tbody
+          tr
+            td Lorem ipsum dolor
+            td 1
+            td $10.00
+          tr
+            td Adipisicing elit
+            td 2
+            td $12.00

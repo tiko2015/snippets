@@ -5,9 +5,14 @@ block content
       h1.logo= config.page.title
     +nav('nav', config.nav)
   .wrapper
-    .span8
+    +slider(content.slides)
+  .wrapper
+    section#content.span5.span-768-6
+      h3 Carousel
+      +carousel(content.thumbs)
       h3 Galeria a 6 columnas
       +gallery(6, content.gallery)
-    .span4
+  .wrapper
+    .span7.span-768-6
       h3 Galeria a 4 columnas
       +gallery(4, content.gallery)
