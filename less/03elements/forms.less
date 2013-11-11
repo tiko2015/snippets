@@ -10,7 +10,7 @@ form {
 		}
 		input[type="text"], input[type="number"], input[type="email"], input[type="password"], select { 
 			width: 90%; .border-box(); padding: 5px; border: 1px solid @lineColor; 
-			.border-radius(4px); height: 30px; line-height: 30px; .font-size(1.4); .transition(all 100ms ease-in-out);
+			.border-radius(4px); height: 2.5em; line-height: 2.5em; .font-size(1.4); .transition(all 100ms ease-in-out);
 			&:focus { .box-shadow(0 0 5px rgba(0,0,0,0.5)); }
 		}
 		input[type="checkbox"] { width: auto; border:1px solid  @lineColor; }
@@ -57,9 +57,9 @@ form {
   .border-radius(4px);
   padding:1em;
   margin:1em;
-  background:@color;
-  border:1px solid darken(@color, 15%);
-  color: spin(darken(@color, 60%), 10);
+  background:lighten(@color, 35%);
+  border: @color;
+  color: @color;
 	span {
 	  font-weight:bold;
 	  text-transform:uppercase;

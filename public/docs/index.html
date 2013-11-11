@@ -1,15 +1,92 @@
 <!DOCTYPE html><html lang="en"><head><title>snippets</title><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="config.page.description"><meta name="description" content="descripvion de snippets"><link href="/media/img/favicon.ico" rel="shortcut icon" type="image/x-icon"><link rel="stylesheet" href="/style.css" type="text/css" media="all"><meta property="og:title" content="undefined - snippets"><meta property="og:description" content="config.page.description"><meta property="og:type" content="website"><meta property="og:url" content="APP_URL"><meta property="og:image" content="/media/img/favicon.png"><meta property="og:site_name" content="snippets"><meta property="fb:admins" content="APP_ADMIN"><script src="/js/lib/jquery-2.0.3.min.js" type="text/javascript"></script><script src="/js/lib/jquery.tools.min.js" type="text/javascript"></script><script src="/js/lib/jquery.flexslider.js" type="text/javascript"></script><script src="/js/script.js" type="text/javascript"></script><!--[if lt IE 9]><script src="/js/lib/html5.js"></script><![endif]--><script>var _gaq=[['_setAccount','UA-31441831-4'],['_trackPageview']];
 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-s.parentNode.insertBefore(g,s)}(document,'script'));</script></head><body><div id="page"><div class="wrapper"><header id="header"><h1 class="logo">snippets</h1></header><ul class="nav"><li><a href="/">Inicio</a></li><li><a href="/docs">Como funciona</a></li><li><a href="/article.html">Ejemplos</a></li></ul><ul class="nav-light"><li><a href="/docs/caracteristicas.html">Características y recursos</a></li><li><a href="/docs/instalacion.html">Instalación</a></li><li><a href="/docs/less.html">Como usar less</a></li><li><a href="/docs/jade.html">Como usar jade</a></li></ul></div><div class="wrapper"><h2 id="como-funciona">Como funciona</h2>
-<p>Al ser un desarrollo orientado a crear plantillas, el servidor node que se inicia se queda a la espera de la petición de archivos situados en el directorio public.</p>
-<p>Si los archivos solicitados tienen la extensión .html, busca su correlación en la carpeta views,en este caso con la extensión .html.jade. 
-En el caso de existir, busca el mismo archivo en models con la extensión .html.json, compila y devuelte el html solicitado.
-Al mismo tiempo crea el archivo solicitado en la carpeta public.</p>
-<p>Si no existiera, intenta encontrarlo en public y en caso de no exitir mostrará un error 404.</p>
-<p>En el caso de less, se repite la misma mecánica. O sea que el llamado a style.css generaría que se compile less/style.css.less con todos sus include y 
-devolviera una hoja de estilos única.</p>
-<blockquote>
-<p><strong>NOTA:</strong> Se pueden generar sitios estaticos si no se incluyen las carpetas less y views en el servidor de producción.</p>
-</blockquote>
-</div><footer class="clear"><ul class="nav-footer"><li><a href="/">Inicio</a></li><li><a href="/docs">Como funciona</a></li><li><a href="/article.html">Ejemplos</a></li></ul><p class="legal">Copyright &copy; 2013 <a href="http://www.linkedin.com/in/jokatz/">Jonathan Katz</a> <br>Licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p></footer><div class="github-fork-ribbon-wrapper right"><div class="github-fork-ribbon"><a href="https://github.com/tiko2015/snippets">Fork me on GitHub</a></div></div></div></body></html>
+s.parentNode.insertBefore(g,s)}(document,'script'));</script></head><script>$(function() {
+  // Cache selectors
+  var lastId,
+      topMenu = $(".nav-activo"),
+      topMenuHeight = 0,
+      // All list items
+      menuItems = topMenu.find("a"),
+      // Anchors corresponding to menu items
+      scrollItems = menuItems.map(function(){
+        var item = $($(this).attr("href"));
+        if (item.length) { return item; }
+      });
+      
+  // Bind click handler to menu items
+  // so we can get a fancy scroll animation
+  menuItems.click(function(e){
+  
+    var href = $(this).attr("href"),
+        offsetTop = (href === "#") ? 0 : $(href).offset().top-topMenuHeight+1;
+    $('html, body').stop().animate({ 
+        scrollTop: offsetTop
+    }, 300);
+    e.preventDefault();
+  });
+  
+  // Bind to scroll
+  $(window).scroll(function(){
+     // Get container scroll position
+     var fromTop = $(this).scrollTop()+topMenuHeight;
+     
+     // Get id of current scroll item
+     var cur = scrollItems.map(function(){
+       if ($(this).offset().top < fromTop)
+         return this;
+     });
+     // Get the id of the current element
+     cur = cur[cur.length-1];
+     var id = cur && cur.length ? cur[0].id : "";
+     
+     if (lastId !== id) {
+         lastId = id;
+         // Set/remove active class
+         menuItems
+           .parent().removeClass("active")
+           .end().filter("[href=#"+id+"]").parent().addClass("active");
+     }                   
+  });
+});
+
+</script><body class="docs"><header><nav><ul class="nav-site"><li><a href="/">Inicio</a></li><li><a href="/docs/">Documentación</a></li><li><a href="/descargar.html">Descargar</a></li></ul></nav></header><div class="nav-docs"><h2>Snippets</h2><h4>html base</h4><ul class="nav-activo"><li><a href="#titulos">titulos</a></li><li><a href="#parrafos">parrafos</a></li><li><a href="#listas">listas</a></li><li><a href="#tablas">tablas</a></li></ul><h4>elementos</h4><ul class="nav-elemetos"><li><a href="/docs/elm.html#formularios">formularios</a></li><li><a href="/docs/elm.html#galeria">galeria</a></li><li><a href="/docs/elm.html#navegacion">navegación</a></li><li><a href="/docs/elm.html#pasadores">pasadores</a></li><li><a href="/docs/elm.html#carrusel">carrusel</a></li></ul><h4>documetos</h4><ul class="nav-documentos"><li><a href="/docs/docs.html#caracter-sticas">características</a></li><li><a href="/docs/docs.html#recursos-javascript">recursos javascript</a></li><li><a href="/docs/docs.html#recursos-less">recursos less</a></li><li><a href="/docs/docs.html#instalaci-n">instalación</a></li><li><a href="/docs/docs.html#como-funciona">como funciona</a></li><li><a href="/docs/docs.html#instruccion-para-trabajar-con-less-en-snippets">como usar less</a></li><li><a href="/docs/docs.html#jade">como usar jade</a></li></ul></div><script>$('header [href*="docs"]').addClass('active');
+$(function() {
+  $("ul.docs-tabs").tabs("> .pane");
+});</script><section><article><h3 id="titulos">Titulos</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#html">html</a></li></ul><div class="pane"><h1>heading h1</h1><h2>heading h2</h2><h3>heading h3</h3><h4>heading h4</h4><h5>heading h5</h5><h6>heading h6</h6></div><div class="pane code"><pre><code>h1 heading h1
+h2 heading h2
+h3 heading h3
+h4 heading h4
+h5 heading h5
+h6 heading h6</code></pre></div><div class="pane code"><pre><code>&lt;h1>heading h1&lt;h1>
+&lt;h2>heading h2&lt;h2>
+&lt;h3>heading h3&lt;h3>
+&lt;h4>heading h4&lt;h4>
+&lt;h5>heading h5&lt;h5>
+&lt;h6>heading h6&lt;h6></code></pre></div></article><article><h3 id="parrafos">Parrafos</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#html">html</a></li></ul><div class="pane"><p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+consectetur adipiscing elit.</p></div><div class="pane code"><pre><code></code>| Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+| et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+| consectetur adipiscing elit.</pre></div><div class="pane code"><pre><code>&lt;p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+consectetur adipiscing elit.&lt;/p></code></pre></div></article><article><h3 id="listas">Listas</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><ul><li>Lorem ipsum</li><li>Aliquam eu magna augue.</li><li>Sed aliquet malesuada egestas.</li></ul></div><div class="pane code"><pre><code>ul
+  li Lorem ipsum
+  li Aliquam eu magna augue.
+  li Sed aliquet malesuada egestas.</code></pre></div></article><article><h3 id="tablas">Tablas</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><table><thead><tr><th>Lorem ipsum</th><th>Aliquam eu magna augue.</th><th>Sed aliquet malesuada egestas.</th></tr><tbody><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr></tbody></thead></table></div><div class="pane code"><pre><code>table: thead
+  tr
+    th Lorem ipsum
+    th Aliquam eu magna augue.
+    th Sed aliquet malesuada egestas.
+  tbody
+  tr
+    td Lorem ipsum
+    td Aliquam eu magna augue.
+    td Sed aliquet malesuada egestas.
+  tr
+    td Lorem ipsum
+    td Aliquam eu magna augue.
+    td Sed aliquet malesuada egestas.
+  tr
+    td Lorem ipsum
+    td Aliquam eu magna augue.
+    td Sed aliquet malesuada egestas.</code></pre></div></article></section><footer><p>Creado por Jonathan Katz <a href="https://github.com/tiko2015/">github </a> <a href="http://www.linkedin.com/in/jokatz">linkedin</a></p></footer></body></html>

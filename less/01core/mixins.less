@@ -31,6 +31,13 @@
   font-size: ~"@{remValue}rem";
 }
 
+.line-height(@sizeValue:1) {
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 10);
+  line-height: ~"@{pxValue}px"; 
+  line-height: ~"@{remValue}rem";
+}
+
 .hide-text () {
   text-indent: 100%;
   text-shadow: none;

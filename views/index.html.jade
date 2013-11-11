@@ -1,14 +1,11 @@
-extends _layouts/default
-block nav
-  header#header
-    h1.logo= config.page.title
-  +nav('nav', config.nav)
+extends _layouts/home
 
 block content
-  .wrapper
+  section#home
+    h1 Snippets
+    h2 Sistema integral de desarrollo frontend
+    h3 nodejs + jade + less
     :markdown
-      ### Entorno para el desarrollo de interfaz para nodejs basado en jade y less.
-
       Debido al interes de poder trabajar los templates con jade y los estilos con less, me surgió la necesidad de tener un compilador en tiempo real.
 
       Snippets logra cumplir esta tarea y crear un entorno de desarrollo a medida para la misma.
@@ -17,4 +14,6 @@ block content
       los estilos en cualquier proyecto.
 
       También es un generador de sitios estáticos, porque a medida que compila y muestra en tiempo real, crea los archivos html y css que entiende 
-      cualquier servidor como apache, ngingx y hasta Microsoft IIS.
+      cualquier servidor como apache, nginx y hasta Microsoft IIS.
+
+      Mirá la **[documentación](docs/)** o **[probalo](descargar.html)**.

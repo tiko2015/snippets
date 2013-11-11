@@ -8,7 +8,7 @@ mixin tabs(items)
   +nav('tabs',items)
   .panes
     - each item in items
-      div=item.content
+      div!=item.content
   script.
     $(function() {
       $("ul.tabs").tabs("div.panes > div");

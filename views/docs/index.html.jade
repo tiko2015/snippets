@@ -1,23 +1,149 @@
-extends ../_layouts/default
+extends ../_layouts/docs
+
 block nav
-  header#header
-    h1.logo= config.page.title
-  +nav('nav', config.nav)
-  +nav('nav-light', config.navdocs)
+  .nav-docs
+    h2 Snippets
+    h4 html base
+    ul.nav-activo
+      - each item in config.htmlbase
+        li
+          a(href=item.anchor)= item.name
+    h4 elementos
+    +nav('nav-elemetos', config.elementos)
+    h4 documetos
+    +nav('nav-documentos', config.documentos)
+
+  script.
+    $('header [href*="docs"]').addClass('active');
+    $(function() {
+      $("ul.docs-tabs").tabs("> .pane");
+    });
 block content
-  .wrapper
-    :markdown
-      ## Como funciona
+  section
+    article
+      h3(id="titulos") Titulos
+      +nav('docs-tabs tabs', 
+        [ {link:'#preview', name:"preview"}, 
+          {link:'#jade', name:"jade"}, 
+          {link:'#html', name:"html"}
+        ])
+      div.pane
+        h1 heading h1
+        h2 heading h2
+        h3 heading h3
+        h4 heading h4
+        h5 heading h5
+        h6 heading h6
+      div.pane.code
+        pre
+          code
+            | h1 heading h1
+            | h2 heading h2
+            | h3 heading h3
+            | h4 heading h4
+            | h5 heading h5
+            | h6 heading h6
+      div.pane.code
+        pre
+          code
+            | &lt;h1>heading h1&lt;h1>
+            | &lt;h2>heading h2&lt;h2>
+            | &lt;h3>heading h3&lt;h3>
+            | &lt;h4>heading h4&lt;h4>
+            | &lt;h5>heading h5&lt;h5>
+            | &lt;h6>heading h6&lt;h6>
 
-      Al ser un desarrollo orientado a crear plantillas, el servidor node que se inicia se queda a la espera de la petición de archivos situados en el directorio public.
+    article
+      h3(id="parrafos") Parrafos
+      +nav('docs-tabs tabs', 
+        [ {link:'#preview', name:"preview"}, 
+          {link:'#jade', name:"jade"}, 
+          {link:'#html', name:"html"}
+        ])
+      div.pane
+        p
+          | Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+          | et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+          | consectetur adipiscing elit.
+          
+      div.pane.code
+        pre
+          code
+          | | Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+          | | et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+          | | consectetur adipiscing elit.
 
-      Si los archivos solicitados tienen la extensión .html, busca su correlación en la carpeta views,en este caso con la extensión .html.jade. 
-      En el caso de existir, busca el mismo archivo en models con la extensión .html.json, compila y devuelte el html solicitado.
-      Al mismo tiempo crea el archivo solicitado en la carpeta public.
+      div.pane.code
+        pre
+          code
+            | &lt;p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+            | et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+            | consectetur adipiscing elit.&lt;/p>
 
-      Si no existiera, intenta encontrarlo en public y en caso de no exitir mostrará un error 404.
+    article
+      h3(id="listas") Listas
+      +nav('docs-tabs tabs', 
+        [ {link:'#preview', name:"preview"}, 
+          {link:'#jade', name:"jade"}
+        ])
+      div.pane
+        ul
+          li Lorem ipsum
+          li Aliquam eu magna augue.
+          li Sed aliquet malesuada egestas.
+          
+      div.pane.code
+        pre
+          code
+            | ul
+            |   li Lorem ipsum
+            |   li Aliquam eu magna augue.
+            |   li Sed aliquet malesuada egestas.
 
-      En el caso de less, se repite la misma mecánica. O sea que el llamado a style.css generaría que se compile less/style.css.less con todos sus include y 
-      devolviera una hoja de estilos única.
-
-      > **NOTA:** Se pueden generar sitios estaticos si no se incluyen las carpetas less y views en el servidor de producción.
+    article
+      h3(id="tablas") Tablas
+      +nav('docs-tabs tabs', 
+        [ {link:'#preview', name:"preview"}, 
+          {link:'#jade', name:"jade"}
+        ])
+      div.pane
+        table: thead
+          tr
+            th Lorem ipsum
+            th Aliquam eu magna augue.
+            th Sed aliquet malesuada egestas.
+          tbody
+            tr
+              td Lorem ipsum
+              td Aliquam eu magna augue.
+              td Sed aliquet malesuada egestas.
+            tr
+              td Lorem ipsum
+              td Aliquam eu magna augue.
+              td Sed aliquet malesuada egestas.
+            tr
+              td Lorem ipsum
+              td Aliquam eu magna augue.
+              td Sed aliquet malesuada egestas.
+          
+      div.pane.code
+        pre
+          code
+            | table: thead
+            |   tr
+            |     th Lorem ipsum
+            |     th Aliquam eu magna augue.
+            |     th Sed aliquet malesuada egestas.
+            |   tbody
+            |   tr
+            |     td Lorem ipsum
+            |     td Aliquam eu magna augue.
+            |     td Sed aliquet malesuada egestas.
+            |   tr
+            |     td Lorem ipsum
+            |     td Aliquam eu magna augue.
+            |     td Sed aliquet malesuada egestas.
+            |   tr
+            |     td Lorem ipsum
+            |     td Aliquam eu magna augue.
+            |     td Sed aliquet malesuada egestas.

@@ -1,7 +1,0 @@
-{
-  "tabs": [ 
-    {"link":"#", "name":"Tab 1", "content":"Este es el contenido del tab 1"},
-    {"link":"#", "name":"Tab 2", "content":"Lorem ipsum 2"},
-    {"link":"#", "name":"Tab 3", "content":"Este es el contenido del tab 3"}
-  ]
-}
