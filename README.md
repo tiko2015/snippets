@@ -9,7 +9,7 @@ En definitiva, es un emulador de MVC pero sin controlador. Esto permite simular 
 los estilos en cualquier proyecto.
 
 También es un generador de sitios estáticos, porque a medida que compila y muestra en tiempo real, crea los archivos html y css que entiende 
-cualquier servidor como apache, ngingx y hasta Microsoft IIS.
+cualquier servidor como apache, nginx y hasta Microsoft IIS.
 
 
 ## Como funciona
