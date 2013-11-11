@@ -82,23 +82,73 @@ block content
 
     article
       h3(id="listas") Listas
-      +nav('docs-tabs tabs', 
-        [ {link:'#preview', name:"preview"}, 
-          {link:'#jade', name:"jade"}
-        ])
-      div.pane
-        ul
-          li Lorem ipsum
-          li Aliquam eu magna augue.
-          li Sed aliquet malesuada egestas.
-          
-      div.pane.code
-        pre
-          code
-            | ul
-            |   li Lorem ipsum
-            |   li Aliquam eu magna augue.
-            |   li Sed aliquet malesuada egestas.
+      h4 Lista desordenada
+      .panels
+        +nav('docs-tabs tabs', 
+          [ {link:'#preview', name:"preview"}, 
+            {link:'#jade', name:"jade"}
+          ])
+        div.pane
+          ul
+            li Lorem ipsum
+            li Aliquam eu magna augue.
+              ul
+                li Lorem ipsum
+                li Aliquam eu magna augue.
+                li Sed aliquet malesuada egestas.
+            li Sed aliquet malesuada egestas.
+            
+        div.pane.code
+          pre
+            code
+              | ul
+              |   li Lorem ipsum
+              |   li Aliquam eu magna augue.
+              |     ul
+              |       li Lorem ipsum
+              |       li Aliquam eu magna augue.
+              |       li Sed aliquet malesuada egestas.
+              |   li Sed aliquet malesuada egestas.
+      h4 Lista ordenada
+      .panels
+        +nav('docs-tabs tabs', 
+          [ {link:'#preview', name:"preview"}, 
+            {link:'#jade', name:"jade"}
+          ])
+        div.pane
+          ol
+            li Lorem ipsum
+            li Aliquam eu magna augue.
+            li Sed aliquet malesuada egestas.
+            
+        div.pane.code
+          pre
+            code
+              | ol
+              |   li Lorem ipsum
+              |   li Aliquam eu magna augue.
+              |   li Sed aliquet malesuada egestas.
+      h4 Lista con descripción
+      .panels
+        +nav('docs-tabs tabs', 
+          [ {link:'#preview', name:"preview"}, 
+            {link:'#jade', name:"jade"}
+          ])
+        div.pane
+          dl
+            dt Lorem ipsum
+            dd Aliquam eu magna augue.
+            dt Sed aliquet malesuada egestas.
+            dd Lorem ipsum dolor, consectetur adipiscing elit.
+            
+        div.pane.code
+          pre
+            code
+              | dl
+              |   dt Lorem ipsum
+              |   dd Aliquam eu magna augue.
+              |   dt Sed aliquet malesuada egestas.
+              |   dd Lorem ipsum dolor, consectetur adipiscing elit.
 
     article
       h3(id="tablas") Tablas
@@ -147,3 +197,35 @@ block content
             |     td Lorem ipsum
             |     td Aliquam eu magna augue.
             |     td Sed aliquet malesuada egestas.
+
+    article
+      h3(id="markdown") Markdown
+      +nav('docs-tabs tabs', 
+        [ {link:'#preview', name:"preview"}, 
+          {link:'#jade', name:"jade"}
+        ])
+      div.pane
+        :markdown
+          # Header h1
+          
+          Aliquam eu magna augue. **Etiam ultrices**, dolor ac consectetur eleifend, justo est, 
+          et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+          consectetur adipiscing elit.
+          
+          - Lorem ipsum
+          - Aliquam eu magna augue.
+          - Sed aliquet malesuada egestas.
+      div.pane.code
+        pre
+          code
+            | :markdown
+            |  
+            |  # Header h1
+            |  
+            |   Aliquam eu magna augue. **Etiam ultrices**, dolor ac consectetur eleifend, justo est, 
+            |   et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+            |   consectetur adipiscing elit.
+            |    
+            |   - Lorem ipsum
+            |   - Aliquam eu magna augue.
+            |   - Sed aliquet malesuada egestas.

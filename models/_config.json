@@ -15,13 +15,14 @@
     {"link":"/docs/#titulos", "anchor":"#titulos", "name":"titulos"},
     {"link":"/docs/#parrafos", "anchor":"#parrafos", "name":"parrafos"},
     {"link":"/docs/#listas", "anchor":"#listas", "name":"listas"},
-    {"link":"/docs/#tablas", "anchor":"#tablas", "name":"tablas"}
+    {"link":"/docs/#tablas", "anchor":"#tablas", "name":"tablas"},
+    {"link":"/docs/#markdown", "anchor":"#markdown", "name":"Markdown"}
   ],
   "elementos": [ 
     {"link":"/docs/elm.html#formularios", "anchor":"#formularios", "name":"formularios"},
     {"link":"/docs/elm.html#galeria", "anchor":"#galeria", "name":"galeria"},
     {"link":"/docs/elm.html#navegacion", "anchor":"#navegacion", "name":"navegación"},
-    {"link":"/docs/elm.html#pasadores", "anchor":"#pasadores", "name":"pasadores"},
+    {"link":"/docs/elm.html#pasador", "anchor":"#pasador", "name":"pasador"},
     {"link":"/docs/elm.html#carrusel", "anchor":"#carrusel", "name":"carrusel"}
   ],
   "documentos": [ 

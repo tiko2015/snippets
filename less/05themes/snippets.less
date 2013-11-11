@@ -52,25 +52,33 @@ body.docs {
       }
     }
   }
-  section { margin:0 20em; color:#fff; 
-    h1, h2, h3, h4, h5, h6, p { color:#fff;}
+  section { margin:0 20em; color:#fff; max-width:600px; min-width:425px;
+    h1, h2, h3, h4, h5, h6, p, ul, ol, dl { color:#fff;}
     blockquote { border-left:5px solid darken(@kuler1, 10%); margin-left:0; padding-left:3em; }
+    #slider, #scrollable { margin:0;}
     .docs-tabs {  border-bottom-color:@kuler2; padding-bottom:3px;
        li a { background:none; color:@kuler4; padding:0.6em 0.6em; margin:0 1.2em;
           &:hover, &:focus { background:none; color:@kuler2;}
           &.current { border:none; border-bottom:3px solid @kuler2;color:@kuler2; }
        }
     }
-    .pane { padding:0.5em; background:darken(@kuler1, 3%);
+    .pane { padding:1em 0.5em; background:darken(@kuler1, 3%);
       &.code { font-family: monospace, serif; 
-        pre { background:none; border-left:none; }
+        pre { background:none; border-left:none; margin:0; }
       }
     }
     a.btn { .mixButton(3, @kuler4, @kuler5); .mixIcon(@icon-download); }
+    a.btn-git { .mixButton(3, @kuler4, @kuler5); .mixIcon(@icon-github-alt); }
+    @media @layout1024 { 
+      margin:0 2em 0 20em
+    }
   }
 }
-footer { margin:2em 20em; text-align:right; 
+footer { margin:2em 20em; text-align:right; clear:both; max-width:600px; min-width:425px;
   a { margin-left:1em;}
+  @media @layout1024 { 
+    margin:0 2em 0 20em
+  }
 }
 
 section#home { color: #fff; 

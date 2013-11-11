@@ -50,7 +50,7 @@ s.parentNode.insertBefore(g,s)}(document,'script'));</script></head><script>$(fu
   });
 });
 
-</script><body class="docs"><header><nav><ul class="nav-site"><li><a href="/">Inicio</a></li><li><a href="/docs/">Documentación</a></li><li><a href="/descargar.html">Descargar</a></li></ul></nav></header><div class="nav-docs"><h2>Snippets</h2><h4>html base</h4><ul class="nav-activo"><li><a href="#titulos">titulos</a></li><li><a href="#parrafos">parrafos</a></li><li><a href="#listas">listas</a></li><li><a href="#tablas">tablas</a></li></ul><h4>elementos</h4><ul class="nav-elemetos"><li><a href="/docs/elm.html#formularios">formularios</a></li><li><a href="/docs/elm.html#galeria">galeria</a></li><li><a href="/docs/elm.html#navegacion">navegación</a></li><li><a href="/docs/elm.html#pasadores">pasadores</a></li><li><a href="/docs/elm.html#carrusel">carrusel</a></li></ul><h4>documetos</h4><ul class="nav-documentos"><li><a href="/docs/docs.html#caracter-sticas">características</a></li><li><a href="/docs/docs.html#recursos-javascript">recursos javascript</a></li><li><a href="/docs/docs.html#recursos-less">recursos less</a></li><li><a href="/docs/docs.html#instalaci-n">instalación</a></li><li><a href="/docs/docs.html#como-funciona">como funciona</a></li><li><a href="/docs/docs.html#instruccion-para-trabajar-con-less-en-snippets">como usar less</a></li><li><a href="/docs/docs.html#jade">como usar jade</a></li></ul></div><script>$('header [href*="docs"]').addClass('active');
+</script><body class="docs"><header><nav><ul class="nav-site"><li><a href="/">Inicio</a></li><li><a href="/docs/">Documentación</a></li><li><a href="/descargar.html">Descargar</a></li></ul></nav></header><div class="nav-docs"><h2>Snippets</h2><h4>html base</h4><ul class="nav-activo"><li><a href="#titulos">titulos</a></li><li><a href="#parrafos">parrafos</a></li><li><a href="#listas">listas</a></li><li><a href="#tablas">tablas</a></li><li><a href="#markdown">Markdown</a></li></ul><h4>elementos</h4><ul class="nav-elemetos"><li><a href="/docs/elm.html#formularios">formularios</a></li><li><a href="/docs/elm.html#galeria">galeria</a></li><li><a href="/docs/elm.html#navegacion">navegación</a></li><li><a href="/docs/elm.html#pasador">pasador</a></li><li><a href="/docs/elm.html#carrusel">carrusel</a></li></ul><h4>documetos</h4><ul class="nav-documentos"><li><a href="/docs/docs.html#caracter-sticas">características</a></li><li><a href="/docs/docs.html#recursos-javascript">recursos javascript</a></li><li><a href="/docs/docs.html#recursos-less">recursos less</a></li><li><a href="/docs/docs.html#instalaci-n">instalación</a></li><li><a href="/docs/docs.html#como-funciona">como funciona</a></li><li><a href="/docs/docs.html#instruccion-para-trabajar-con-less-en-snippets">como usar less</a></li><li><a href="/docs/docs.html#jade">como usar jade</a></li></ul></div><script>$('header [href*="docs"]').addClass('active');
 $(function() {
   $("ul.docs-tabs").tabs("> .pane");
 });</script><section><article><h3 id="titulos">Titulos</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#html">html</a></li></ul><div class="pane"><h1>heading h1</h1><h2>heading h2</h2><h3>heading h3</h3><h4>heading h4</h4><h5>heading h5</h5><h6>heading h6</h6></div><div class="pane code"><pre><code>h1 heading h1
@@ -69,10 +69,21 @@ consectetur adipiscing elit.</p></div><div class="pane code"><pre><code></code>|
 | et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
 | consectetur adipiscing elit.</pre></div><div class="pane code"><pre><code>&lt;p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
 et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
-consectetur adipiscing elit.&lt;/p></code></pre></div></article><article><h3 id="listas">Listas</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><ul><li>Lorem ipsum</li><li>Aliquam eu magna augue.</li><li>Sed aliquet malesuada egestas.</li></ul></div><div class="pane code"><pre><code>ul
+consectetur adipiscing elit.&lt;/p></code></pre></div></article><article><h3 id="listas">Listas</h3><h4>Lista desordenada</h4><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><ul><li>Lorem ipsum</li><li>Aliquam eu magna augue.<ul><li>Lorem ipsum</li><li>Aliquam eu magna augue.</li><li>Sed aliquet malesuada egestas.</li></ul></li><li>Sed aliquet malesuada egestas.</li></ul></div><div class="pane code"><pre><code>ul
   li Lorem ipsum
   li Aliquam eu magna augue.
-  li Sed aliquet malesuada egestas.</code></pre></div></article><article><h3 id="tablas">Tablas</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><table><thead><tr><th>Lorem ipsum</th><th>Aliquam eu magna augue.</th><th>Sed aliquet malesuada egestas.</th></tr><tbody><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr></tbody></thead></table></div><div class="pane code"><pre><code>table: thead
+    ul
+      li Lorem ipsum
+      li Aliquam eu magna augue.
+      li Sed aliquet malesuada egestas.
+  li Sed aliquet malesuada egestas.</code></pre></div></div><h4>Lista ordenada</h4><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><ol><li>Lorem ipsum</li><li>Aliquam eu magna augue.</li><li>Sed aliquet malesuada egestas.</li></ol></div><div class="pane code"><pre><code>ol
+  li Lorem ipsum
+  li Aliquam eu magna augue.
+  li Sed aliquet malesuada egestas.</code></pre></div></div><h4>Lista con descripción</h4><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><dl><dt>Lorem ipsum</dt><dd>Aliquam eu magna augue.</dd><dt>Sed aliquet malesuada egestas.</dt><dd>Lorem ipsum dolor, consectetur adipiscing elit.</dd></dl></div><div class="pane code"><pre><code>dl
+  dt Lorem ipsum
+  dd Aliquam eu magna augue.
+  dt Sed aliquet malesuada egestas.
+  dd Lorem ipsum dolor, consectetur adipiscing elit.</code></pre></div></div></article><article><h3 id="tablas">Tablas</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><table><thead><tr><th>Lorem ipsum</th><th>Aliquam eu magna augue.</th><th>Sed aliquet malesuada egestas.</th></tr><tbody><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr></tbody></thead></table></div><div class="pane code"><pre><code>table: thead
   tr
     th Lorem ipsum
     th Aliquam eu magna augue.
@@ -89,4 +100,23 @@ consectetur adipiscing elit.&lt;/p></code></pre></div></article><article><h3 id=
   tr
     td Lorem ipsum
     td Aliquam eu magna augue.
-    td Sed aliquet malesuada egestas.</code></pre></div></article></section><footer><p>Creado por Jonathan Katz <a href="https://github.com/tiko2015/">github </a> <a href="http://www.linkedin.com/in/jokatz">linkedin</a></p></footer></body></html>
+    td Sed aliquet malesuada egestas.</code></pre></div></article><article><h3 id="markdown">Markdown</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><h1 id="header-h1">Header h1</h1>
+<p>Aliquam eu magna augue. <strong>Etiam ultrices</strong>, dolor ac consectetur eleifend, justo est, 
+et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+consectetur adipiscing elit.</p>
+<ul>
+<li>Lorem ipsum</li>
+<li>Aliquam eu magna augue.</li>
+<li>Sed aliquet malesuada egestas.</li>
+</ul>
+</div><div class="pane code"><pre><code>:markdown
+ 
+ # Header h1
+ 
+  Aliquam eu magna augue. **Etiam ultrices**, dolor ac consectetur eleifend, justo est, 
+  et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+  consectetur adipiscing elit.
+   
+  - Lorem ipsum
+  - Aliquam eu magna augue.
+  - Sed aliquet malesuada egestas.</code></pre></div></article></section><footer><p>Desarrollado por Jonathan Katz <a href="https://github.com/tiko2015/">github </a> <a href="http://www.linkedin.com/in/jokatz">linkedin</a></p></footer></body></html>

@@ -21,129 +21,334 @@ block nav
 block content
   section
     article
-      h3(id="titulos") Titulos
+      h3(id="formularios") Formularios
+      h4 Formulario horizontal
+      .panels
+        +nav('docs-tabs tabs', 
+          [ {link:'#preview', name:"preview"}, 
+            {link:'#jade', name:"jade"}, 
+            {link:'#less', name:"less"}
+          ])
+        div.pane
+          form.hform
+            p: +formInput('text', 'nombre', 'Nombre', '')
+            p: +formInput('text', 'email', 'Correo', '')
+            p: +formSelect(
+              'asunto', 'Pais', [
+                {'name':'Argentina','value':'ar'},
+                {'name':'Brasil','value':'br'}, 
+                {'name':'Uruguay','value':'uy'}
+              ]
+            )
+            p: +formTextarea('Mensaje', 'mensaje', '')
+            p.checkbox: +formRadio('sexo', [{'label':'Hombre','value':'h'},{'label':'Mujer','value':'m'}])
+            p.checkbox: +formCheckbox('info', 'Acepto los términos y condiciones', '1')
+            p: button.button-big Enviar
+        div.pane.code
+          pre
+            code
+              | form.hform
+              |   p: +formInput('text', 'nombre', 'Nombre', '')
+              |   p: +formInput('text', 'email', 'Correo', '')
+              |   p: +formSelect(
+              |     'asunto', 'Pais', [
+              |       {'name':'Argentina','value':'ar'},
+              |       {'name':'Brasil','value':'br'}, 
+              |       {'name':'Uruguay','value':'uy'}
+              |     ]
+              |   )
+              |   p: +formTextarea('Mensaje', 'mensaje', '')
+              |   p.checkbox: +formRadio(
+              |     'sexo', 
+              |     [{'label':'Hombre','value':'h'},{'label':'Mujer','value':'m'}]
+              |   )
+              |   p.checkbox: +formCheckbox('info', 'Acepto los términos y condiciones', '1')
+              |   p: button.button-big Enviar
+        div.pane.code
+          pre
+            code
+              | [class*="button"] { .mixButton(); }
+              | .button-big { .mixButtonSize(2.4); }
+              | form.hform  { .mixFormHorizontal(); }
+
+      h4 Formulario vertical
+      .panels
+        +nav('docs-tabs tabs', 
+          [ {link:'#preview', name:"preview"}, 
+            {link:'#jade', name:"jade"}, 
+            {link:'#less', name:"less"}
+          ])
+        div.pane
+          form.vform
+            p: +formInput('text', 'nombre', 'Nombre', '')
+            p: +formInput('text', 'email', 'Correo', '')
+            p: +formSelect(
+              'asunto', 'Pais', [
+                {'name':'Argentina','value':'ar'},
+                {'name':'Brasil','value':'br'}, 
+                {'name':'Uruguay','value':'uy'}
+              ]
+            )
+            p: +formTextarea('Mensaje', 'mensaje', '')
+            p.checkbox: +formRadio('sexo', [{'label':'Hombre','value':'h'},{'label':'Mujer','value':'m'}])
+            p.checkbox: +formCheckbox('info', 'Acepto los términos y condiciones', '1')
+            p: button.button-big Enviar
+        div.pane.code
+          pre
+            code
+              | form.vform
+              |   p: +formInput('text', 'nombre', 'Nombre', '')
+              |   p: +formInput('text', 'email', 'Correo', '')
+              |   p: +formSelect(
+              |     'asunto', 'Pais', [
+              |       {'name':'Argentina','value':'ar'},
+              |       {'name':'Brasil','value':'br'}, 
+              |       {'name':'Uruguay','value':'uy'}
+              |     ]
+              |   )
+              |   p: +formTextarea('Mensaje', 'mensaje', '')
+              |   p.checkbox: +formRadio(
+              |     'sexo', 
+              |     [{'label':'Hombre','value':'h'},{'label':'Mujer','value':'m'}]
+              |   )
+              |   p.checkbox: +formCheckbox('info', 'Acepto los términos y condiciones', '1')
+              |   p: button.button-big Enviar
+        div.pane.code
+          pre
+            code
+              | [class*="button"] { .mixButton(); }
+              | .button-big { .mixButtonSize(2.4); }
+              | form.vform  { .mixFormVertical(); }
+ 
+      h4 Alertas
+      .panels
+        +nav('docs-tabs tabs', 
+          [ {link:'#preview', name:"preview"}, 
+            {link:'#jade', name:"jade"}, 
+            {link:'#less', name:"less"}
+          ])
+        div.pane
+          .alert-box.alert-error
+            span Error:
+            |  Reemplaza esta alerta por tu HTML.
+          .alert-box.alert-success
+            span Success:
+            |  Reemplaza esta alerta por tu HTML.
+          .alert-box.alert-warning
+            span Warning:
+            |  Reemplaza esta alerta por tu HTML.
+          .alert-box.alert-notice
+            span Notice:
+            |  Reemplaza esta alerta por tu HTML.
+        div.pane.code
+          pre
+            code
+              | .alert-box.alert-error
+              |   span Error:
+              |   |  Reemplaza esta alerta por tu HTML.
+              | .alert-box.alert-success
+              |   span Success:
+              |   |  Reemplaza esta alerta por tu HTML.
+              | .alert-box.alert-warning
+              |   span Warning:
+              |   |  Reemplaza esta alerta por tu HTML.
+              | .alert-box.alert-notice
+              |   span Notice:
+              |   |  Reemplaza esta alerta por tu HTML.
+        div.pane.code
+          pre
+            code
+              | .alert-box { 
+              |   &[class*="error"]   { .alertBox(@errorColor); }
+              |   &[class*="success"] { .alertBox(@successColor); }
+              |   &[class*="warning"] { .alertBox(@warningColor); }
+              |   &[class*="notice"]  { .alertBox(@noticeColor); }
+              | }
+ 
+ 
+ 
+    article
+      h3(id="galeria") Galería
       +nav('docs-tabs tabs', 
         [ {link:'#preview', name:"preview"}, 
           {link:'#jade', name:"jade"}, 
-          {link:'#html', name:"html"}
+          {link:'#json', name:"json"},
+          {link:'#less', name:"less"}
         ])
       div.pane
-        h1 heading h1
-        h2 heading h2
-        h3 heading h3
-        h4 heading h4
-        h5 heading h5
-        h6 heading h6
-      div.pane.code
-        pre
-          code
-            | h1 heading h1
-            | h2 heading h2
-            | h3 heading h3
-            | h4 heading h4
-            | h5 heading h5
-            | h6 heading h6
-      div.pane.code
-        pre
-          code
-            | &lt;h1>heading h1&lt;h1>
-            | &lt;h2>heading h2&lt;h2>
-            | &lt;h3>heading h3&lt;h3>
-            | &lt;h4>heading h4&lt;h4>
-            | &lt;h5>heading h5&lt;h5>
-            | &lt;h6>heading h6&lt;h6>
-
-    article
-      h3(id="parrafos") Parrafos
-      +nav('docs-tabs tabs', 
-        [ {link:'#preview', name:"preview"}, 
-          {link:'#jade', name:"jade"}, 
-          {link:'#html', name:"html"}
-        ])
-      div.pane
-        p
-          | Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
-          | et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
-          | consectetur adipiscing elit.
+        +gallery(6, content.gallery)
           
       div.pane.code
         pre
           code
-          | | Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
-          | | et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
-          | | consectetur adipiscing elit.
+          | +gallery(6, content.gallery)
 
       div.pane.code
         pre
           code
-            | &lt;p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
-            | et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
-            | consectetur adipiscing elit.&lt;/p>
+            | {
+            |  "gallery": [
+            |    "/media/upload/1.jpeg",
+            |    "/media/upload/2.jpeg",
+            |    "/media/upload/3.jpeg",
+            |    "/media/upload/4.jpeg",
+            |    "/media/upload/5.jpeg",
+            |    "/media/upload/6.jpeg",
+            |    "/media/upload/1.jpeg",
+            |    "/media/upload/2.jpeg",
+            |    "/media/upload/3.jpeg",
+            |    "/media/upload/4.jpeg",
+            |    "/media/upload/5.jpeg",
+            |    "/media/upload/6.jpeg"
+            |  ]
+            | }
 
-    article
-      h3(id="listas") Listas
-      +nav('docs-tabs tabs', 
-        [ {link:'#preview', name:"preview"}, 
-          {link:'#jade', name:"jade"}
-        ])
-      div.pane
-        ul
-          li Lorem ipsum
-          li Aliquam eu magna augue.
-          li Sed aliquet malesuada egestas.
-          
       div.pane.code
         pre
           code
-            | ul
-            |   li Lorem ipsum
-            |   li Aliquam eu magna augue.
-            |   li Sed aliquet malesuada egestas.
+          | .gallery6  { .mixGallery(@column:6); }
 
     article
-      h3(id="tablas") Tablas
-      +nav('docs-tabs tabs', 
-        [ {link:'#preview', name:"preview"}, 
-          {link:'#jade', name:"jade"}
-        ])
-      div.pane
-        table: thead
-          tr
-            th Lorem ipsum
-            th Aliquam eu magna augue.
-            th Sed aliquet malesuada egestas.
-          tbody
-            tr
-              td Lorem ipsum
-              td Aliquam eu magna augue.
-              td Sed aliquet malesuada egestas.
-            tr
-              td Lorem ipsum
-              td Aliquam eu magna augue.
-              td Sed aliquet malesuada egestas.
-            tr
-              td Lorem ipsum
-              td Aliquam eu magna augue.
-              td Sed aliquet malesuada egestas.
-          
-      div.pane.code
-        pre
-          code
-            | table: thead
-            |   tr
-            |     th Lorem ipsum
-            |     th Aliquam eu magna augue.
-            |     th Sed aliquet malesuada egestas.
-            |   tbody
-            |   tr
-            |     td Lorem ipsum
-            |     td Aliquam eu magna augue.
-            |     td Sed aliquet malesuada egestas.
-            |   tr
-            |     td Lorem ipsum
-            |     td Aliquam eu magna augue.
-            |     td Sed aliquet malesuada egestas.
-            |   tr
-            |     td Lorem ipsum
-            |     td Aliquam eu magna augue.
-            |     td Sed aliquet malesuada egestas.
+      h3(id="navegacion") Navegación
+      h4 Navegación vertical
+      .panels
+        +nav('docs-tabs tabs', 
+          [ {link:'#preview', name:"preview"}, 
+            {link:'#jade', name:"jade"}, 
+            {link:'#json', name:"json"},
+            {link:'#less', name:"less"}
+          ])      
+        .pane
+          +nav('nav-vertical', [{link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}])
+            
+        .pane.code
+          pre
+            code
+            | +nav('nav-vertical', content.nav)
+
+        .pane.code
+          pre
+            code
+              | {
+              |  "nav": [ 
+              |     {link:'#', name:'Lorem'}, 
+              |     {link:'#', name:'Lorem'}, 
+              |     {link:'#', name:'Lorem'}, 
+              |     {link:'#', name:'Lorem'}
+              |   ]
+              | }
+
+        .pane.code
+          pre
+            code
+            | .nav-vertical       { .verticalNav(); }
+            | // tambien podés probar definir los colores asi:
+            | .nav-vertical-light { .verticalNav(@kuler2, @kuler1); }
+      h4 Navegación horizontal
+      .panels
+        +nav('docs-tabs tabs', 
+          [ {link:'#preview', name:"preview"}, 
+            {link:'#jade', name:"jade"}, 
+            {link:'#json', name:"json"},
+            {link:'#less', name:"less"}
+          ])      
+        .pane
+          +nav('nav', [{link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}, {link:'#', name:'Lorem'}])
+            
+        .pane.code
+          pre
+            code
+            | +nav('nav', content.nav)
+
+        .pane.code
+          pre
+            code
+              | {
+              |  "nav": [ 
+              |     {link:'#', name:'Lorem'}, 
+              |     {link:'#', name:'Lorem'}, 
+              |     {link:'#', name:'Lorem'}, 
+              |     {link:'#', name:'Lorem'}
+              |   ]
+              | }
+
+        .pane.code
+          pre
+            code
+            | .nav                { .horizontalNav(); }
+            | .nav-light          { .horizontalNav(@kuler2, @kuler1); }
+
+    article
+      h3(id="Pasador") Pasador
+      .panels
+        +nav('docs-tabs tabs', 
+          [ {link:'#preview', name:"preview"}, 
+            {link:'#jade', name:"jade"}, 
+            {link:'#json', name:"json"},
+            {link:'#less', name:"less"}
+          ])      
+        .pane
+          +slider(content.slides)
+            
+        .pane.code
+          pre
+            code
+            | +slider(content.slides)
+
+        .pane.code
+          pre
+            code
+              | {
+              |  "slides": [ 
+              |     "/media/upload/1_big.jpeg", 
+              |     "/media/upload/2_big.jpeg", 
+              |     "/media/upload/3_big.jpeg"
+              |   ]
+              | }
+
+        .pane.code
+          pre
+            code
+            | .slider   { .flexslider(); }
+
+    article
+      h3(id="carrusel") Carrusel
+      .panels
+        +nav('docs-tabs tabs', 
+          [ {link:'#preview', name:"preview"}, 
+            {link:'#jade', name:"jade"}, 
+            {link:'#json', name:"json"},
+            {link:'#less', name:"less"}
+          ])      
+        .pane
+          +carousel(content.thumbs)
+            
+        .pane.code
+          pre
+            code
+            | +carousel(content.thumbs)
+
+        .pane.code
+          pre
+            code
+              | {
+              |   "thumbs": [
+              |     "/media/upload/1.jpeg", 
+              |     "/media/upload/2.jpeg", 
+              |     "/media/upload/3.jpeg", 
+              |     "/media/upload/4.jpeg", 
+              |     "/media/upload/5.jpeg", 
+              |     "/media/upload/6.jpeg",
+              |     "/media/upload/1.jpeg", 
+              |     "/media/upload/2.jpeg", 
+              |     "/media/upload/3.jpeg", 
+              |     "/media/upload/4.jpeg", 
+              |     "/media/upload/5.jpeg", 
+              |     "/media/upload/6.jpeg"
+              |   ]
+              | }
+
+        .pane.code
+          pre
+            code
+            | .carousel { .carousel(); }
