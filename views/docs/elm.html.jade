@@ -1,0 +1,149 @@
+extends ../_layouts/docs
+
+block nav
+  .nav-docs
+    h2 Snippets
+    h4 html base
+    +nav('nav-elemetos', config.htmlbase)
+    h4 elementos
+    ul.nav-activo
+      - each item in config.elementos
+        li
+          a(href=item.anchor)= item.name
+    h4 documetos
+    +nav('nav-documentos', config.documentos)
+
+  script.
+    $('header [href*="docs"]').addClass('active');
+    $(function() {
+      $("ul.docs-tabs").tabs("> .pane");
+    });
+block content
+  section
+    article
+      h3(id="titulos") Titulos
+      +nav('docs-tabs tabs', 
+        [ {link:'#preview', name:"preview"}, 
+          {link:'#jade', name:"jade"}, 
+          {link:'#html', name:"html"}
+        ])
+      div.pane
+        h1 heading h1
+        h2 heading h2
+        h3 heading h3
+        h4 heading h4
+        h5 heading h5
+        h6 heading h6
+      div.pane.code
+        pre
+          code
+            | h1 heading h1
+            | h2 heading h2
+            | h3 heading h3
+            | h4 heading h4
+            | h5 heading h5
+            | h6 heading h6
+      div.pane.code
+        pre
+          code
+            | &lt;h1>heading h1&lt;h1>
+            | &lt;h2>heading h2&lt;h2>
+            | &lt;h3>heading h3&lt;h3>
+            | &lt;h4>heading h4&lt;h4>
+            | &lt;h5>heading h5&lt;h5>
+            | &lt;h6>heading h6&lt;h6>
+
+    article
+      h3(id="parrafos") Parrafos
+      +nav('docs-tabs tabs', 
+        [ {link:'#preview', name:"preview"}, 
+          {link:'#jade', name:"jade"}, 
+          {link:'#html', name:"html"}
+        ])
+      div.pane
+        p
+          | Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+          | et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+          | consectetur adipiscing elit.
+          
+      div.pane.code
+        pre
+          code
+          | | Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+          | | et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+          | | consectetur adipiscing elit.
+
+      div.pane.code
+        pre
+          code
+            | &lt;p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+            | et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+            | consectetur adipiscing elit.&lt;/p>
+
+    article
+      h3(id="listas") Listas
+      +nav('docs-tabs tabs', 
+        [ {link:'#preview', name:"preview"}, 
+          {link:'#jade', name:"jade"}
+        ])
+      div.pane
+        ul
+          li Lorem ipsum
+          li Aliquam eu magna augue.
+          li Sed aliquet malesuada egestas.
+          
+      div.pane.code
+        pre
+          code
+            | ul
+            |   li Lorem ipsum
+            |   li Aliquam eu magna augue.
+            |   li Sed aliquet malesuada egestas.
+
+    article
+      h3(id="tablas") Tablas
+      +nav('docs-tabs tabs', 
+        [ {link:'#preview', name:"preview"}, 
+          {link:'#jade', name:"jade"}
+        ])
+      div.pane
+        table: thead
+          tr
+            th Lorem ipsum
+            th Aliquam eu magna augue.
+            th Sed aliquet malesuada egestas.
+          tbody
+            tr
+              td Lorem ipsum
+              td Aliquam eu magna augue.
+              td Sed aliquet malesuada egestas.
+            tr
+              td Lorem ipsum
+              td Aliquam eu magna augue.
+              td Sed aliquet malesuada egestas.
+            tr
+              td Lorem ipsum
+              td Aliquam eu magna augue.
+              td Sed aliquet malesuada egestas.
+          
+      div.pane.code
+        pre
+          code
+            | table: thead
+            |   tr
+            |     th Lorem ipsum
+            |     th Aliquam eu magna augue.
+            |     th Sed aliquet malesuada egestas.
+            |   tbody
+            |   tr
+            |     td Lorem ipsum
+            |     td Aliquam eu magna augue.
+            |     td Sed aliquet malesuada egestas.
+            |   tr
+            |     td Lorem ipsum
+            |     td Aliquam eu magna augue.
+            |     td Sed aliquet malesuada egestas.
+            |   tr
+            |     td Lorem ipsum
+            |     td Aliquam eu magna augue.
+            |     td Sed aliquet malesuada egestas.

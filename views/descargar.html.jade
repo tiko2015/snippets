@@ -1,0 +1,16 @@
+extends _layouts/docs
+block nav
+  script.
+    $('header [href*="descargar.html"]').addClass('active');
+block content
+  section
+    h1 Snippets
+    h2 Sistema integral de desarrollo frontend
+    
+    h3 Clonar desde github:
+    pre
+      code git clone code https://github.com/tiko2015/snippets.git
+    h3 Descargar .zip
+    p 
+      a.btn(href="https://github.com/tiko2015/snippets/archive/master.zip") Descargar
+      

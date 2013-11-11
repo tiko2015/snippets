@@ -1,0 +1,42 @@
+extends ../_layouts/default
+block nav
+  header#header
+    h1.logo= config.page.title
+  +nav('nav', config.nav)
+  +nav('nav-light', config.navejemplos)
+
+block content
+  .wrapper
+    section#content.span7
+      h3 Form horizontal
+      form.hform
+        p: +formInput('text', 'nombre', 'Nombre', '')
+        p: +formInput('text', 'email', 'Correo', '')
+        p: +formSelect('asunto', 'Pais', [{'name':'Argentina','value':'ar'},{'name':'Brasil','value':'br'}, {'name':'Uruguay','value':'uy'}])
+        p: +formTextarea('Mensaje', 'mensaje', '')
+        p.checkbox: +formRadio('sexo', [{'label':'Hombre','value':'h'},{'label':'Mujer','value':'m'}])
+        p.checkbox: +formCheckbox('info', 'Acepto los términos y condiciones', '1')
+        p: button.button-big Enviar
+    section#content.span5
+      h3 Form vertical
+      form.vform
+        p: +formInput('text', 'nombre', 'Nombre', '')
+        p: +formInput('text', 'email', 'Correo', '')
+        p: +formSelect('asunto', 'Pais', [{'name':'Argentina','value':'ar'},{'name':'Brasil','value':'br'}, {'name':'Uruguay','value':'uy'}])
+        p: +formTextarea('Mensaje', 'mensaje', '')
+        p.checkbox: +formRadio('sexo', [{'label':'Hombre','value':'h'},{'label':'Mujer','value':'m'}])
+        p.checkbox: +formCheckbox('info', 'Acepto los términos y condiciones', '1')
+        p: button.button-big Enviar
+    section.span12
+      .alert-box.alert-error
+        span Error:
+        |  Reemplaza esta alerta por tu HTML.
+      .alert-box.alert-success
+        span Success:
+        |  Reemplaza esta alerta por tu HTML.
+      .alert-box.alert-warning
+        span Warning:
+        |  Reemplaza esta alerta por tu HTML.
+      .alert-box.alert-notice
+        span Notice:
+        |  Reemplaza esta alerta por tu HTML.

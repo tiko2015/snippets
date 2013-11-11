@@ -1,0 +1,14 @@
+include elements/gallery
+include elements/forms
+include elements/slider
+include elements/nav
+!!! 5
+html(lang="en")
+  include includes/head_snippets
+  body
+    
+    header
+      nav
+        +nav('nav-site', config.nav)
+    block content
+    include includes/foot_snippets
