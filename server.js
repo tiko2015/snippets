@@ -84,7 +84,7 @@ function requestHandler(req, res) {
       if (err) return appError(err, res);   
       try {
         var config = jsonlint.parse(configFile);
-        jade.renderFile(jadeFileName, { content:options, config:config }, function (err, html) {
+        jade.renderFile(jadeFileName, { content:options, config:config, pretty: 1 }, function (err, html) {
           if (err) return appError(err, res);   
           res.setHeader('Content-Type', 'text/html; charset=utf-8');
           res.end(html);
