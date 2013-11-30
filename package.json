@@ -1,6 +1,6 @@
 {
   "name": "snippets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "framework html y css basado en jade y less",
   "main": "server.js",
   "scripts": {
