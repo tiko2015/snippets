@@ -3,6 +3,8 @@ mixin nav(style, items)
     - each item in items
       li
         a(href=item.link)= item.name
+        - if(item.nav)
+          +nav('subnav', item.nav)
 
 mixin tabs(items)
   +nav('tabs',items)
