@@ -1,1 +1,40 @@
-{}
+{
+  "tabs": [ 
+    {"link":"#", "name":"Tab 1", "content":"Este es el contenido del tab 1"},
+    {"link":"#", "name":"Tab 2", "content":"Lorem ipsum 2"},
+    {"link":"#", "name":"Tab 3", "content":"Este es el contenido del tab 3"}
+  ],
+  "gallery": [
+    "/media/upload/1.jpeg",
+    "/media/upload/2.jpeg",
+    "/media/upload/3.jpeg",
+    "/media/upload/4.jpeg",
+    "/media/upload/5.jpeg",
+    "/media/upload/6.jpeg",
+    "/media/upload/1.jpeg",
+    "/media/upload/2.jpeg",
+    "/media/upload/3.jpeg",
+    "/media/upload/4.jpeg",
+    "/media/upload/5.jpeg",
+    "/media/upload/6.jpeg"
+  ],
+  "slides": [
+    "/media/upload/1_big.jpeg", 
+    "/media/upload/2_big.jpeg", 
+    "/media/upload/3_big.jpeg"
+  ],
+  "thumbs": [
+    "/media/upload/1.jpeg", 
+    "/media/upload/2.jpeg", 
+    "/media/upload/3.jpeg", 
+    "/media/upload/4.jpeg", 
+    "/media/upload/5.jpeg", 
+    "/media/upload/6.jpeg",
+    "/media/upload/1.jpeg", 
+    "/media/upload/2.jpeg", 
+    "/media/upload/3.jpeg", 
+    "/media/upload/4.jpeg", 
+    "/media/upload/5.jpeg", 
+    "/media/upload/6.jpeg"
+  ]
+}

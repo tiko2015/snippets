@@ -12,27 +12,27 @@
     {"link":"/examples/tools.html", "name":"Herramientas"}
   ],
   "htmlbase": [ 
-    {"link":"/docs/#titulos", "anchor":"#titulos", "name":"titulos"},
-    {"link":"/docs/#parrafos", "anchor":"#parrafos", "name":"parrafos"},
-    {"link":"/docs/#listas", "anchor":"#listas", "name":"listas"},
-    {"link":"/docs/#tablas", "anchor":"#tablas", "name":"tablas"},
-    {"link":"/docs/#markdown", "anchor":"#markdown", "name":"Markdown"}
+    {"link":"#titulos", "name":"titulos"},
+    {"link":"#parrafos", "name":"parrafos"},
+    {"link":"#listas", "name":"listas"},
+    {"link":"#tablas", "name":"tablas"},
+    {"link":"#markdown", "name":"Markdown"}
   ],
   "elementos": [ 
-    {"link":"/docs/elm.html#formularios", "anchor":"#formularios", "name":"formularios"},
-    {"link":"/docs/elm.html#galeria", "anchor":"#galeria", "name":"galeria"},
-    {"link":"/docs/elm.html#navegacion", "anchor":"#navegacion", "name":"navegación"},
-    {"link":"/docs/elm.html#pasador", "anchor":"#pasador", "name":"pasador"},
-    {"link":"/docs/elm.html#carrusel", "anchor":"#carrusel", "name":"carrusel"}
+    {"link":"#formularios", "name":"formularios"},
+    {"link":"#galeria", "name":"galeria"},
+    {"link":"#navegacion", "name":"navegación"},
+    {"link":"#pasador", "name":"pasador"},
+    {"link":"#carrusel", "name":"carrusel"}
   ],
   "documentos": [ 
-    {"link":"/docs/docs.html#caracter-sticas", "anchor":"#caracter-sticas", "name":"características"},
-    {"link":"/docs/docs.html#recursos-javascript", "anchor":"#recursos-javascript", "name":"recursos javascript"},
-    {"link":"/docs/docs.html#recursos-less", "anchor":"#recursos-less", "name":"recursos less"},
-    {"link":"/docs/docs.html#instalaci-n", "anchor":"#instalaci-n", "name":"instalación"},
-    {"link":"/docs/docs.html#como-funciona", "anchor":"#como-funciona", "name":"como funciona"},
-    {"link":"/docs/docs.html#instruccion-para-trabajar-con-less-en-snippets", "anchor":"#instruccion-para-trabajar-con-less-en-snippets", "name":"como usar less"},
-    {"link":"/docs/docs.html#jade", "anchor":"#jade", "name":"como usar jade"}
+    {"link":"#caracter-sticas", "name":"características"},
+    {"link":"#recursos-javascript", "name":"recursos javascript"},
+    {"link":"#recursos-less", "name":"recursos less"},
+    {"link":"#instalaci-n", "name":"instalación"},
+    {"link":"#como-funciona", "name":"como funciona"},
+    {"link":"#instruccion-para-trabajar-con-less-en-snippets", "name":"como usar less"},
+    {"link":"#jade", "name":"como usar jade"}
   ],
   "user": {
     "name": "User Name",
