@@ -1,26 +1,26 @@
-extends _layouts/docs
+extends ../_layouts/docs_es
 block nav
   script.
     $('header [href*="descargar.html"]').addClass('active');
 block content
   section
     h1 Snippets
-    h2 Front End Integrated Development System
+    h2 Sistema integral de desarrollo frontend
     
-    h3 Clone from github:
+    h3 Clonar desde github:
     pre
       code $ git clone code https://github.com/tiko2015/snippets.git
 
     .span6.span-768-12
-      h3 Go to repository
+      h3 Ir al repositorio
       p 
-        a.btn-git(href="https://github.com/tiko2015/snippets") Repository
+        a.btn-git(href="https://github.com/tiko2015/snippets") Repositorio
     .span6.span-768-12
-      h3 Download .zip
+      h3 Descargar .zip
       p 
-        a.btn(href="https://github.com/tiko2015/snippets/archive/master.zip") Download
+        a.btn(href="https://github.com/tiko2015/snippets/archive/master.zip") Descargar
     .span12
-      h3 Quick install:
+      h3 Instalación rápida:
       pre
         code $ git clone https://github.com/tiko2015/snippets.git
           | $ cd snippets

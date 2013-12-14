@@ -1,8 +1,9 @@
 {
   "nav": [ 
-    {"link":"/", "name":"Inicio"},
-    {"link":"/docs/", "name":"Documentación"},
-    {"link":"/descargar.html", "name":"Descargar"}
+    {"link":"/", "name":"Home"},
+    {"link":"/docs/", "name":"Documentation"},
+    {"link":"/descargar.html", "name":"Download"},
+    {"link":"/es/#lang", "name":"Español"}
   ],
   "navejemplos": [ 
     {"link":"/examples/article.html", "name":"Textos"},
@@ -12,27 +13,27 @@
     {"link":"/examples/tools.html", "name":"Herramientas"}
   ],
   "htmlbase": [ 
-    {"link":"#titulos", "name":"titulos"},
-    {"link":"#parrafos", "name":"parrafos"},
-    {"link":"#listas", "name":"listas"},
-    {"link":"#tablas", "name":"tablas"},
-    {"link":"#markdown", "name":"Markdown"}
+    {"link":"#heading", "name":"heading"},
+    {"link":"#paragraph", "name":"paragraph"},
+    {"link":"#list", "name":"list"},
+    {"link":"#tables", "name":"tables"},
+    {"link":"#markdown", "name":"markdown"}
   ],
   "elementos": [ 
-    {"link":"#formularios", "name":"formularios"},
-    {"link":"#galeria", "name":"galeria"},
-    {"link":"#navegacion", "name":"navegación"},
-    {"link":"#pasador", "name":"pasador"},
+    {"link":"#forms", "name":"forms"},
+    {"link":"#gallery", "name":"gallery"},
+    {"link":"#navigation", "name":"navigation"},
+    {"link":"#slider", "name":"slider"},
     {"link":"#carrusel", "name":"carrusel"}
   ],
   "documentos": [ 
-    {"link":"#caracter-sticas", "name":"características"},
-    {"link":"#recursos-javascript", "name":"recursos javascript"},
-    {"link":"#recursos-less", "name":"recursos less"},
-    {"link":"#instalaci-n", "name":"instalación"},
-    {"link":"#como-funciona", "name":"como funciona"},
-    {"link":"#instruccion-para-trabajar-con-less-en-snippets", "name":"como usar less"},
-    {"link":"#jade", "name":"como usar jade"}
+    {"link":"#characteristics", "name":"characteristics"},
+    {"link":"#javascript-resources", "name":"javascript resources"},
+    {"link":"#less-resources", "name":"less resources"},
+    {"link":"#installation", "name":"installation"},
+    {"link":"#how-does-it-work-", "name":"how does it work?"},
+    {"link":"#how-to-work-with-less-in-snippets", "name":"how to work with less"},
+    {"link":"#jade", "name":"jade"}
   ],
   "user": {
     "name": "User Name",
@@ -42,5 +43,40 @@
   "page": {
     "title": "snippets",
     "decription": "framework frontend: nodejs + jade + less"
+  },
+  "es": {
+    "nav": [ 
+      {"link":"/es", "name":"Inicio"},
+      {"link":"/es/docs/", "name":"Documentación"},
+      {"link":"/es/descargar.html", "name":"Descargar"},
+      {"link":"/#lang", "name":"English"}
+    ],
+    "htmlbase": [ 
+      {"link":"#titulos", "name":"titulos"},
+      {"link":"#parrafos", "name":"parrafos"},
+      {"link":"#listas", "name":"listas"},
+      {"link":"#tablas", "name":"tablas"},
+      {"link":"#markdown", "name":"Markdown"}
+    ],
+    "elementos": [ 
+      {"link":"#formularios", "name":"formularios"},
+      {"link":"#galeria", "name":"galeria"},
+      {"link":"#navegacion", "name":"navegación"},
+      {"link":"#pasador", "name":"pasador"},
+      {"link":"#carrusel", "name":"carrusel"}
+    ],
+    "documentos": [ 
+      {"link":"#caracter-sticas", "name":"características"},
+      {"link":"#recursos-javascript", "name":"recursos javascript"},
+      {"link":"#recursos-less", "name":"recursos less"},
+      {"link":"#instalaci-n", "name":"instalación"},
+      {"link":"#como-funciona", "name":"como funciona"},
+      {"link":"#instruccion-para-trabajar-con-less-en-snippets", "name":"como usar less"},
+      {"link":"#jade", "name":"como usar jade"}
+    ],
+    "page": {
+      "title": "snippets",
+      "decription": "framework frontend: nodejs + jade + less"
+    }
   }
 }

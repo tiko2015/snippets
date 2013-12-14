@@ -1,20 +1,19 @@
 :markdown
 
-  ## Características
+  ## Characteristics
   
   - HTML5 y CSS3
-  - Responsive o Adaptive según la necesidad.
-  - Configurable.
-  - Construido en less para desarrollar en less.
-  - Sin classes predefinidas.
-  - Ordenado y extensible.
-  - Sin código basura.
-  - Fácil de aprender
-  - Incluye librerías js para formularios, modales, slider, tooltips tabs y más.
-  - El css base compilado pesa solo 7.4k.
+  - Responsive or Adaptive based on need. 
+  - Configurable. 
+  - Built on Less so you can develop on Less. 
+  - Without pre defined classes
+  - Ordained and Extendible
+  - No Junk Codes
+  - Easy to learn 
+  - It includes a JS library for forms, modales, sliders, tooltips tabs and more
+  - The CSS base compilator weighs only 7.4k
 
-
-  ## Recursos javascript
+  ## JavaScript Resources
 
   - [jQuery](http://jquery.com/)
   - [jQuery tools](http://jquerytools.org) (incluye: Tabs, Tooltip, Form Tools, Toolbox.)
@@ -23,181 +22,196 @@
   - [less](http://lesscss.org/)
   - [jade](http://jade-lang.com)
 
-  ## Recursos less
+  ## Less Resources
 
-  - Variables de entorno
-      - Colores 
-      - Fuentes
-      - Ruta del directorio de contenidos multimedia (imágenes, tipografia, etc.)
-  - [Normalize](http://git.io/normalize) por defecto o [reset v2.0](http://meyerweb.com/eric/tools/css/reset/) de Eric Meyer.
-  - Tipografias incluidas y mediante google fonts
-  - Definición de formularios horizontales o verticales.
-  - Conjuntos de atributos para generar código recurrente. Algo asi como ejecutar funciones dentro del css.
-      - Grilla y columnas de [semantic.gs](http://semantic.gs/).
-      - CSS3 de [LESS Prefixer](http://lessprefixer.com/) .
-      - Botones.
-      - Iconos de [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
-  - Elementos predefinidos.
-      - Galería.
-      - Navegación.
-      - Rotador de imágenes.
+  - Surround Variables
+      - Colors 
+      - Sources
+      - Path to the Content Directory multimedia (images, letter case, etc.) 
+  - [Normalize](http://git.io/normalize).
+  - Letter Case included through Google fonts.
+  - Horizontal o Vertical form definition.
+  - Pack to generate Recurrent Codes. This is like executing functions in CSS.
+      - [semantic.gs](http://semantic.gs/) grid.
+      - [LESS Prefixer](http://lessprefixer.com/) CSS3.
+      - Buttons.
+      - [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icons.
+  - Pre defined Elements.
+      - Gallery.
+      - Navigation.
+      - Image Rotator.
   - Layout
-      - Estilos generales y archivos separados para cada media query.
+      - General styles with individual files for each media Query.
 
-  ## Instalación
+  ## Installation
 
-  **Atención: Para poder usar el servidor, debes tener instalado [nodejs](http://nodejs.org).**
+  **Attention: To be able to use this server, you need to have [nodejs](http://nodejs.org) installed.**
 
 
-  ##### En consola:
+  ##### Dashboard:
 
       git clone https://github.com/tiko2015/snippets.git
       cd snippets
       npm install
       node server
 
-  ##### En el navegador: 
+  ##### Navigator: 
 
       http://127.0.0.1:3000
 
-  Correr la aplicacion en heroku.com:
+  Run this application on heroku.com:
 
       heroku apps:create example
       git push heroku master
       heroku open
 
-  Miralo funcionando en [heroku](http://snippets-ws.herokuapp.com)
+  See it working on [heroku](http://snippets-ws.herokuapp.com)
 
-  Si necesitas ayuda con esto, [acá está la documentación de heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+  If you need help, [click on this link](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
   
-  ## Como funciona
+  ## How does it work?
 
-  Al ser un desarrollo orientado a crear plantillas, el servidor node que se inicia se queda a la espera de la petición de archivos situados en el directorio public.
+  Being this a program to create templates, when the node server is started, it sits and waits for file requests located at the public directory.
 
-  Si los archivos solicitados tienen la extensión .html, busca su correlación en la carpeta views,en este caso con la extensión .html.jade. 
-  En el caso de existir, busca el mismo archivo en models con la extensión .html.json, compila y devuelte el html solicitado.
-  Al mismo tiempo crea el archivo solicitado en la carpeta public.
-
-  Si no existiera, intenta encontrarlo en public y en caso de no exitir mostrará un error 404.
-
-  En el caso de less, se repite la misma mecánica. O sea que el llamado a style.css generaría que se compile less/style.css.less con todos sus include y 
-  devolviera una hoja de estilos única.
-
-  > **NOTA:** Se pueden generar sitios estaticos si no se incluyen las carpetas less y views en el servidor de producción.
+  If the requested files have the .html extension, the Server searches its correlation in the views folder, in this specific case with the .html.jade extension.
   
-  ## Instruccion para trabajar con less en snippets
+  If this one already exists, it looks for the same files in the models folder using the extension .html.json, it will compile and return the requested html.
+  
+  At the same time, it creates the requested file in Public folder.
+  
+  If the file would not exist, the server would try to find it in the Public folder, and if still not there, it will then show a 404 error. 
+  
+  If using Less, you do the same procedure.
+  
+  Meaning that the call to style.css would compile less/style.css.less with all its includes and it will return a page of unique styles.
+  
+  > **NOTE:** Idle sites could be generated if less & views folders are not included in the production Server.
 
-  Lo primero que tenes que saber es que esta herramienta tiene que ser útil para tu proyecto, tomar una estructura como **snippets** para empezar no debe condicionarte, adaptala a tu necesidad.
 
-  Para empezar a utilizar **snippets** es necesario conocer la estructura de directorios. Si bien la podes cambiar a tu gusto para tu proyecto es necesario entenderla para modificarla.
+  
+  ## How to work with Less in Snippets
 
-  Tené en cuenta que **snippets** usa una gran cantidad de recortes de código para facilitar la organización de tu proyecto. 
+  Please know that this tool should be helpful in implementing your project.
 
-  El objetivo de esto es facilitar la tarea de desarrollo y generar un único css compilado para tu sitio en producción.
+  Therefore, using a structure like Shippets should not intimidate you. You should be able to adapt and customize this tool it to your needs.
 
-  #### Estructura de directorios:
+  To begin utilizing Shippets, you need to know the structure of the directories.
+
+  Although you will be able to change it to fit your project requirements and needs, you need to understand the structure to be able to modify it.
+
+  Bear in mind that shippets uses a great amount of code shortcuts to make your project easier.
+
+  The goal here is to make the development 
+
+  Easier and generate one CSS for your site.
+
+  #### Structure of Directories:
   <div class="folder">
-  - **models** (archivos de datos en formato json)
-  - **views** (archivos jade)
+  - **models** (data files in json format)
+  - **views** (jade files)
       - **_layouts** 
         - **includes**
         - **elements**
-  - **less** (aca se encuentran los archivos .less, no es necesaria para producción)
+  - **less** (here is where you find these files.  less, is not necessary for production)
       - **lib**
-          - **01core** (tipografias, reset, mixins y demás configuraciones generales)
-          - **02extends** (librerías less para facilitar la creación de código)
-          - **03elements** (definición de elementos puntuales de tu sitio)
+          - **01core** (letter case, reset, mixins and other general configurations)
+          - **02extends** (less libraries to help you  code creating)
+          - **03elements** (specific site element definition)
       - **themes**
-          - **default** (estilos por defecto para aplicar en línea)
-          - **docs** (estilos del sitio de documentación)
-          - **examples** (estilos de los ejemplos)
+          - **default**
+          - **docs**
+          - **examples**
   - **public**
-      - **js** (tus scripts)
-          - **lib** (recursos javascript de terceros)
-      - **media** (archivos binarios)
-          - **fonts** (tipografias a utilizar)
-          - **img** (archivos de imagen que forman parte del diseño)
-          - **upload** (archivos que forman parte del contenido)
+      - **js** (your scripts)
+          - **lib** (tirad party javascript resources)
+      - **media** (binary files)
+          - **fonts** (lettercase to be utilized)
+          - **img** (image files that are a part of the design)
+          - **upload** (content files)
   </div>
-  #### Por donde empezar:
+  #### Where to begin:
 
-  Lo primero que podés hacer es abrir el archivo *'less/style.less'*. Acá vás a encotrar todos los archivos incluidos en tu proyecto y el orden en que se cargan.
+  Start by opening the *'less/style.less'* file.
 
-  Fijate que los directorios esán numerados para facilitar la lectura, de todos modos, cada proyecto tiene sus requerimentos y este orden se puede alterar 
-  según las necesidades.
+  Here you will find all the files needed for your task, and in their loading sequence.
 
-  Para quitar archivos no es necesario borrarlos, se pueden comentar como el caso de *'reset.less'*:
+  For reading purposes, all directories are numbered. Nevertheless, each task has different requirements, qnd this sequence can be altered based on your needs. 
+
+  To remove files, you don’t need to erase them. You can comment them same as in *'reset.less'*:
 
       ...
       //@import "01core/reset.less";
       @import "01core/normalize.less";
       ...
       
-  Otro archivo donde nos proponemos trabajar bastante de nuestro tiempo es *04layout/all.less*.
+  Another file where we are committed to working extensively is *04layout/all.less*.
 
-  En él nos vamos a encontrar con algunas líneas que le dan forma al html de ejemplo que es *'index.html'*
+  Here you will find lines that shape the HTML. i.e, *'index.html'*
 
-  Si todavía no conoces **less**, este es el momento de darte una vuelta por [less](http://lesscss.org/).
+  If you are not familiar with **less** yet, this is a good time to [take a tour](http://lesscss.org/).
 
-  Para empezar un proyecto nuevo, podés borrar todos estos estilos y comenzar utilizando *'clean.html'*. En este archivo solo están definidas las 
-  llamadas a los scripts necesarios para el desarrollo con **snippets**.
+  When beginning a new project or task, you can delete all styles and start utilizing *'clean.html'*. 
+  The only definitions in this file are the calls are the calls to the scripts needed for **snippets** development.
 
-  #### Usando mixins:
 
-  Una de las grandes ventajas de crear css con less, es la posibilidad de usar *mixins*. Esto nos permite definir una serie de atributos para un elemento, 
-  incluso se le pueden pasar variables.
+  #### Mixins User:
 
-  Vamos a ver un ejemplo de nuestro archivo *'01core/mixins.less'*
+  One of the biggest advantages of creating CSS with less is the possibility of using mixins.
+
+  This allows us to define a series of attributes for one element.  Further, you can add variables.
+  
+  Let’s check an example of our file *'lib/01core/mixins.less'*
 
       .size (@width: 400, @height: 200) {
         width: @width * 1px;
         height: @height * 1px;
       }
       
-  Con estas líneas generamos un código abreviado para definir elementos de tamaño fijo. Para un *div* con el *class .box*, podriamos escribir esto:
+  CUsing these lines we can generate an abreviated code to define elements of a fixed size. To do a div with a **class .box**, we could write it like this:
 
       .box {
         .size(60,60);
       }
       
-  Y el resultado en el css compilado sería el siguiente:
+  And the result of the compiled CSS would be as follows:
 
       .box {
         width: 60px;
         height: 60px;
       }
 
-  *Investiga que otros elementos tenes en mixins y agrega los que creas necesarios*.
 
-  #### Usando extends:
+  #### Using Extends:
 
-  Hasta ahora tenemos 4 extensiones definidas: buttons, css3, grid y glyphicons.
+  Up to know, we have four (4) defined extensions, buttons, css3, grid and Font-Awesome.
 
-  Buttons es una extensión que te permite crear botonos tanto de links como inputs de formularios. Te permite definir el color de fondo, tamaño. Miralo, 
-  modificalo y sualo a tu gusto.
+  Buttons is an extension that allows you to create botonos for links and inputs for forms.
 
-  Con css3.less haces compatible las propiedades de la nueva versión sin necesidad de escribir prefijos para todos los navegadores. 
-  Mirá como usarlo en [LESS Prefixer](http://lessprefixer.com/) 
+  It also allows you define the background color and size.
+  
+  Check it out, modify it and use it as you please!
 
-  Como sistema de grilla **snippets** adopta el método de 12 columnas. Conoce la implementación de [semantic.gs](http://semantic.gs/) que está 
-  muy bien explicado y documentado.
+  With css3.less you can make the properties  of the new version compatible so that you don’t have to write prefixes for every navigator.
 
-  [Font Awesome](http://fortawesome.github.io/Font-Awesome/) es una familia de iconos estándar para graficar botones, links, alertas, etc.
+  See how to use it in [LESS Prefixer](http://lessprefixer.com/) 
 
-  #### Elementos, layouts y themes
+  As a table system, **snippets** adopts the 12 column method. Learn how to use [semantic.gs](http://semantic.gs/) which is very well explained and documented.
 
-  En elements vas a encontrar algunas estructuras que se utilizan comunmente, revisa en el directorio views/_layouts/elements 
-  que encontraras otros recortes de código compatibles.
+  [Font Awesome](http://fortawesome.github.io/Font-Awesome/) is a family of standard icons to help you graph buttons, links, alerts, etc.
 
-  En layouts se definen las reglas generales para responsive.
+  #### Elements, layouts and sources
 
-  Themes es donde se encuentran todos los estilos particulares de tu desarrollo.
+  In elements you will find structures that are ordinarily used. Check the directory views/_layouts/elements you will find other code shorcuts that are compatible.
+
+  In layouts we define the general rules to responsive. 
+
+  Themes is where you will find all the particular styles for your task.
 
 
-  #### Recomendaciones
+  #### Reccommendations
 
-  Utilizá less desde un servidor local, instalarlo en cualquier sistema operativo suele ser una tarea simple.
+  Use less from a local Server. Installing it in any operating system is a simple task.
 
   ## Jade
 
-  Mientras preparamos la documentación, podés ir a la [documentación](http://jade-lang.com/reference/) de [jade](http://jade-lang.com/).
+  While we are preparing the documentation, you can go to [documentación](http://jade-lang.com/reference/) of [jade](http://jade-lang.com/).

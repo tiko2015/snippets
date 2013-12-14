@@ -1,0 +1,411 @@
+<!DOCTYPE html><html lang="en"><head><title>snippets</title><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords"><meta name="description" content="Sistema integral de desarrollo frontend"><link href="/media/img/favicon.ico" rel="shortcut icon" type="image/x-icon"><link rel="stylesheet" href="/style.css" type="text/css" media="all"><meta property="og:title" content="snippets"><meta property="og:description"><meta property="og:type" content="website"><meta property="og:url" content="APP_URL"><meta property="og:image" content="/media/img/favicon.png"><meta property="og:site_name" content="snippets"><meta property="fb:admins" content="APP_ADMIN"><script src="/js/lib/jquery-2.0.3.min.js" type="text/javascript"></script><script src="/js/lib/jquery.tools.min.js" type="text/javascript"></script><script src="/js/lib/jquery.flexslider.js" type="text/javascript"></script><script src="/js/script.js" type="text/javascript"></script><!--[if lte IE8]><script src="/js/lib/html5.js"></script><![endif]--><script>var _gaq=[['_setAccount','UA-31441831-4'],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));</script></head><script>$(function() {
+  // Cache selectors
+  var lastId,
+      topMenu = $(".nav-activo"),
+      topMenuHeight = 0,
+      // All list items
+      menuItems = topMenu.find("a"),
+      // Anchors corresponding to menu items
+      scrollItems = menuItems.map(function(){
+        var item = $($(this).attr("href"));
+        if (item.length) { return item; }
+      });
+      
+  // Bind click handler to menu items
+  // so we can get a fancy scroll animation
+  menuItems.click(function(e){
+  
+    var href = $(this).attr("href"),
+        offsetTop = (href === "#") ? 0 : $(href).offset().top-topMenuHeight+1;
+    $('html, body').stop().animate({ 
+        scrollTop: offsetTop
+    }, 300);
+    e.preventDefault();
+  });
+  
+  // Bind to scroll
+  $(window).scroll(function(){
+     // Get container scroll position
+     var fromTop = $(this).scrollTop()+topMenuHeight;
+     
+     // Get id of current scroll item
+     var cur = scrollItems.map(function(){
+       if ($(this).offset().top < fromTop)
+         return this;
+     });
+     // Get the id of the current element
+     cur = cur[cur.length-1];
+     var id = cur && cur.length ? cur[0].id : "";
+     
+     if (lastId !== id) {
+         lastId = id;
+         // Set/remove active class
+         menuItems
+           .parent().removeClass("active")
+           .end().filter("[href=#"+id+"]").parent().addClass("active");
+     }                   
+  });
+});
+
+</script><body class="docs"><header><nav><ul class="nav-site"><li><a href="/es">Inicio</a></li><li><a href="/es/docs/">Documentación</a></li><li><a href="/es/descargar.html">Descargar</a></li><li><a href="/#lang">English</a></li></ul></nav></header><div class="nav-docs"><h2>Snippets</h2><h4>html base</h4><ul class="nav-activo"><li><a href="#titulos">titulos</a></li><li><a href="#parrafos">parrafos</a></li><li><a href="#listas">listas</a></li><li><a href="#tablas">tablas</a></li><li><a href="#markdown">Markdown</a></li></ul><h4>elementos</h4><ul class="nav-activo"><li><a href="#formularios">formularios</a></li><li><a href="#galeria">galeria</a></li><li><a href="#navegacion">navegación</a></li><li><a href="#pasador">pasador</a></li><li><a href="#carrusel">carrusel</a></li></ul><h4>documetos</h4><ul class="nav-activo"><li><a href="#caracter-sticas">características</a></li><li><a href="#recursos-javascript">recursos javascript</a></li><li><a href="#recursos-less">recursos less</a></li><li><a href="#instalaci-n">instalación</a></li><li><a href="#como-funciona">como funciona</a></li><li><a href="#instruccion-para-trabajar-con-less-en-snippets">como usar less</a></li><li><a href="#jade">como usar jade</a></li></ul></div><script>$('header [href*="docs"]').addClass('active');
+$(function() {
+  $("ul.docs-tabs").tabs("> .pane");
+});</script><section><article><h3 id="titulos">Titulos</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#html">html</a></li></ul><div class="pane"><h1>heading h1</h1><h2>heading h2</h2><h3>heading h3</h3><h4>heading h4</h4><h5>heading h5</h5><h6>heading h6</h6></div><div class="pane code"><pre><code>h1 heading h1
+h2 heading h2
+h3 heading h3
+h4 heading h4
+h5 heading h5
+h6 heading h6</code></pre></div><div class="pane code"><pre><code>&lt;h1>heading h1&lt;h1>
+&lt;h2>heading h2&lt;h2>
+&lt;h3>heading h3&lt;h3>
+&lt;h4>heading h4&lt;h4>
+&lt;h5>heading h5&lt;h5>
+&lt;h6>heading h6&lt;h6></code></pre></div></article><article><h3 id="parrafos">Parrafos</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#html">html</a></li></ul><div class="pane"><p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+consectetur adipiscing elit.</p></div><div class="pane code"><pre><code></code>| Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+| et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+| consectetur adipiscing elit.</pre></div><div class="pane code"><pre><code>&lt;p>Aliquam eu magna augue. Etiam ultrices, dolor ac consectetur eleifend, justo est, 
+et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+consectetur adipiscing elit.&lt;/p></code></pre></div></article><article><h3 id="listas">Listas</h3><h4>Lista desordenada</h4><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><ul><li>Lorem ipsum</li><li>Aliquam eu magna augue.<ul><li>Lorem ipsum</li><li>Aliquam eu magna augue.</li><li>Sed aliquet malesuada egestas.</li></ul></li><li>Sed aliquet malesuada egestas.</li></ul></div><div class="pane code"><pre><code>ul
+  li Lorem ipsum
+  li Aliquam eu magna augue.
+    ul
+      li Lorem ipsum
+      li Aliquam eu magna augue.
+      li Sed aliquet malesuada egestas.
+  li Sed aliquet malesuada egestas.</code></pre></div></div><h4>Lista ordenada</h4><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><ol><li>Lorem ipsum</li><li>Aliquam eu magna augue.</li><li>Sed aliquet malesuada egestas.</li></ol></div><div class="pane code"><pre><code>ol
+  li Lorem ipsum
+  li Aliquam eu magna augue.
+  li Sed aliquet malesuada egestas.</code></pre></div></div><h4>Lista con descripción</h4><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><dl><dt>Lorem ipsum</dt><dd>Aliquam eu magna augue.</dd><dt>Sed aliquet malesuada egestas.</dt><dd>Lorem ipsum dolor, consectetur adipiscing elit.</dd></dl></div><div class="pane code"><pre><code>dl
+  dt Lorem ipsum
+  dd Aliquam eu magna augue.
+  dt Sed aliquet malesuada egestas.
+  dd Lorem ipsum dolor, consectetur adipiscing elit.</code></pre></div></div></article><article><h3 id="tablas">Tablas</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><table><thead><tr><th>Lorem ipsum</th><th>Aliquam eu magna augue.</th><th>Sed aliquet malesuada egestas.</th></tr><tbody><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr><tr><td>Lorem ipsum</td><td>Aliquam eu magna augue.</td><td>Sed aliquet malesuada egestas.</td></tr></tbody></thead></table></div><div class="pane code"><pre><code>table: thead
+  tr
+    th Lorem ipsum
+    th Aliquam eu magna augue.
+    th Sed aliquet malesuada egestas.
+  tbody
+  tr
+    td Lorem ipsum
+    td Aliquam eu magna augue.
+    td Sed aliquet malesuada egestas.
+  tr
+    td Lorem ipsum
+    td Aliquam eu magna augue.
+    td Sed aliquet malesuada egestas.
+  tr
+    td Lorem ipsum
+    td Aliquam eu magna augue.
+    td Sed aliquet malesuada egestas.</code></pre></div></article><article><h3 id="markdown">Markdown</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li></ul><div class="pane"><h1 id="header-h1">Header h1</h1>
+<p>Aliquam eu magna augue. <strong>Etiam ultrices</strong>, dolor ac consectetur eleifend, justo est, 
+et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+consectetur adipiscing elit.</p>
+<ul>
+<li>Lorem ipsum</li>
+<li>Aliquam eu magna augue.</li>
+<li>Sed aliquet malesuada egestas.</li>
+</ul>
+</div><div class="pane code"><pre><code>:markdown
+ 
+ # Header h1
+ 
+  Aliquam eu magna augue. **Etiam ultrices**, dolor ac consectetur eleifend, justo est, 
+  et dapibus nisl quam nec diam. Sed aliquet malesuada egestas. Lorem ipsum dolor, 
+  consectetur adipiscing elit.
+   
+  - Lorem ipsum
+  - Aliquam eu magna augue.
+  - Sed aliquet malesuada egestas.</code></pre></div></article><article><h3 id="formularios">Formularios</h3><h4>Formulario horizontal</h4><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#less">less</a></li></ul><div class="pane"><form class="hform"><p><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" value=""/></p><p><label for="email">Correo</label><input type="text" id="email" name="email" value=""/></p><p><label for="asunto">Pais</label><select id="asunto" name="asunto"><option value="ar">Argentina</option><option value="br">Brasil</option><option value="uy">Uruguay</option></select></p><p><label for="Mensaje">mensaje</label><textarea id="Mensaje" name="Mensaje"></textarea></p><p class="checkbox"><input type="radio" id="sexo_h" name="sexo" value="h"/><label for="sexo_h">Hombre</label><input type="radio" id="sexo_m" name="sexo" value="m"/><label for="sexo_m">Mujer</label></p><p class="checkbox"><input type="checkbox" id="info" name="info" value="1"/><label for="info">Acepto los términos y condiciones</label></p><p><button class="button-big">Enviar</button></p></form></div><div class="pane code"><pre><code>form.hform
+  p: +formInput('text', 'nombre', 'Nombre', '')
+  p: +formInput('text', 'email', 'Correo', '')
+  p: +formSelect(
+    'asunto', 'Pais', [
+      {'name':'Argentina','value':'ar'},
+      {'name':'Brasil','value':'br'}, 
+      {'name':'Uruguay','value':'uy'}
+    ]
+  )
+  p: +formTextarea('Mensaje', 'mensaje', '')
+  p.checkbox: +formRadio(
+    'sexo', 
+    [{'label':'Hombre','value':'h'},{'label':'Mujer','value':'m'}]
+  )
+  p.checkbox: +formCheckbox('info', 'Acepto los términos y condiciones', '1')
+  p: button.button-big Enviar</code></pre></div><div class="pane code"><pre><code>[class*="button"] { .mixButton(); }
+.button-big { .mixButtonSize(2.4); }
+form.hform  { .mixFormHorizontal(); }</code></pre></div></div><h4>Formulario vertical</h4><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#less">less</a></li></ul><div class="pane"><form class="vform"><p><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" value=""/></p><p><label for="email">Correo</label><input type="text" id="email" name="email" value=""/></p><p><label for="asunto">Pais</label><select id="asunto" name="asunto"><option value="ar">Argentina</option><option value="br">Brasil</option><option value="uy">Uruguay</option></select></p><p><label for="Mensaje">mensaje</label><textarea id="Mensaje" name="Mensaje"></textarea></p><p class="checkbox"><input type="radio" id="sexo_h" name="sexo" value="h"/><label for="sexo_h">Hombre</label><input type="radio" id="sexo_m" name="sexo" value="m"/><label for="sexo_m">Mujer</label></p><p class="checkbox"><input type="checkbox" id="info" name="info" value="1"/><label for="info">Acepto los términos y condiciones</label></p><p><button class="button-big">Enviar</button></p></form></div><div class="pane code"><pre><code>form.vform
+  p: +formInput('text', 'nombre', 'Nombre', '')
+  p: +formInput('text', 'email', 'Correo', '')
+  p: +formSelect(
+    'asunto', 'Pais', [
+      {'name':'Argentina','value':'ar'},
+      {'name':'Brasil','value':'br'}, 
+      {'name':'Uruguay','value':'uy'}
+    ]
+  )
+  p: +formTextarea('Mensaje', 'mensaje', '')
+  p.checkbox: +formRadio(
+    'sexo', 
+    [{'label':'Hombre','value':'h'},{'label':'Mujer','value':'m'}]
+  )
+  p.checkbox: +formCheckbox('info', 'Acepto los términos y condiciones', '1')
+  p: button.button-big Enviar</code></pre></div><div class="pane code"><pre><code>[class*="button"] { .mixButton(); }
+.button-big { .mixButtonSize(2.4); }
+form.vform  { .mixFormVertical(); }</code></pre></div></div><h4>Alertas</h4><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#less">less</a></li></ul><div class="pane"><div class="alert-box alert-error"><span>Error:</span> Reemplaza esta alerta por tu HTML.</div><div class="alert-box alert-success"><span>Success:</span> Reemplaza esta alerta por tu HTML.</div><div class="alert-box alert-warning"><span>Warning:</span> Reemplaza esta alerta por tu HTML.</div><div class="alert-box alert-notice"><span>Notice:</span> Reemplaza esta alerta por tu HTML.</div></div><div class="pane code"><pre><code>.alert-box.alert-error
+  span Error:
+  |  Reemplaza esta alerta por tu HTML.
+.alert-box.alert-success
+  span Success:
+  |  Reemplaza esta alerta por tu HTML.
+.alert-box.alert-warning
+  span Warning:
+  |  Reemplaza esta alerta por tu HTML.
+.alert-box.alert-notice
+  span Notice:
+  |  Reemplaza esta alerta por tu HTML.</code></pre></div><div class="pane code"><pre><code>.alert-box { 
+  &[class*="error"]   { .alertBox(@errorColor); }
+  &[class*="success"] { .alertBox(@successColor); }
+  &[class*="warning"] { .alertBox(@warningColor); }
+  &[class*="notice"]  { .alertBox(@noticeColor); }
+}</code></pre></div></div></article><article><h3 id="galeria">Galería</h3><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#json">json</a></li><li><a href="#less">less</a></li></ul><div class="pane"><ul class="gallery6"><li><img src="/media/upload/1.jpeg"/></li><li><img src="/media/upload/2.jpeg"/></li><li><img src="/media/upload/3.jpeg"/></li><li><img src="/media/upload/4.jpeg"/></li><li><img src="/media/upload/5.jpeg"/></li><li><img src="/media/upload/6.jpeg"/></li><li><img src="/media/upload/1.jpeg"/></li><li><img src="/media/upload/2.jpeg"/></li><li><img src="/media/upload/3.jpeg"/></li><li><img src="/media/upload/4.jpeg"/></li><li><img src="/media/upload/5.jpeg"/></li><li><img src="/media/upload/6.jpeg"/></li></ul></div><div class="pane code"><pre><code></code>+gallery(6, content.gallery)</pre></div><div class="pane code"><pre><code>{
+ "gallery": [
+   "/media/upload/1.jpeg",
+   "/media/upload/2.jpeg",
+   "/media/upload/3.jpeg",
+   "/media/upload/4.jpeg",
+   "/media/upload/5.jpeg",
+   "/media/upload/6.jpeg",
+   "/media/upload/1.jpeg",
+   "/media/upload/2.jpeg",
+   "/media/upload/3.jpeg",
+   "/media/upload/4.jpeg",
+   "/media/upload/5.jpeg",
+   "/media/upload/6.jpeg"
+ ]
+}</code></pre></div><div class="pane code"><pre><code></code>.gallery6  { .mixGallery(@column:6); }</pre></div></article><article><h3 id="navegacion">Navegación</h3><h4>Navegación vertical</h4><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#json">json</a></li><li><a href="#less">less</a></li></ul><div class="pane"><ul class="nav-vertical"><li><a href="#">Lorem</a></li><li><a href="#">Lorem</a></li><li><a href="#">Lorem</a></li><li><a href="#">Lorem</a></li></ul></div><div class="pane code"><pre><code></code>+nav('nav-vertical', content.nav)</pre></div><div class="pane code"><pre><code>{
+ "nav": [ 
+    {link:'#', name:'Lorem'}, 
+    {link:'#', name:'Lorem'}, 
+    {link:'#', name:'Lorem'}, 
+    {link:'#', name:'Lorem'}
+  ]
+}</code></pre></div><div class="pane code"><pre><code></code>.nav-vertical       { .verticalNav(); }
+// tambien podés probar definir los colores asi:
+.nav-vertical-light { .verticalNav(@kuler2, @kuler1); }</pre></div></div><h4>Navegación horizontal</h4><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#json">json</a></li><li><a href="#less">less</a></li></ul><div class="pane"><ul class="nav"><li><a href="#">Lorem</a></li><li><a href="#">Lorem</a></li><li><a href="#">Lorem</a></li><li><a href="#">Lorem</a></li></ul></div><div class="pane code"><pre><code></code>+nav('nav', content.nav)</pre></div><div class="pane code"><pre><code>{
+ "nav": [ 
+    {link:'#', name:'Lorem'}, 
+    {link:'#', name:'Lorem'}, 
+    {link:'#', name:'Lorem'}, 
+    {link:'#', name:'Lorem'}
+  ]
+}</code></pre></div><div class="pane code"><pre><code></code>.nav                { .horizontalNav(); }
+.nav-light          { .horizontalNav(@kuler2, @kuler1); }</pre></div></div></article><article><h3 id="pasador">Pasador</h3><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#json">json</a></li><li><a href="#less">less</a></li></ul><div class="pane"><section id="slider"><div class="slider"><ul class="slides"><li><img src="/media/upload/1_big.jpeg"/></li><li><img src="/media/upload/2_big.jpeg"/></li><li><img src="/media/upload/3_big.jpeg"/></li></ul></div></section><script>$(window).load(function() {
+  $('#slider .slider').flexslider({
+    animation: "slide"
+  });
+});</script></div><div class="pane code"><pre><code></code>+slider(content.slides)</pre></div><div class="pane code"><pre><code>{
+ "slides": [ 
+    "/media/upload/1_big.jpeg", 
+    "/media/upload/2_big.jpeg", 
+    "/media/upload/3_big.jpeg"
+  ]
+}</code></pre></div><div class="pane code"><pre><code></code>.slider   { .flexslider(); }</pre></div></div></article><article><h3 id="carrusel">Carrusel</h3><div class="panels"><ul class="docs-tabs tabs"><li><a href="#preview">preview</a></li><li><a href="#jade">jade</a></li><li><a href="#json">json</a></li><li><a href="#less">less</a></li></ul><div class="pane"><section id="scrollable"><div class="slider"><ul class="slides"><li><img src="/media/upload/1.jpeg"/></li><li><img src="/media/upload/2.jpeg"/></li><li><img src="/media/upload/3.jpeg"/></li><li><img src="/media/upload/4.jpeg"/></li><li><img src="/media/upload/5.jpeg"/></li><li><img src="/media/upload/6.jpeg"/></li><li><img src="/media/upload/1.jpeg"/></li><li><img src="/media/upload/2.jpeg"/></li><li><img src="/media/upload/3.jpeg"/></li><li><img src="/media/upload/4.jpeg"/></li><li><img src="/media/upload/5.jpeg"/></li><li><img src="/media/upload/6.jpeg"/></li></ul></div></section><script>$(window).load(function() {
+  $('#scrollable .slider').flexslider({
+      animation: "slide",
+      animationLoop: false,
+      itemWidth: 100
+  });
+});</script></div><div class="pane code"><pre><code></code>+carousel(content.thumbs)</pre></div><div class="pane code"><pre><code>{
+  "thumbs": [
+    "/media/upload/1.jpeg",
+    "/media/upload/2.jpeg",
+    "/media/upload/3.jpeg",
+    "/media/upload/4.jpeg",
+    "/media/upload/5.jpeg",
+    "/media/upload/6.jpeg",
+    "/media/upload/1.jpeg",
+    "/media/upload/2.jpeg",
+    "/media/upload/3.jpeg",
+    "/media/upload/4.jpeg",
+    "/media/upload/5.jpeg",
+    "/media/upload/6.jpeg"
+  ]
+}</code></pre></div><div class="pane code"><pre><code></code>.carousel { .carousel(); }</pre></div></div></article><h2 id="caracter-sticas">Características</h2>
+<ul>
+<li>HTML5 y CSS3</li>
+<li>Responsive o Adaptive según la necesidad.</li>
+<li>Configurable.</li>
+<li>Construido en less para desarrollar en less.</li>
+<li>Sin classes predefinidas.</li>
+<li>Ordenado y extensible.</li>
+<li>Sin código basura.</li>
+<li>Fácil de aprender</li>
+<li>Incluye librerías js para formularios, modales, slider, tooltips tabs y más.</li>
+<li>El css base compilado pesa solo 7.4k.</li>
+</ul>
+<h2 id="recursos-javascript">Recursos javascript</h2>
+<ul>
+<li><a href="http://jquery.com/">jQuery</a></li>
+<li><a href="http://jquerytools.org">jQuery tools</a> (incluye: Tabs, Tooltip, Form Tools, Toolbox.)</li>
+<li><a href="http://flexslider.woothemes.com/">flexSlider2</a></li>
+<li><a href="http://code.google.com/p/html5shim/">html5shim</a></li>
+<li><a href="http://lesscss.org/">less</a></li>
+<li><a href="http://jade-lang.com">jade</a></li>
+</ul>
+<h2 id="recursos-less">Recursos less</h2>
+<ul>
+<li>Variables de entorno<ul>
+<li>Colores </li>
+<li>Fuentes</li>
+<li>Ruta del directorio de contenidos multimedia (imágenes, tipografia, etc.)</li>
+</ul>
+</li>
+<li><a href="http://git.io/normalize">Normalize</a>.</li>
+<li>Tipografias incluidas y mediante google fonts</li>
+<li>Definición de formularios horizontales o verticales.</li>
+<li>Conjuntos de atributos para generar código recurrente. Algo asi como ejecutar funciones dentro del css.<ul>
+<li>Grilla y columnas de <a href="http://semantic.gs/">semantic.gs</a>.</li>
+<li>CSS3 de <a href="http://lessprefixer.com/">LESS Prefixer</a> .</li>
+<li>Botones.</li>
+<li>Iconos de <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>.</li>
+</ul>
+</li>
+<li>Elementos predefinidos.<ul>
+<li>Galería.</li>
+<li>Navegación.</li>
+<li>Rotador de imágenes.</li>
+</ul>
+</li>
+<li>Layout<ul>
+<li>Estilos generales y archivos separados para cada media query.</li>
+</ul>
+</li>
+</ul>
+<h2 id="instalaci-n">Instalación</h2>
+<p><strong>Atención: Para poder usar el servidor, debes tener instalado <a href="http://nodejs.org">nodejs</a>.</strong></p>
+<h5 id="en-consola-">En consola:</h5>
+<pre><code>git clone https://github.com/tiko2015/snippets.git
+cd snippets
+npm install
+node server</code></pre>
+<h5 id="en-el-navegador-">En el navegador:</h5>
+<pre><code>http://127.0.0.1:3000</code></pre>
+<p>Correr la aplicacion en heroku.com:</p>
+<pre><code>heroku apps:create example
+git push heroku master
+heroku open</code></pre>
+<p>Miralo funcionando en <a href="http://snippets-ws.herokuapp.com">heroku</a></p>
+<p>Si necesitas ayuda con esto, <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">acá está la documentación de heroku</a></p>
+<h2 id="como-funciona">Como funciona</h2>
+<p>Al ser un desarrollo orientado a crear plantillas, el servidor node que se inicia se queda a la espera de la petición de archivos situados en el directorio public.</p>
+<p>Si los archivos solicitados tienen la extensión .html, busca su correlación en la carpeta views,en este caso con la extensión .html.jade. 
+En el caso de existir, busca el mismo archivo en models con la extensión .html.json, compila y devuelte el html solicitado.
+Al mismo tiempo crea el archivo solicitado en la carpeta public.</p>
+<p>Si no existiera, intenta encontrarlo en public y en caso de no exitir mostrará un error 404.</p>
+<p>En el caso de less, se repite la misma mecánica. O sea que el llamado a style.css generaría que se compile less/style.css.less con todos sus include y 
+devolviera una hoja de estilos única.</p>
+<blockquote>
+<p><strong>NOTA:</strong> Se pueden generar sitios estaticos si no se incluyen las carpetas less y views en el servidor de producción.</p>
+</blockquote>
+<h2 id="instruccion-para-trabajar-con-less-en-snippets">Instruccion para trabajar con less en snippets</h2>
+<p>Lo primero que tenes que saber es que esta herramienta tiene que ser útil para tu proyecto, tomar una estructura como <strong>snippets</strong> para empezar no debe condicionarte, adaptala a tu necesidad.</p>
+<p>Para empezar a utilizar <strong>snippets</strong> es necesario conocer la estructura de directorios. Si bien la podes cambiar a tu gusto para tu proyecto es necesario entenderla para modificarla.</p>
+<p>Tené en cuenta que <strong>snippets</strong> usa una gran cantidad de recortes de código para facilitar la organización de tu proyecto. </p>
+<p>El objetivo de esto es facilitar la tarea de desarrollo y generar un único css compilado para tu sitio en producción.</p>
+<h4 id="estructura-de-directorios-">Estructura de directorios:</h4>
+<p><div class="folder"></p>
+<ul>
+<li><strong>models</strong> (archivos de datos en formato json)</li>
+<li><strong>views</strong> (archivos jade)<ul>
+<li><strong>_layouts</strong> <ul>
+<li><strong>includes</strong></li>
+<li><strong>elements</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>less</strong> (aca se encuentran los archivos .less, no es necesaria para producción)<ul>
+<li><strong>lib</strong><ul>
+<li><strong>01core</strong> (tipografias, reset, mixins y demás configuraciones generales)</li>
+<li><strong>02extends</strong> (librerías less para facilitar la creación de código)</li>
+<li><strong>03elements</strong> (definición de elementos puntuales de tu sitio)</li>
+</ul>
+</li>
+<li><strong>themes</strong><ul>
+<li><strong>default</strong> (estilos por defecto para aplicar en línea)</li>
+<li><strong>docs</strong> (estilos del sitio de documentación)</li>
+<li><strong>examples</strong> (estilos de los ejemplos)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>public</strong><ul>
+<li><strong>js</strong> (tus scripts)<ul>
+<li><strong>lib</strong> (recursos javascript de terceros)</li>
+</ul>
+</li>
+<li><strong>media</strong> (archivos binarios)<ul>
+<li><strong>fonts</strong> (tipografias a utilizar)</li>
+<li><strong>img</strong> (archivos de imagen que forman parte del diseño)</li>
+<li><strong>upload</strong> (archivos que forman parte del contenido)
+</div><h4 id="por-donde-empezar-">Por donde empezar:</h4>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Lo primero que podés hacer es abrir el archivo <em>&#39;less/style.less&#39;</em>. Acá vás a encotrar todos los archivos incluidos en tu proyecto y el orden en que se cargan.</p>
+<p>Fijate que los directorios esán numerados para facilitar la lectura, de todos modos, cada proyecto tiene sus requerimentos y este orden se puede alterar 
+según las necesidades.</p>
+<p>Para quitar archivos no es necesario borrarlos, se pueden comentar como el caso de <em>&#39;reset.less&#39;</em>:</p>
+<pre><code>...
+//@import &quot;01core/reset.less&quot;;
+@import &quot;01core/normalize.less&quot;;
+...</code></pre>
+<p>Otro archivo donde nos proponemos trabajar bastante de nuestro tiempo es <em>04layout/all.less</em>.</p>
+<p>En él nos vamos a encontrar con algunas líneas que le dan forma al html de ejemplo que es <em>&#39;index.html&#39;</em></p>
+<p>Si todavía no conoces <strong>less</strong>, este es el momento de darte una vuelta por <a href="http://lesscss.org/">less</a>.</p>
+<p>Para empezar un proyecto nuevo, podés borrar todos estos estilos y comenzar utilizando <em>&#39;clean.html&#39;</em>. En este archivo solo están definidas las 
+llamadas a los scripts necesarios para el desarrollo con <strong>snippets</strong>.</p>
+<h4 id="usando-mixins-">Usando mixins:</h4>
+<p>Una de las grandes ventajas de crear css con less, es la posibilidad de usar <em>mixins</em>. Esto nos permite definir una serie de atributos para un elemento, 
+incluso se le pueden pasar variables.</p>
+<p>Vamos a ver un ejemplo de nuestro archivo <em>&#39;01core/mixins.less&#39;</em></p>
+<pre><code>.size (@width: 400, @height: 200) {
+  width: @width * 1px;
+  height: @height * 1px;
+}</code></pre>
+<p>Con estas líneas generamos un código abreviado para definir elementos de tamaño fijo. Para un <em>div</em> con el <em>class .box</em>, podriamos escribir esto:</p>
+<pre><code>.box {
+  .size(60,60);
+}</code></pre>
+<p>Y el resultado en el css compilado sería el siguiente:</p>
+<pre><code>.box {
+  width: 60px;
+  height: 60px;
+}</code></pre>
+<p><em>Investiga que otros elementos tenes en mixins y agrega los que creas necesarios</em>.</p>
+<h4 id="usando-extends-">Usando extends:</h4>
+<p>Hasta ahora tenemos 4 extensiones definidas: buttons, css3, grid y glyphicons.</p>
+<p>Buttons es una extensión que te permite crear botonos tanto de links como inputs de formularios. Te permite definir el color de fondo, tamaño. Miralo, 
+modificalo y sualo a tu gusto.</p>
+<p>Con css3.less haces compatible las propiedades de la nueva versión sin necesidad de escribir prefijos para todos los navegadores. 
+Mirá como usarlo en <a href="http://lessprefixer.com/">LESS Prefixer</a> </p>
+<p>Como sistema de grilla <strong>snippets</strong> adopta el método de 12 columnas. Conoce la implementación de <a href="http://semantic.gs/">semantic.gs</a> que está 
+muy bien explicado y documentado.</p>
+<p><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> es una familia de iconos estándar para graficar botones, links, alertas, etc.</p>
+<h4 id="elementos-layouts-y-themes">Elementos, layouts y themes</h4>
+<p>En elements vas a encontrar algunas estructuras que se utilizan comunmente, revisa en el directorio views/_layouts/elements 
+que encontraras otros recortes de código compatibles.</p>
+<p>En layouts se definen las reglas generales para responsive.</p>
+<p>Themes es donde se encuentran todos los estilos particulares de tu desarrollo.</p>
+<h4 id="recomendaciones">Recomendaciones</h4>
+<p>Utilizá less desde un servidor local, instalarlo en cualquier sistema operativo suele ser una tarea simple.</p>
+<h2 id="jade">Jade</h2>
+<p>Mientras preparamos la documentación, podés ir a la <a href="http://jade-lang.com/reference/">documentación</a> de <a href="http://jade-lang.com/">jade</a>.</p>
+</section><footer><p>Desarrollado por Jonathan Katz<a href="https://github.com/tiko2015/">github </a> <a href="http://www.linkedin.com/in/jokatz">linkedin</a></p></footer></body></html>

@@ -1,0 +1,22 @@
+extends ../../_layouts/docs_es
+
+block nav
+  .nav-docs
+    h2 Snippets
+    h4 html base
+    +nav('nav-activo', config.es.htmlbase)
+    h4 elementos
+    +nav('nav-activo', config.es.elementos)
+    h4 documetos
+    +nav('nav-activo', config.es.documentos)
+
+  script.
+    $('header [href*="docs"]').addClass('active');
+    $(function() {
+      $("ul.docs-tabs").tabs("> .pane");
+    });
+block content
+  section
+    include base
+    include elm
+    include docs
