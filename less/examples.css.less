@@ -7,30 +7,59 @@
  *  
 *------------------------------------------------------------- */
 
+/* vars */
+
+@backgroundColor: #fff;
+
+@textColor: #333;
+@titleColor: @kuler4;
+@lineColor: @kuler1;
+
+@titleFont: 'Open Sans', Helvetica, Arial, sans-serif;
+
+@linkColor:     @kuler4;
+@linkColorOver: darken(@linkColor, 15%);
+
+@kuler1: #7F7F3B;
+@kuler2: #BFBF59;
+@kuler3: #FFFF76;
+@kuler4: #40401E;
+@kuler5: #E5E56A;
+
+@errorColor:    #b34e4d;  
+@warningColor:  #c09854;
+@noticeColor:   #3986ac;
+@successColor:  #458746;
+
+@media: 'media/';
+
+@layout1024: ~"screen and (max-width: 1024px)";
+@layout768:  ~"screen and (max-width: 768px)";
+@layout480:  ~"screen and (max-width: 480px)";
+@layout320:  ~"screen and (max-width: 320px)";
+@layout240:  ~"screen and (max-width: 240px)";
 
 /* imports */
 
-@import "01core/vars.less";
-@import "01core/mixins.less";
-//@import "01core/reset.less";
-@import "01core/normalize.less";
-@import "01core/typography.less";
+@import "lib/01core/mixins.less";
+@import "lib/01core/normalize.less";
+@import "lib/01core/typography.less";
 
-@import "02extends/grid.less";
-@import "02extends/css3.less";
-@import "02extends/buttons.less";
-@import "02extends/tooltip.less";
-@import "02extends/font-awesome.less";
+@import "lib/02extends/grid.less";
+@import "lib/02extends/css3.less";
+@import "lib/02extends/buttons.less";
+@import "lib/02extends/tooltip.less";
+@import "lib/02extends/font-awesome.less";
 
-@import "03elements/forms.less";
-@import "03elements/nav.less";
-@import "03elements/slider.less";
-@import "03elements/gallery.less";
-@import "03elements/modal.less";
+@import "lib/03elements/forms.less";
+@import "lib/03elements/nav.less";
+@import "lib/03elements/slider.less";
+@import "lib/03elements/gallery.less";
+@import "lib/03elements/modal.less";
 
-@import "04layout/all.less";
-@import "04layout/responsive.less";
-@media print { @import "04layout/print.less"; }
+@import "themes/default/all.less";
+@import "themes/default/responsive.less";
 
-@import "05themes/default.less";
-@import "05themes/examples.less";
+@import "themes/examples/all.less";
+@import "themes/examples/responsive.less";
+@import "themes/examples/print.less";

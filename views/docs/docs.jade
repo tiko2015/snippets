@@ -103,11 +103,14 @@
         - **includes**
         - **elements**
   - **less** (aca se encuentran los archivos .less, no es necesaria para producción)
-      - **01core** (tipografias, reset, mixins y demás configuraciones generales)
-      - **02extends** (librerías less para facilitar la creación de código)
-      - **03elements** (definición de elementos puntuales de tu sitio)
-      - **04layout** (definicion general de estilos y excepciones para responsive)
-      - **05theme** (características particulares del proyecto)
+      - **lib**
+          - **01core** (tipografias, reset, mixins y demás configuraciones generales)
+          - **02extends** (librerías less para facilitar la creación de código)
+          - **03elements** (definición de elementos puntuales de tu sitio)
+      - **themes**
+          - **default** (estilos por defecto para aplicar en línea)
+          - **docs** (estilos del sitio de documentación)
+          - **examples** (estilos de los ejemplos)
   - **public**
       - **js** (tus scripts)
           - **lib** (recursos javascript de terceros)

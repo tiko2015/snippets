@@ -3,7 +3,8 @@ var http = require('http')
   , fs   = require('fs')
   , jade = require('jade')
   , less = require('less')
-  , jsonlint = require('jsonlint');
+  , jsonlint = require('jsonlint')
+  , config = require('./config/all');
   
 function getFile(filePath,res,page404){
   fs.exists(filePath,function(exists){
@@ -24,15 +25,15 @@ function getFile(filePath,res,page404){
 };
 function requestHandler(req, res) {
   //console.log('req: ' + req.url);
-  var fileName      = (path.extname(req.url)) ? req.url : path.join(req.url, 'index.html')
-    , tplFolder     = './views'
-    , lessFolder    = './less'
-    , dataFolder    = './models'
-    , localFolder   = './public'
+  var fileName      = (path.extname(req.url)) ? req.url : path.join(req.url, config.folder.indexFile)
+    , tplFolder     = config.folder.tpl
+    , lessFolder    = config.folder.less
+    , dataFolder    = config.folder.data
+    , localFolder   = config.folder.local
     , page404       = localFolder + '/404.html'
-    , jadeFileName  = path.join(tplFolder, fileName) + '.jade'
-    , lessFileName  = path.join(lessFolder, fileName) + '.less'
-    , jsonFileName  = path.join(dataFolder, fileName) + '.json';
+    , jadeFileName  = path.join(tplFolder, fileName) + config.ext.tpl
+    , lessFileName  = path.join(lessFolder, fileName) + config.ext.less
+    , jsonFileName  = path.join(dataFolder, fileName) + config.ext.json;
 
   var loadJade = function (exists) {
     if(exists){
@@ -46,7 +47,7 @@ function requestHandler(req, res) {
     if(exists){
       fs.readFile(lessFileName, 'utf8', function (err, data) {
         if (err) return appError(err, res);   
-        less.render(data, { compress: true, paths: ['./less'] }, function (err, css) {
+        less.render(data, { compress: config.less.compress, paths: [config.folder.less] }, function (err, css) {
           if (err) return appError(err, res);   
           res.setHeader("Content-type", "text/css; charset=utf-8");
           res.end(css);
@@ -83,8 +84,8 @@ function requestHandler(req, res) {
     fs.readFile('./models/_config.json', 'utf8', function (err, configFile) {
       if (err) return appError(err, res);   
       try {
-        var config = jsonlint.parse(configFile);
-        jade.renderFile(jadeFileName, { content:options, config:config, pretty: 0 }, function (err, html) {
+        var modelConfig = jsonlint.parse(configFile);
+        jade.renderFile(jadeFileName, { content:options, config:modelConfig, pretty: config.jade.pretty }, function (err, html) {
           if (err) return appError(err, res);   
           res.setHeader('Content-Type', 'text/html; charset=utf-8');
           res.end(html);

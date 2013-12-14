@@ -1,25 +1,27 @@
+/* all */
+
 /* theme default */
 body { }
 header { position: relative; top: 0; right: 2em; z-index: 20; float: right; 
   .transition(all 200ms ease-in); overflow:hidden; width: 4em; 
-	&:hover { width: 18em; }
-	nav {
-		ul { list-style: none; margin: 0; padding: 0;
-			li { float: right; clear: right; width: 18em; text-align: right;
-				a { color: #999; background: #fff; padding:0 2.5em  0 1em; line-height: 2em; margin: 0; display: block; 
+  &:hover { width: 18em; }
+  nav {
+    ul { list-style: none; margin: 0; padding: 0;
+      li { float: right; clear: right; width: 18em; text-align: right;
+        a { color: #999; background: #fff; padding:0 2.5em  0 1em; line-height: 2em; margin: 0; display: block; 
           position: relative; .font-size(2);
-					.transition(all 200ms ease-in); border-right:5px solid #fff;
-					&:after { width: 1.7em; text-align: center; display: block; position: absolute;top: 0; right: 5px; }
-					&:focus, &.active { background: @linkColorOver; color: @kuler2; border-right:5px solid @kuler2;
-						&:after { color:@kuler2; }
-					}
-					&:hover { border-right:5px solid @kuler2; color: @kuler2; text-decoration:none;
+          .transition(all 200ms ease-in); border-right:5px solid #fff;
+          &:after { width: 1.7em; text-align: center; display: block; position: absolute;top: 0; right: 5px; }
+          &:focus, &.active { background: @linkColorOver; color: @kuler2; border-right:5px solid @kuler2;
             &:after { color:@kuler2; }
           }
-				}
-			}
-		}
-	}
+          &:hover { border-right:5px solid @kuler2; color: @kuler2; text-decoration:none;
+            &:after { color:@kuler2; }
+          }
+        }
+      }
+    }
+  }
   [href*="/"] { .mixIconAfter(@icon-arrow-up, #999, 0.9em); }
   [href*="docs"] { .mixIconAfter(@icon-file-text-alt, #999, 0.9em); }
   [href*="descargar"] { .mixIconAfter(@icon-download, #999, 0.9em); }
@@ -99,7 +101,7 @@ section#home { color: #fff;
 article { }
 
 section#home { left: 0; right: 0; 
-	background: #fff; 
+  background: #fff; 
 }
 
 /* iconos */
