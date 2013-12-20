@@ -1,0 +1,23 @@
+@import 'lib/nib'
+
+font-size = 14px
+
+.clearfix
+  clearfix()
+
+body
+  background red
+  color #fff
+
+.box
+  @extend .clearfix
+  box-sizing border-box
+  border-radius 5px
+  transition all 500ms
+  &:hover
+    border blue
+  h1
+    font-size font-size*2
+  h2
+    color #ccc
+    font-size font-size

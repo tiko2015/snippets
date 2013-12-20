@@ -1,0 +1,41 @@
+.clearfix,
+.box {
+  zoom: 1;
+}
+.clearfix:before,
+.box:before,
+.clearfix:after,
+.box:after {
+  content: "";
+  display: table;
+}
+.clearfix:after,
+.box:after {
+  clear: both;
+}
+body {
+  background: #f00;
+  color: #fff;
+}
+.box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  -o-transition: all 500ms;
+  -ms-transition: all 500ms;
+  transition: all 500ms;
+}
+.box:hover {
+  border: 1px solid #00f;
+}
+.box h1 {
+  font-size: 28px;
+}
+.box h2 {
+  color: #ccc;
+  font-size: 14px;
+}

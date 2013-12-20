@@ -2,6 +2,7 @@ module.exports = {
   folder: {
     tpl: './views',
     less: './less',
+    stylus: './stylus',
     data: './models',
     local: './public',
     indexFile: 'index.html'
@@ -9,6 +10,7 @@ module.exports = {
   ext: {
     tpl: '.jade',
     less: '.less',
+    stylus: '.styl',
     json: '.json'
   },
   jade: {

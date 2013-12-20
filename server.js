@@ -2,6 +2,7 @@ var http = require('http')
   , path = require('path')
   , fs   = require('fs')
   , jade = require('jade')
+  , stylus = require('stylus')
   , less = require('less')
   , jsonlint = require('jsonlint')
   , config = require('./config/all');
@@ -24,16 +25,18 @@ function getFile(filePath,res,page404){
   });
 };
 function requestHandler(req, res) {
-  //console.log('req: ' + req.url);
-  var fileName      = (path.extname(req.url)) ? req.url : path.join(req.url, config.folder.indexFile)
-    , tplFolder     = config.folder.tpl
-    , lessFolder    = config.folder.less
-    , dataFolder    = config.folder.data
-    , localFolder   = config.folder.local
-    , page404       = localFolder + '/404.html'
-    , jadeFileName  = path.join(tplFolder, fileName) + config.ext.tpl
-    , lessFileName  = path.join(lessFolder, fileName) + config.ext.less
-    , jsonFileName  = path.join(dataFolder, fileName) + config.ext.json;
+
+  var fileName        = (path.extname(req.url)) ? req.url : path.join(req.url, config.folder.indexFile)
+    , tplFolder       = config.folder.tpl
+    , lessFolder      = config.folder.less
+    , stylusFolder    = config.folder.stylus
+    , dataFolder      = config.folder.data
+    , localFolder     = config.folder.local
+    , page404         = localFolder + '/404.html'
+    , jadeFileName    = path.join(tplFolder, fileName) + config.ext.tpl
+    , lessFileName    = path.join(lessFolder, fileName) + config.ext.less
+    , stylusFileName  = path.join(stylusFolder, fileName) + config.ext.stylus
+    , jsonFileName    = path.join(dataFolder, fileName) + config.ext.json;
 
   var loadJade = function (exists) {
     if(exists){
@@ -62,6 +65,29 @@ function requestHandler(req, res) {
     }
   };
   
+  var loadStylus = function (exists) {
+    if(exists){
+      fs.readFile(stylusFileName, 'utf8', function (err, data) {
+        if (err) return appError(err, res);
+        stylus(data)
+          .set('filename', stylusFileName)
+          .set('paths', [config.folder.stylus])
+          .render(function(err, css){
+            if (err) return appError(err, res);   
+            res.setHeader("Content-type", "text/css; charset=utf-8");
+            res.end(css);
+            console.log('res: ' + stylusFileName);
+            console.log('res: ' + localFolder + fileName);
+            fs.writeFile(localFolder + fileName, css, function (err) {
+              if (err) throw err;
+              console.log(localFolder + fileName + ' saved!');
+            });
+          });
+      });
+    }
+  }
+  
+
   var loadJson = function(exists){
     if(exists){
       fs.readFile(jsonFileName, 'utf8', function (err, data) {
@@ -103,7 +129,8 @@ function requestHandler(req, res) {
     });
   };
   if(path.extname(req.url) != '.css') fs.exists( jadeFileName , loadJade);
-  else fs.exists( lessFileName , loadLess);
+  fs.exists( lessFileName , loadLess);
+  fs.exists( stylusFileName , loadStylus);
 };
 
 function appError(err, res) {
